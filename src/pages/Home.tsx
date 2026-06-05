@@ -315,7 +315,7 @@ export default function Home() {
           <h2 className="cta-section__title reveal reveal-delay-1">{t('home.s5Title')}</h2>
           <p className="cta-section__sub reveal reveal-delay-2">{t('home.s5Sub')}</p>
 
-          <div className="platform-grid reveal reveal-delay-3" style={{ maxWidth: 840, margin: '0 auto' }}>
+          <div className="platform-grid reveal reveal-delay-3" style={{ maxWidth: 560, margin: '0 auto' }}>
             {PLATFORM_DATA.map((p, i) => (
               <Link key={i} to={p.to} className="platform-card">
                 <img src={p.icon} alt="" className="platform-card__icon" />

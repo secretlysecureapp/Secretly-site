@@ -1,13 +1,26 @@
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useReveal } from '../hooks/useReveal'
 import { SITE } from '../config'
 
 /* Official Donorbox iframe embed for the campaign.
-   Campaign slug lives in config.ts (SITE.donorboxCampaign). */
+   Campaign slug lives in config.ts (SITE.donorboxCampaign).
+   donorbox widgets.js auto-resizes the iframe to fit its content,
+   so the form is never cut off and leaves no empty space. */
 const DONORBOX_SRC = `https://donorbox.org/embed/${SITE.donorboxCampaign}?language=en`
 
 export default function Donate() {
   const ref = useReveal()
+
+  useEffect(() => {
+    const id = 'donorbox-widget-script'
+    if (document.getElementById(id)) return
+    const s = document.createElement('script')
+    s.id = id
+    s.src = 'https://donorbox.org/widgets.js'
+    s.setAttribute('paypalExpress', 'false')
+    document.body.appendChild(s)
+  }, [])
 
   return (
     <div ref={ref}>
@@ -28,7 +41,7 @@ export default function Donate() {
 
       <section className="section">
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 64, alignItems: 'start' }}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 56, alignItems: 'start' }}
             className="two-col-grid">
             {/* Left: why donate */}
             <div>
@@ -77,14 +90,17 @@ export default function Donate() {
               </Link>
             </div>
 
-            {/* Right: Donorbox embedded donation form */}
+            {/* Right: Donorbox embedded donation form (auto-resized by widgets.js) */}
             <div className="reveal reveal-delay-2"
               style={{
                 background: '#ffffff',
                 borderRadius: 'var(--r-xl)',
                 border: '1px solid var(--border)',
+                boxShadow: '0 24px 60px rgba(0,0,0,0.45)',
                 overflow: 'hidden',
-                minHeight: 600,
+                width: '100%',
+                maxWidth: 500,
+                margin: '0 auto',
               }}>
               <iframe
                 title="Donate to Secretly"
@@ -94,7 +110,9 @@ export default function Donate() {
                 seamless
                 frameBorder={0}
                 scrolling="no"
-                style={{ width: '100%', minWidth: 250, maxHeight: 'none', height: 900, border: 'none', display: 'block' }}
+                height={900}
+                width="100%"
+                style={{ width: '100%', minWidth: 250, maxHeight: 'none', border: 'none', display: 'block' }}
               />
             </div>
           </div>
