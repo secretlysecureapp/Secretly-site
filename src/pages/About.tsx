@@ -60,11 +60,7 @@ export default function About() {
       <section className="section--sm section" style={{ background: 'var(--bg-surface)' }}>
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 32 }}>
-            {[
-              { label: 'Open source',          value: '100%',  sub: 'Fully auditable codebase'        },
-              { label: 'Zero-knowledge',        value: '0',     sub: 'Server-side message storage'     },
-              { label: 'Personal data required',value: 'None',  sub: 'No phone number, no email'       },
-            ].map((stat, i) => (
+            {(t('aboutStats', { returnObjects: true }) as Array<{value:string;label:string;sub:string}>).map((stat, i) => (
               <div key={i} className={`pillar reveal reveal-delay-${i + 1}`}>
                 <div style={{ fontSize: 48, fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, color: 'var(--accent)', marginBottom: 8, letterSpacing: '-0.04em' }}>
                   {stat.value}

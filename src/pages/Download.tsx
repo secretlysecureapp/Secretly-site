@@ -39,7 +39,7 @@ export default function Download() {
                   <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: 20, marginBottom: 4 }}>
                     {p.name}
                   </p>
-                  <p style={{ fontSize: 13, color: 'var(--text-muted)' }}>{p.sub}</p>
+                  <p style={{ fontSize: 13, color: 'var(--text-muted)' }}>{p.sub === 'Desktop app' ? t('platforms.desktop') : p.sub}</p>
                 </div>
                 <span className="btn btn--ghost" style={{ marginTop: 'auto', fontSize: 14, padding: '10px 20px', opacity: p.available ? 1 : 0.6 }}>
                   {p.available ? t('download.downloadBtn') : t('download.comingSoon')}

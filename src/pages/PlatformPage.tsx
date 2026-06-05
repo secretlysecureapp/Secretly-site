@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import { useReveal } from '../hooks/useReveal'
 import { SITE, isAvailable } from '../config'
 
@@ -6,52 +7,29 @@ interface PlatformPageProps {
   platform: 'android' | 'ios' | 'desktop'
 }
 
-const CONFIG = {
-  android: {
-    kicker:   'Download',
-    title:    'Secretly for Android',
-    sub:      'Stay invisible. No phone number, no email — just a randomly generated Secretly ID for total anonymity.',
-    icon:     '/icons/android.png',
-    ctaLabel: 'Download for Android',
-    ctaHref:  SITE.download.android,
-    note:     'Or visit secretlyapp.com/download from your phone.',
-    storeLabel: 'Available on Google Play',
-  },
-  ios: {
-    kicker:   'Download',
-    title:    'Secretly for iPhone & iPad',
-    sub:      'Stay invisible. No phone number, no email — just a randomly generated Secretly ID for total anonymity.',
-    icon:     '/icons/phone.png',
-    ctaLabel: 'Download for iPhone or iPad',
-    ctaHref:  SITE.download.ios,
-    note:     'Or visit secretlyapp.com/download from your phone.',
-    storeLabel: 'Available on the App Store',
-  },
-  desktop: {
-    kicker:   'Download',
-    title:    'Secretly for Desktop',
-    sub:      'Stay invisible. No phone number, no email — just a randomly generated Secretly ID for total anonymity.',
-    icon:     '/icons/monitor.png',
-    ctaLabel: 'Download for Windows',
-    ctaHref:  SITE.download.windows,
-    note:     'To use the desktop app, Secretly must first be installed on your phone.',
-    storeLabel: 'Windows & macOS',
-  },
+/* Non-translatable per-platform data (icon + store destination).
+   All copy comes from i18n: t(`platform.${platform}.*`). */
+const META = {
+  android: { icon: '/icons/android.png', href: SITE.download.android },
+  ios:     { icon: '/icons/phone.png',   href: SITE.download.ios     },
+  desktop: { icon: '/icons/monitor.png', href: SITE.download.windows },
 }
 
 export default function PlatformPage({ platform }: PlatformPageProps) {
-  const cfg = CONFIG[platform]
   const ref = useReveal()
-  const available = isAvailable(cfg.ctaHref)
+  const { t } = useTranslation()
+  const meta = META[platform]
+  const title = t(`platform.${platform}.title`)
+  const available = isAvailable(meta.href)
   const macAvailable = isAvailable(SITE.download.macos)
 
   return (
     <div ref={ref}>
       <section className="page-hero">
         <div className="container">
-          <p className="page-hero__kicker reveal">{cfg.kicker}</p>
-          <h1 className="page-hero__title reveal reveal-delay-1">{cfg.title}</h1>
-          <p className="page-hero__sub reveal reveal-delay-2">{cfg.sub}</p>
+          <p className="page-hero__kicker reveal">{t('platform.kicker')}</p>
+          <h1 className="page-hero__title reveal reveal-delay-1">{title}</h1>
+          <p className="page-hero__sub reveal reveal-delay-2">{t('platform.sub')}</p>
         </div>
       </section>
       <div className="divider" />
@@ -77,21 +55,21 @@ export default function PlatformPage({ platform }: PlatformPageProps) {
               alignItems: 'center',
               justifyContent: 'center',
             }}>
-              <img src={cfg.icon} alt={cfg.title} style={{ width: 52, height: 52, filter: 'brightness(0) invert(1)', opacity: 0.85 }} />
+              <img src={meta.icon} alt={title} style={{ width: 52, height: 52, filter: 'brightness(0) invert(1)', opacity: 0.85 }} />
             </div>
 
             <div>
               <p style={{ fontSize: 13, color: 'var(--text-muted)', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 8 }}>
-                {cfg.storeLabel}
+                {t(`platform.${platform}.store`)}
               </p>
               {available ? (
                 <a
-                  href={cfg.ctaHref}
+                  href={meta.href}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn--primary btn--large"
                 >
-                  {cfg.ctaLabel}
+                  {t(`platform.${platform}.cta`)}
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
                     <polyline points="7 10 12 15 17 10"/>
@@ -101,25 +79,25 @@ export default function PlatformPage({ platform }: PlatformPageProps) {
               ) : (
                 <span className="btn btn--primary btn--large" aria-disabled="true"
                       style={{ opacity: 0.55, pointerEvents: 'none', cursor: 'default' }}>
-                  Coming soon
+                  {t('platform.comingSoon')}
                 </span>
               )}
               {platform === 'desktop' && (
                 macAvailable ? (
                   <a href={SITE.download.macos} target="_blank" rel="noopener noreferrer"
                      className="btn btn--ghost btn--large" style={{ marginLeft: 12 }}>
-                    Download for macOS
+                    {t('platform.macDownload')}
                   </a>
                 ) : (
                   <span className="btn btn--ghost btn--large" aria-disabled="true"
                         style={{ marginLeft: 12, opacity: 0.55, pointerEvents: 'none', cursor: 'default' }}>
-                    macOS — coming soon
+                    {t('platform.macComingSoon')}
                   </span>
                 )
               )}
             </div>
 
-            <p style={{ fontSize: 14, color: 'var(--text-muted)' }}>{cfg.note}</p>
+            <p style={{ fontSize: 14, color: 'var(--text-muted)' }}>{t(`platform.${platform}.note`)}</p>
           </div>
 
           {/* App preview */}
@@ -134,7 +112,7 @@ export default function PlatformPage({ platform }: PlatformPageProps) {
           }}>
             <picture>
               <source srcSet="/Chat.webp" type="image/webp" />
-              <img src="/Chat-fallback.png" alt={`${cfg.title} preview`}
+              <img src="/Chat-fallback.png" alt={`${title} preview`}
                    style={{ maxWidth: '100%', maxHeight: 360, height: 'auto', objectFit: 'contain' }}
                    draggable={false} loading="lazy" />
             </picture>
@@ -142,10 +120,10 @@ export default function PlatformPage({ platform }: PlatformPageProps) {
 
           <div className="reveal reveal-delay-3" style={{ marginTop: 48 }}>
             <p style={{ fontSize: 13, color: 'var(--text-muted)', marginBottom: 16 }}>
-              Looking for another platform?
+              {t('platform.anotherPlatform')}
             </p>
             <Link to="/download" className="btn btn--ghost">
-              View all downloads →
+              {t('platform.viewAll')}
             </Link>
           </div>
         </div>

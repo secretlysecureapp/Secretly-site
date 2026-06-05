@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import { useReveal } from '../hooks/useReveal'
 import { SITE } from '../config'
 
@@ -11,6 +12,8 @@ const DONORBOX_SRC = `https://donorbox.org/embed/${SITE.donorboxCampaign}?langua
 
 export default function Donate() {
   const ref = useReveal()
+  const { t } = useTranslation()
+  const benefits = t('donate.benefits', { returnObjects: true }) as string[]
 
   useEffect(() => {
     const id = 'donorbox-widget-script'
@@ -26,14 +29,12 @@ export default function Donate() {
     <div ref={ref}>
       <section className="page-hero">
         <div className="container">
-          <p className="page-hero__kicker reveal">Support our mission</p>
+          <p className="page-hero__kicker reveal">{t('donate.kicker')}</p>
           <h1 className="page-hero__title reveal reveal-delay-1">
-            Help keep privacy free.
+            {t('donate.title')}
           </h1>
           <p className="page-hero__sub reveal reveal-delay-2">
-            Secretly is built by a team of engineers and privacy advocates who believe secure
-            communication should be accessible to everyone. Your contribution helps us keep
-            Secretly free, open source, and independent.
+            {t('donate.sub')}
           </p>
         </div>
       </section>
@@ -45,24 +46,17 @@ export default function Donate() {
             className="two-col-grid">
             {/* Left: why donate */}
             <div>
-              <p className="section-label reveal">Why donate</p>
+              <p className="section-label reveal">{t('donate.whyLabel')}</p>
               <h2 className="section-title reveal reveal-delay-1" style={{ fontSize: 'clamp(1.6rem, 3vw, 2.2rem)' }}>
-                Privacy infrastructure takes resources.
+                {t('donate.whyTitle')}
               </h2>
               <p className="section-body reveal reveal-delay-2" style={{ marginBottom: 32 }}>
-                Unlike ad-supported platforms, Secretly does not monetize your data. We rely on
-                the support of our community to keep servers running, code audits funded, and
-                development moving forward.
+                {t('donate.whyBody')}
               </p>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: 12, marginBottom: 32 }}
                 className="reveal reveal-delay-3">
-                {[
-                  'Fund ongoing security audits of our encryption',
-                  'Keep server infrastructure independent and private',
-                  'Support full-time open-source development',
-                  'Maintain multi-platform availability for everyone',
-                ].map((item, i) => (
+                {benefits.map((item, i) => (
                   <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
                     <div style={{ width: 20, height: 20, borderRadius: '50%', background: 'var(--accent-dim)', border: '1px solid var(--accent-border)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                       <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
@@ -75,18 +69,17 @@ export default function Donate() {
               </div>
 
               <p className="reveal reveal-delay-3" style={{ fontSize: 14, color: 'var(--text-muted)', lineHeight: 1.7, marginBottom: 16 }}>
-                Donations are processed securely via Donorbox. We accept Credit &amp; Debit Card,
-                Apple Pay, and Google Pay.
+                {t('donate.methods')}
               </p>
               <p className="reveal reveal-delay-4" style={{ fontSize: 14, color: 'var(--text-muted)', lineHeight: 1.7 }}>
-                For contributions above $50,000, please contact us at{' '}
+                {t('donate.largeNote')}{' '}
                 <a href="mailto:support@secretlyapp.com" style={{ color: 'var(--accent)' }}>
                   support@secretlyapp.com
                 </a>.
               </p>
 
               <Link to="/about" className="btn btn--ghost reveal reveal-delay-4" style={{ marginTop: 24 }}>
-                Learn about our mission
+                {t('donate.learnMore')}
               </Link>
             </div>
 

@@ -117,12 +117,12 @@ export default function Contact() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 80, alignItems: 'start' }}>
             {/* Contact info */}
             <div className="reveal">
-              <p className="section-label">Contact channels</p>
+              <p className="section-label">{t('contactUi.channelsLabel')}</p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 20, marginTop: 12 }}>
                 {[
-                  { label: 'General support',   value: 'support@secretlyapp.com',  icon: '✉️' },
-                  { label: 'Security reports',  value: 'security@secretlyapp.com', icon: '🔒' },
-                  { label: 'Business inquiries',value: 'business@secretlyapp.com', icon: '💼' },
+                  { label: t('contactUi.channelGeneral'),  value: 'support@secretlyapp.com',  icon: '✉️' },
+                  { label: t('contactUi.channelSecurity'), value: 'security@secretlyapp.com', icon: '🔒' },
+                  { label: t('contactUi.channelBusiness'), value: 'business@secretlyapp.com', icon: '💼' },
                 ].map((c, i) => (
                   <div key={i} style={{
                     padding: '20px 24px',
@@ -147,9 +147,8 @@ export default function Contact() {
               </div>
               <div style={{ marginTop: 32, padding: '20px 24px', background: 'var(--accent-dim)', border: '1px solid var(--accent-border)', borderRadius: 'var(--r-md)' }}>
                 <p style={{ fontSize: 14, color: 'var(--text-secondary)', lineHeight: 1.65 }}>
-                  <strong style={{ color: 'var(--accent)' }}>Security note:</strong> If you
-                  have found a security vulnerability, please report it via encrypted email to
-                  security@secretlyapp.com. We take all reports seriously and respond promptly.
+                  <strong style={{ color: 'var(--accent)' }}>{t('contactUi.securityNoteTitle')}:</strong>{' '}
+                  {t('contactUi.securityNoteBody')}
                 </p>
               </div>
             </div>
@@ -181,12 +180,12 @@ export default function Contact() {
               ) : (
                 <form ref={formRef} onSubmit={handleSubmit} noValidate
                   style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-                  <h3 style={{ marginBottom: 8, fontSize: 20 }}>Send a message</h3>
+                  <h3 style={{ marginBottom: 8, fontSize: 20 }}>{t('contactUi.formTitle')}</h3>
 
                   {/* Name */}
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
                     <label style={{ fontSize: 13, color: 'var(--text-secondary)', fontWeight: 500 }}>
-                      Your name <span style={{ color: 'rgba(255,80,80,0.8)' }}>*</span>
+                      {t('contactUi.fieldName')} <span style={{ color: 'rgba(255,80,80,0.8)' }}>*</span>
                     </label>
                     <input type="text" name="name" value={fields.name} onChange={handleChange}
                       placeholder={t('contact.namePlaceholder')} autoComplete="name"
@@ -200,7 +199,7 @@ export default function Contact() {
                   {/* Email */}
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
                     <label style={{ fontSize: 13, color: 'var(--text-secondary)', fontWeight: 500 }}>
-                      Email <span style={{ color: 'rgba(255,80,80,0.8)' }}>*</span>
+                      {t('contactUi.fieldEmail')} <span style={{ color: 'rgba(255,80,80,0.8)' }}>*</span>
                     </label>
                     <input type="email" name="email" value={fields.email} onChange={handleChange}
                       placeholder={t('contact.emailPlaceholder')} autoComplete="email"
@@ -214,7 +213,7 @@ export default function Contact() {
                   {/* Subject */}
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
                     <label style={{ fontSize: 13, color: 'var(--text-secondary)', fontWeight: 500 }}>
-                      Subject <span style={{ color: 'rgba(255,80,80,0.8)' }}>*</span>
+                      {t('contactUi.fieldSubject')} <span style={{ color: 'rgba(255,80,80,0.8)' }}>*</span>
                     </label>
                     <input type="text" name="subject" value={fields.subject} onChange={handleChange}
                       placeholder={t('contact.subjectPlaceholder')}
@@ -228,7 +227,7 @@ export default function Contact() {
                   {/* Message */}
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
                     <label style={{ fontSize: 13, color: 'var(--text-secondary)', fontWeight: 500 }}>
-                      Message <span style={{ color: 'rgba(255,80,80,0.8)' }}>*</span>
+                      {t('contactUi.fieldMessage')} <span style={{ color: 'rgba(255,80,80,0.8)' }}>*</span>
                     </label>
                     <textarea name="message" value={fields.message} onChange={handleChange}
                       placeholder={t('contact.messagePlaceholder')} rows={5}
@@ -241,7 +240,7 @@ export default function Contact() {
 
                   {sendError && (
                     <p style={{ fontSize: 13, color: 'rgba(255,100,100,0.95)', lineHeight: 1.5 }}>
-                      Could not send your message. Please try again, or email us directly at{' '}
+                      {t('contactUi.sendError')}{' '}
                       <a href={`mailto:${SITE.supportEmail}`} style={{ color: 'var(--accent)' }}>
                         {SITE.supportEmail}
                       </a>.
