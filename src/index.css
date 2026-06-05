@@ -457,11 +457,26 @@ h1, h2, h3, h4, h5, h6 {
   padding: 80px 0 100px;
 }
 @media (max-width: 1024px) {
+  /* Don't force a full-viewport, vertically-centered hero on narrow screens:
+     stacked content is taller than the viewport, and centering would push the
+     top (kicker + headline) off-screen and clip it. Let it flow naturally
+     from just below the fixed navbar instead. */
+  .hero {
+    min-height: auto;
+    justify-content: flex-start;
+    padding-top: 100px;
+  }
   .hero__content {
     grid-template-columns: 1fr;
-    gap: 56px;
-    padding: 60px 0 80px;
+    gap: 40px;
+    padding: 8px 0 56px;
   }
+  .hero__scroll-hint { display: none; }
+}
+@media (max-width: 480px) {
+  .hero { padding-top: 92px; }
+  .hero__headline { font-size: clamp(2rem, 8.5vw, 2.6rem); }
+  .hero__content { gap: 32px; padding: 4px 0 48px; }
 }
 
 .hero__text { display: flex; flex-direction: column; }
