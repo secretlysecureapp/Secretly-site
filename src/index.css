@@ -1174,6 +1174,14 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   will-change: transform;
 }
+/* Custom cursor is a desktop-only effect. On touch / small screens the JS
+   never activates, so the elements would otherwise sit frozen in the
+   top-left corner — hide them entirely. */
+@media (pointer: coarse), (max-width: 768px) {
+  .cursor-dot,
+  .cursor-ring,
+  .cursor-spotlight { display: none; }
+}
 .cursor-dot {
   width: 12px;
   height: 12px;
