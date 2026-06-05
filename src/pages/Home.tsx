@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useReveal } from '../hooks/useReveal'
 import { useCountUp } from '../hooks/useCountUp'
-import TextScramble from '../components/TextScramble'
 import MagneticButton from '../components/MagneticButton'
 
 const FEATURE_ICONS = [
@@ -71,13 +70,11 @@ export default function Home() {
             <div className="hero__text">
               <span className="hero__kicker">{t('hero.kicker')}</span>
 
-              <TextScramble
-                text={t('hero.headline')}
-                tag="h1"
-                className="hero__headline"
-                delay={400}
-                duration={1400}
-              />
+              <h1 className="hero__headline">
+                {t('hero.headline').split('\n').map((line, i, arr) => (
+                  <span key={i}>{line}{i < arr.length - 1 && <br />}</span>
+                ))}
+              </h1>
 
               <p className="hero__subhead">{t('hero.subhead')}</p>
 
