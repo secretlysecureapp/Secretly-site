@@ -257,8 +257,8 @@ export default function CursorSystem() {
         ring.style.height = `${sz}px`
         ring.style.transform = `translate(${ringPos.current.x - sz / 2}px, ${ringPos.current.y - sz / 2}px)`
         ring.style.borderColor = isInteract.current
-          ? 'rgba(0,229,255,0.9)'
-          : 'rgba(0,229,255,0.45)'
+          ? 'rgba(88,101,242,0.9)'
+          : 'rgba(88,101,242,0.45)'
       }
 
       // Spotlight — hero only, very slow
