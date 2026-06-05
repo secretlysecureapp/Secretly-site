@@ -1,0 +1,22 @@
+{
+  "name": "Secretly — Private Messaging",
+  "short_name": "Secretly",
+  "description": "Private messaging for people and teams who need secure communication without phone numbers, email, or surveillance.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#060a12",
+  "theme_color": "#060a12",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icons/chat.png",
+      "sizes": "100x100",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["communication", "productivity", "social"],
+  "lang": "en",
+  "dir": "ltr",
+  "scope": "/"
+}
