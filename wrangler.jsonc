@@ -1,0 +1,13 @@
+{
+  // Deploy Secretly as a static-assets Worker (no server code).
+  // This tells `wrangler deploy` to serve the prebuilt Vite output in ./dist
+  // directly, so it does NOT try to apply the Cloudflare Vite plugin
+  // (which would require Vite >= 6).
+  "name": "secretlysite",
+  "compatibility_date": "2025-01-01",
+  "assets": {
+    "directory": "./dist",
+    // Serve index.html for unknown routes so React Router (SPA) works.
+    "not_found_handling": "single-page-application"
+  }
+}
