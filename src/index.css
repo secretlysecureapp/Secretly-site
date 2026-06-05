@@ -470,6 +470,20 @@ h1, h2, h3, h4, h5, h6 {
     grid-template-columns: 1fr;
     gap: 40px;
     padding: 8px 0 56px;
+    min-width: 0;
+  }
+  /* Allow the single grid column to shrink below its content's intrinsic
+     width, and cap the device mockup to the container — otherwise the image's
+     640px max-width forces the whole column (and text) wider than the phone
+     screen and everything gets clipped on the right. */
+  .hero__text,
+  .hero__visual { min-width: 0; }
+  /* Higher specificity (.hero__visual descendant) so this beats the base
+     .hero__devices-img--landscape { max-width: 640px } rule that appears
+     later in the file. */
+  .hero__visual .hero__devices-img {
+    max-width: 100%;
+    max-height: none;
   }
   .hero__scroll-hint { display: none; }
 }
