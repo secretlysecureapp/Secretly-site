@@ -7,9 +7,9 @@ export default function Privacy() {
     <div ref={ref}>
       <section className="page-hero">
         <div className="container">
-          <p className="page-hero__kicker reveal">Legal</p>
-          <h1 className="page-hero__title reveal reveal-delay-1">Privacy Policy</h1>
-          <p className="page-hero__sub reveal reveal-delay-2">
+          <p className="page-hero__kicker">Legal</p>
+          <h1 className="page-hero__title">Privacy Policy</h1>
+          <p className="page-hero__sub">
             Effective Date: May 15, 2026 · Operator: Secretly LLC
           </p>
         </div>
@@ -18,7 +18,7 @@ export default function Privacy() {
 
       <section className="section">
         <div className="container">
-          <div className="prose reveal">
+          <div className="prose">
             <p>
               This document describes what data Secretly collects, how it's used, and user
               rights regarding the Secretly service.

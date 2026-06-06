@@ -11,7 +11,7 @@ interface PlatformPageProps {
    All copy comes from i18n: t(`platform.${platform}.*`). */
 const META = {
   android: { icon: '/icons/android.png', href: SITE.download.android },
-  ios:     { icon: '/icons/phone.png',   href: SITE.download.ios     },
+  ios:     { icon: '/icons/macos.png',   href: SITE.download.ios     },
   desktop: { icon: '/icons/monitor.png', href: SITE.download.windows },
 }
 

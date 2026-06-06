@@ -7,9 +7,9 @@ export default function Terms() {
     <div ref={ref}>
       <section className="page-hero">
         <div className="container">
-          <p className="page-hero__kicker reveal">Legal</p>
-          <h1 className="page-hero__title reveal reveal-delay-1">Terms of Service</h1>
-          <p className="page-hero__sub reveal reveal-delay-2">
+          <p className="page-hero__kicker">Legal</p>
+          <h1 className="page-hero__title">Terms of Service</h1>
+          <p className="page-hero__sub">
             Effective date: May 01, 2026 · Operator: Secretly LLC
           </p>
         </div>
@@ -18,7 +18,7 @@ export default function Terms() {
 
       <section className="section">
         <div className="container">
-          <div className="prose reveal">
+          <div className="prose">
             <h2>1. Acceptance</h2>
             <p>These Terms of Service govern your access to and use of Secretly.</p>
             <p>

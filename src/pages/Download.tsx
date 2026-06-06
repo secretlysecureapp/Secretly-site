@@ -5,9 +5,9 @@ import { SITE, isAvailable } from '../config'
 
 const PLATFORMS = [
   { name: 'Android',       sub: 'Google Play Store',  icon: '/icons/android.png', to: '/download/android', available: isAvailable(SITE.download.android) },
-  { name: 'iPhone & iPad', sub: 'Apple App Store',    icon: '/icons/phone.png',   to: '/download/ios',     available: isAvailable(SITE.download.ios)     },
-  { name: 'Windows',       sub: 'Desktop app',        icon: '/icons/monitor.png', to: '/download/desktop', available: isAvailable(SITE.download.windows) },
-  { name: 'macOS',         sub: 'Desktop app',        icon: '/icons/macos.png',   to: '/download/desktop', available: isAvailable(SITE.download.macos)   },
+  { name: 'iPhone & iPad', sub: 'Apple App Store',    icon: '/icons/macos.png',              to: '/download/ios',     available: isAvailable(SITE.download.ios)     },
+  { name: 'Windows',       sub: 'Desktop app',        icon: '/icons/monitor.png',            to: '/download/desktop', available: isAvailable(SITE.download.windows) },
+  { name: 'macOS',         sub: 'Desktop app',        icon: '/icons/icons8-macbook-100.png', to: '/download/desktop', available: isAvailable(SITE.download.macos)   },
 ]
 
 export default function Download() {

@@ -32,9 +32,9 @@ const PILLAR_ICONS = [
 
 const PLATFORM_DATA = [
   { name: 'Android',      icon: '/icons/android.png',  to: '/download/android'  },
-  { name: 'iPhone & iPad',icon: '/icons/phone.png',    to: '/download/ios'      },
+  { name: 'iPhone & iPad',icon: '/icons/macos.png',    to: '/download/ios'      },
   { name: 'Windows',      icon: '/icons/monitor.png',  to: '/download/desktop'  },
-  { name: 'macOS',        icon: '/icons/macos.png',    to: '/download/desktop'  },
+  { name: 'macOS',        icon: '/icons/icons8-macbook-100.png', to: '/download/desktop'  },
 ]
 
 /* ══════════════════════════════════════════════════════════════
