@@ -146,6 +146,10 @@ const de = {
     { value: '0',     label: 'Zero-Knowledge',            sub: 'Serverseitige Nachrichtenspeicherung' },
     { value: 'Keine', label: 'Erforderliche persönliche Daten', sub: 'Keine Telefonnummer, keine E-Mail' },
   ],
+  termsAbuse: {
+    title: 'Anstößige Inhalte & Missbrauch — Null Toleranz',
+    body: 'Wir dulden keinerlei anstößige, missbräuchliche oder illegale Inhalte und kein missbräuchliches Verhalten. Mit der Nutzung von Secretly stimmen Sie zu, solche Inhalte nicht zu veröffentlichen oder zu übertragen. In der App können Nutzer Inhalte melden und andere Nutzer blockieren. Wir prüfen Meldungen und reagieren innerhalb von 24 Stunden, indem wir anstößige Inhalte – soweit technisch möglich – entfernen und das betreffende Konto sperren.',
+  },
   footer: {
     tagline: 'Private Nachrichten ohne Kompromisse.',
     product: 'Produkt', company: 'Unternehmen', legal: 'Rechtliches',

@@ -146,6 +146,10 @@ const zh = {
     { value: '0',    label: 'Zero-knowledge',  sub: '服务器端消息存储' },
     { value: '无',   label: '所需个人数据',     sub: '无需电话号码，无需邮箱' },
   ],
+  termsAbuse: {
+    title: '不良内容与滥用 — 零容忍',
+    body: '我们对不良、辱骂或非法内容以及滥用行为采取零容忍。使用 Secretly 即表示您同意不发布或传输此类内容。用户可在应用内举报内容并屏蔽其他用户。我们会审核举报并在 24 小时内处理：在技术可行的情况下删除违规内容并封禁违规账户。',
+  },
   footer: {
     tagline: '毫无妥协的私密消息。',
     product: '产品', company: '公司', legal: '法律',

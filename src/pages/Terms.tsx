@@ -1,7 +1,9 @@
+import { useTranslation } from 'react-i18next'
 import { useReveal } from '../hooks/useReveal'
 
 export default function Terms() {
   const ref = useReveal()
+  const { t } = useTranslation()
 
   return (
     <div ref={ref}>
@@ -19,6 +21,19 @@ export default function Terms() {
       <section className="section">
         <div className="container">
           <div className="prose">
+            <div style={{
+              padding: '20px 24px',
+              background: 'var(--accent-dim)',
+              border: '1px solid var(--accent-border)',
+              borderRadius: 'var(--r-md)',
+              marginBottom: 40,
+            }}>
+              <h3 style={{ marginTop: 0, marginBottom: 10, fontSize: '1.05rem', color: 'var(--accent)' }}>
+                {t('termsAbuse.title')}
+              </h3>
+              <p style={{ marginBottom: 0 }}>{t('termsAbuse.body')}</p>
+            </div>
+
             <h2>1. Acceptance</h2>
             <p>These Terms of Service govern your access to and use of Secretly.</p>
             <p>

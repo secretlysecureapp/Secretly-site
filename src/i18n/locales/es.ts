@@ -148,6 +148,10 @@ const es = {
     { value: '0',        label: 'Zero-knowledge',            sub: 'Almacenamiento de mensajes en el servidor' },
     { value: 'Ninguno',  label: 'Datos personales requeridos', sub: 'Sin número de teléfono ni correo' },
   ],
+  termsAbuse: {
+    title: 'Contenido objetable y abuso — Tolerancia cero',
+    body: 'No se tolera ningún contenido objetable, abusivo o ilegal, ni los comportamientos abusivos. Al usar Secretly, aceptas no publicar ni transmitir dicho contenido. Dentro de la aplicación puedes denunciar contenido y bloquear a otros usuarios. Revisamos las denuncias y actuamos en un plazo de 24 horas, eliminando el contenido infractor cuando es técnicamente posible y bloqueando la cuenta infractora.',
+  },
   footer: {
     tagline: 'Mensajería privada sin compromisos.',
     product: 'Producto', company: 'Empresa', legal: 'Legal',

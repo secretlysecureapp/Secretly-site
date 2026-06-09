@@ -248,6 +248,10 @@ const en = {
     { value: '0',    label: 'Zero-knowledge',         sub: 'Server-side message storage' },
     { value: 'None', label: 'Personal data required', sub: 'No phone number, no email'   },
   ],
+  termsAbuse: {
+    title: 'Objectionable Content & Abuse — Zero Tolerance',
+    body: 'There is zero tolerance for objectionable, abusive, or illegal content and for abusive behavior. By using Secretly you agree not to post or transmit such content. Users can report content and block other users in-app. We review reports and act within 24 hours by removing offending content where technically possible and banning the offending account.',
+  },
   footer: {
     tagline: 'Private messaging without compromise.',
     product: 'Product',

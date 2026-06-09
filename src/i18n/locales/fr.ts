@@ -146,6 +146,10 @@ const fr = {
     { value: '0',      label: 'Zero-knowledge',               sub: 'Stockage des messages côté serveur' },
     { value: 'Aucune', label: 'Donnée personnelle requise',   sub: 'Sans numéro de téléphone ni e-mail' },
   ],
+  termsAbuse: {
+    title: 'Contenu répréhensible et abus — Tolérance zéro',
+    body: 'Aucune tolérance n\'est accordée au contenu répréhensible, abusif ou illégal, ni aux comportements abusifs. En utilisant Secretly, vous acceptez de ne pas publier ni transmettre un tel contenu. Dans l\'application, vous pouvez signaler du contenu et bloquer d\'autres utilisateurs. Nous examinons les signalements et agissons sous 24 heures en supprimant le contenu fautif lorsque cela est techniquement possible et en bannissant le compte fautif.',
+  },
   footer: {
     tagline: 'Messagerie privée sans compromis.',
     product: 'Produit', company: 'Entreprise', legal: 'Mentions légales',
