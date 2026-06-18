@@ -7,6 +7,9 @@
   "compatibility_date": "2025-01-01",
   "assets": {
     "directory": "./dist",
+    // Serve /route/index.html at /route (no trailing slash) to match the
+    // canonical URLs and sitemap; /route/ then 308-redirects to /route.
+    "html_handling": "drop-trailing-slash",
     // Serve index.html for unknown routes so React Router (SPA) works.
     "not_found_handling": "single-page-application"
   }
