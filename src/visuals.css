@@ -1,0 +1,96 @@
+/* ════════════════════════════════════════════════════════════════
+   SECURITY / PRODUCT VISUALS
+   Hand-built inline-SVG "proof" graphics (E2EE flow, key ratchet,
+   zero-knowledge). Themed with the core palette, animated with CSS
+   only (SSR-safe), and fully disabled under reduced-motion.
+   ════════════════════════════════════════════════════════════════ */
+
+.sv-wrap {
+  position: relative;
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+  background:
+    radial-gradient(120% 90% at 50% -10%, rgba(88, 101, 242, 0.10), transparent 60%),
+    linear-gradient(180deg, var(--bg-elevated) 0%, var(--bg-surface) 100%);
+  padding: clamp(20px, 4vw, 44px);
+  overflow: hidden;
+}
+.sv-wrap::before {
+  /* faint grid texture */
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+}
+.sv {
+  display: block;
+  width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 1;
+  overflow: visible;
+}
+
+/* Node outlines (phones / server) */
+.sv-node { fill: var(--bg-surface); stroke: var(--border); stroke-width: 1.5; }
+.sv-screen { fill: var(--bg-base); }
+.sv-label { fill: var(--text-secondary); font: 600 13px 'Space Grotesk', sans-serif; letter-spacing: 0.02em; }
+.sv-sub   { fill: var(--text-muted); font: 500 11px 'Inter', sans-serif; }
+.sv-cipher { fill: var(--text-muted); font: 600 12px ui-monospace, 'SFMono-Regular', Menlo, monospace; letter-spacing: 0.06em; }
+.sv-readable { fill: #fff; }
+.sv-bubble { fill: var(--accent); }
+.sv-bubble-line { stroke: rgba(255,255,255,0.85); stroke-width: 2.2; stroke-linecap: round; }
+
+/* Connector + flow */
+.sv-track { stroke: var(--border); stroke-width: 2; fill: none; }
+.sv-flow {
+  stroke: var(--accent);
+  stroke-width: 2.5;
+  fill: none;
+  stroke-linecap: round;
+  stroke-dasharray: 4 12;
+  filter: drop-shadow(0 0 4px var(--accent-glow));
+  animation: sv-dash 1.1s linear infinite;
+}
+@keyframes sv-dash { to { stroke-dashoffset: -32; } }
+
+/* Lock badge pulse */
+.sv-lock-ring {
+  fill: var(--accent-dim);
+  stroke: var(--accent-border);
+  stroke-width: 1.5;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: sv-pulse 2.6s ease-in-out infinite;
+}
+@keyframes sv-pulse {
+  0%, 100% { opacity: 0.55; }
+  50%      { opacity: 1; }
+}
+.sv-lock { stroke: var(--accent); stroke-width: 1.8; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.sv-lock-body { fill: var(--accent); opacity: 0.9; }
+
+/* "Can't read" eye-slash */
+.sv-eye { stroke: #ef5350; stroke-width: 1.8; fill: none; stroke-linecap: round; }
+
+/* scanning shimmer over the server ciphertext */
+.sv-scan { fill: url(#sv-scan-grad); opacity: 0.5; animation: sv-scan-move 3.2s ease-in-out infinite; }
+@keyframes sv-scan-move { 0%,100% { transform: translateX(-8px);} 50% { transform: translateX(8px);} }
+
+/* Key-ratchet chain */
+.sv-key { stroke: var(--accent); stroke-width: 1.8; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.sv-key-fill { fill: var(--accent-dim); stroke: var(--accent-border); stroke-width: 1.5; }
+.sv-key-old { opacity: 0.4; }
+.sv-arrow { stroke: var(--text-muted); stroke-width: 1.6; fill: none; marker-end: url(#sv-arrowhead); }
+.sv-pop { transform-box: fill-box; transform-origin: center; animation: sv-pop 3s ease-in-out infinite; }
+@keyframes sv-pop { 0%, 70%, 100% { transform: scale(1); } 80% { transform: scale(1.12); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .sv-flow, .sv-lock-ring, .sv-scan, .sv-pop { animation: none !important; }
+  .sv-flow { stroke-dasharray: none; opacity: 0.9; }
+}

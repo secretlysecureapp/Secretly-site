@@ -1,5 +1,6 @@
-import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom'
-import { useEffect, lazy, Suspense } from 'react'
+import { Outlet, Navigate, useLocation } from 'react-router-dom'
+import { useEffect } from 'react'
+import type { RouteRecord } from 'vite-react-ssg'
 import Navbar          from './components/Navbar'
 import Footer          from './components/Footer'
 import ErrorBoundary   from './components/ErrorBoundary'
@@ -7,85 +8,53 @@ import ScrollProgress  from './components/ScrollProgress'
 import BackToTop       from './components/BackToTop'
 import PageTransition  from './components/PageTransition'
 import CursorSystem    from './components/CursorSystem'
+import Seo             from './components/Seo'
 import useLenis        from './hooks/useLenis'
+import i18n, { detectPreferredLanguage } from './i18n'
 
-/* Route-level code splitting — each page is its own chunk */
-const Home        = lazy(() => import('./pages/Home'))
-const About       = lazy(() => import('./pages/About'))
-const Download    = lazy(() => import('./pages/Download'))
-const PlatformPage= lazy(() => import('./pages/PlatformPage'))
-const Help        = lazy(() => import('./pages/Help'))
-const Contact     = lazy(() => import('./pages/Contact'))
-const Privacy     = lazy(() => import('./pages/Privacy'))
-const Terms       = lazy(() => import('./pages/Terms'))
-const Donate      = lazy(() => import('./pages/Donate'))
-const NotFound    = lazy(() => import('./pages/NotFound'))
+/* ──────────────────────────────────────────────────────────────
+   Routes are defined as a data-router array consumed by
+   vite-react-ssg, which statically pre-renders each page to HTML.
 
-/* Minimal loading screen shown while a lazy chunk is fetching */
-function PageLoader() {
-  return (
-    <div style={{
-      minHeight: '60vh',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-    }}>
-      <div className="page-loader" />
-    </div>
-  )
-}
+   IMPORTANT: pages use react-router `lazy` (NOT React.lazy). The SSG
+   renderer resolves `lazy` BEFORE rendering, so real page content
+   lands in the static HTML. React.lazy + Suspense would render the
+   fallback during renderToString, shipping empty pages to crawlers.
+   ────────────────────────────────────────────────────────────── */
 
-/* Scroll to top on route change */
+/* Scroll to top on every client-side route change. */
 function ScrollReset() {
   const { pathname } = useLocation()
-  useEffect(() => { window.scrollTo({ top: 0, behavior: 'instant' }) }, [pathname])
+  useEffect(() => {
+    if (typeof window !== 'undefined') window.scrollTo({ top: 0, behavior: 'instant' })
+  }, [pathname])
   return null
 }
 
+/* App shell / layout route — chrome that wraps every page. */
 function AppShell() {
   useLenis()
+
+  // Apply the visitor's preferred language AFTER hydration so the first
+  // client render still matches the English pre-rendered HTML.
+  useEffect(() => {
+    const lng = detectPreferredLanguage()
+    if (lng !== i18n.language) i18n.changeLanguage(lng)
+    document.documentElement.lang = lng
+    document.documentElement.dir = lng === 'ar' ? 'rtl' : 'ltr'
+  }, [])
+
   return (
     <ErrorBoundary>
+      <Seo />
       <CursorSystem />
       <ScrollProgress />
       <ScrollReset />
       <Navbar />
       <main>
-        <Suspense fallback={<PageLoader />}>
-          <PageTransition>
-            <Routes>
-            <Route path="/"                    element={<Home />} />
-            <Route path="/about"               element={<About />} />
-            <Route path="/download"            element={<Download />} />
-            <Route path="/download/android"    element={<PlatformPage platform="android" />} />
-            <Route path="/download/ios"        element={<PlatformPage platform="ios" />} />
-            <Route path="/download/desktop"    element={<PlatformPage platform="desktop" />} />
-            <Route path="/help"                element={<Help />} />
-            <Route path="/support"             element={<Help />} />
-            <Route path="/contact"             element={<Contact />} />
-            <Route path="/donate"              element={<Donate />} />
-            <Route path="/delete-account"      element={<Help />} />
-
-            {/* ── Legal — canonical paths MUST match the previously published
-                 site (referenced by app-store listings & shipped apps) ── */}
-            <Route path="/privacy-policy"      element={<Privacy />} />
-            <Route path="/terms-of-service"    element={<Terms />} />
-
-            {/* ── Backward-compatible redirects from legacy / short slugs ── */}
-            <Route path="/privacy"             element={<Navigate to="/privacy-policy" replace />} />
-            <Route path="/terms"               element={<Navigate to="/terms-of-service" replace />} />
-            <Route path="/about-us"            element={<Navigate to="/about" replace />} />
-            <Route path="/secretly-for-android"        element={<Navigate to="/download/android" replace />} />
-            <Route path="/secretly-for-ios"            element={<Navigate to="/download/ios" replace />} />
-            <Route path="/secretly-for-desktop"        element={<Navigate to="/download/desktop" replace />} />
-            <Route path="/secretly-huawei-app-gallery" element={<Navigate to="/download" replace />} />
-            <Route path="/support-1"           element={<Navigate to="/support" replace />} />
-            <Route path="/-3"                  element={<Navigate to="/delete-account" replace />} />
-
-            <Route path="*"                    element={<NotFound />} />
-          </Routes>
-          </PageTransition>
-        </Suspense>
+        <PageTransition>
+          <Outlet />
+        </PageTransition>
       </main>
       <Footer />
       <BackToTop />
@@ -93,10 +62,51 @@ function AppShell() {
   )
 }
 
-export default function App() {
-  return (
-    <BrowserRouter>
-      <AppShell />
-    </BrowserRouter>
-  )
+/* Small client-only redirect component for legacy / short slugs. */
+function Redirect({ to }: { to: string }) {
+  return <Navigate to={to} replace />
 }
+
+export const routes: RouteRecord[] = [
+  {
+    path: '/',
+    element: <AppShell />,
+    children: [
+      { index: true,                 lazy: () => import('./pages/Home').then(m => ({ Component: m.default })) },
+      { path: 'about',               lazy: () => import('./pages/About').then(m => ({ Component: m.default })) },
+      { path: 'download',            lazy: () => import('./pages/Download').then(m => ({ Component: m.default })) },
+      { path: 'download/android',    lazy: () => import('./pages/PlatformPage').then(m => ({ Component: () => <m.default platform="android" /> })) },
+      { path: 'download/ios',        lazy: () => import('./pages/PlatformPage').then(m => ({ Component: () => <m.default platform="ios" /> })) },
+      { path: 'download/desktop',    lazy: () => import('./pages/PlatformPage').then(m => ({ Component: () => <m.default platform="desktop" /> })) },
+      { path: 'security',            lazy: () => import('./pages/Security').then(m => ({ Component: m.default })) },
+      { path: 'compare',             lazy: () => import('./pages/Compare').then(m => ({ Component: m.default })) },
+      { path: 'pricing',             lazy: () => import('./pages/Pricing').then(m => ({ Component: m.default })) },
+      { path: 'teams',               lazy: () => import('./pages/Teams').then(m => ({ Component: m.default })) },
+      { path: 'help',                lazy: () => import('./pages/Help').then(m => ({ Component: m.default })) },
+      { path: 'support',             lazy: () => import('./pages/Support').then(m => ({ Component: m.default })) },
+      { path: 'contact',             lazy: () => import('./pages/Contact').then(m => ({ Component: m.default })) },
+      { path: 'donate',              lazy: () => import('./pages/Donate').then(m => ({ Component: m.default })) },
+      { path: 'delete-account',      lazy: () => import('./pages/DeleteAccount').then(m => ({ Component: m.default })) },
+
+      /* ── Legal — canonical paths MUST match the previously published
+           site (referenced by app-store listings & shipped apps) ── */
+      { path: 'privacy-policy',      lazy: () => import('./pages/Privacy').then(m => ({ Component: m.default })) },
+      { path: 'terms-of-service',    lazy: () => import('./pages/Terms').then(m => ({ Component: m.default })) },
+
+      /* ── Backward-compatible redirects from legacy / short slugs.
+           Excluded from pre-rendering (see vite.config ssgOptions);
+           served via host SPA fallback → client-side redirect. ── */
+      { path: 'privacy',                  Component: () => <Redirect to="/privacy-policy" /> },
+      { path: 'terms',                    Component: () => <Redirect to="/terms-of-service" /> },
+      { path: 'about-us',                 Component: () => <Redirect to="/about" /> },
+      { path: 'secretly-for-android',     Component: () => <Redirect to="/download/android" /> },
+      { path: 'secretly-for-ios',         Component: () => <Redirect to="/download/ios" /> },
+      { path: 'secretly-for-desktop',     Component: () => <Redirect to="/download/desktop" /> },
+      { path: 'secretly-huawei-app-gallery', Component: () => <Redirect to="/download" /> },
+      { path: 'support-1',                Component: () => <Redirect to="/support" /> },
+      { path: '-3',                       Component: () => <Redirect to="/delete-account" /> },
+
+      { path: '*',                   lazy: () => import('./pages/NotFound').then(m => ({ Component: m.default })) },
+    ],
+  },
+]

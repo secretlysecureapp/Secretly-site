@@ -4,11 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Primary meta -->
-    <title>Secretly | Private Messaging Without Phone Numbers or Email</title>
-    <meta name="description" content="Secretly is a private messenger for people and teams who need secure communication without phone numbers, email, ads, or surveillance." />
-    <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://www.secretlyapp.com/" />
+    <!-- Per-page <title>, description, canonical, og:url/title/description and
+         twitter:title/description are injected per route by components/Seo.tsx
+         (see src/seo.ts). Only shared/static tags live here. -->
 
     <!-- Theme + icons -->
     <meta name="theme-color" content="#060a12" />
@@ -17,29 +15,21 @@
     <link rel="apple-touch-icon" href="/logo.png" />
     <link rel="manifest" href="/manifest.json" />
 
-    <!-- Open Graph -->
-    <meta property="og:type"        content="website" />
-    <meta property="og:url"         content="https://www.secretlyapp.com/" />
-    <meta property="og:title"       content="Secretly — Private Messaging Without Phone Numbers or Email" />
-    <meta property="og:description" content="End-to-end encrypted chats, calls, and files. No phone number, no email, no surveillance. Available on Android, iOS, Windows, and macOS." />
+    <!-- Open Graph (shared) -->
+    <meta property="og:type"         content="website" />
     <meta property="og:image"        content="https://www.secretlyapp.com/og-image.jpg" />
     <meta property="og:image:width"  content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:type"   content="image/jpeg" />
-    <meta property="og:site_name"   content="Secretly" />
-    <meta property="og:locale"      content="en_US" />
+    <meta property="og:site_name"    content="Secretly" />
+    <meta property="og:locale"       content="en_US" />
 
-    <!-- Twitter Card -->
+    <!-- Twitter Card (shared) -->
     <meta name="twitter:card"        content="summary_large_image" />
     <meta name="twitter:site"        content="@Secretly_App" />
-    <meta name="twitter:title"       content="Secretly — Private Messaging Without Phone Numbers or Email" />
-    <meta name="twitter:description" content="End-to-end encrypted chats, calls, and files. No phone number. No email. Zero-knowledge architecture." />
     <meta name="twitter:image"       content="https://www.secretlyapp.com/og-image.jpg" />
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <!-- Fonts are self-hosted (see src/fonts.css) — no external requests. -->
 
     <!-- No-script fallback -->
     <noscript>

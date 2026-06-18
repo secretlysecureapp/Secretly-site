@@ -1,24 +1,25 @@
 import { Link } from 'react-router-dom'
 import { SITE } from '../config'
 
-const ORG_LINKS = [
-  { label: 'About Us',        to: '/about'            },
-  { label: 'Donate',          to: '/donate'           },
-  { label: 'Privacy Policy',  to: '/privacy-policy'   },
-  { label: 'Terms of Service',to: '/terms-of-service' },
+const PRODUCT_LINKS = [
+  { label: 'Download',  to: '/download' },
+  { label: 'Pricing',   to: '/pricing'  },
+  { label: 'Security',  to: '/security' },
+  { label: 'Compare',   to: '/compare'  },
 ]
 
-const DOWNLOAD_LINKS = [
-  { label: 'Android',          to: '/download/android'  },
-  { label: 'iPhone & iPad',    to: '/download/ios'      },
-  { label: 'Windows',          to: '/download/desktop'  },
-  { label: 'Mac',              to: '/download/desktop'  },
+const COMPANY_LINKS = [
+  { label: 'About Us',  to: '/about'   },
+  { label: 'For Teams', to: '/teams'   },
+  { label: 'Donate',    to: '/donate'  },
+  { label: 'Contact',   to: '/contact' },
 ]
 
-const HELP_LINKS = [
-  { label: 'Help Center', to: '/help'    },
-  { label: 'Contact Us',  to: '/contact' },
-  { label: 'Support',     to: '/support' },
+const RESOURCE_LINKS = [
+  { label: 'Help Center',    to: '/help'           },
+  { label: 'Support',        to: '/support'        },
+  { label: 'Privacy Policy', to: '/privacy-policy' },
+  { label: 'Terms of Service', to: '/terms-of-service' },
   { label: 'Delete Account', to: '/delete-account' },
 ]
 
@@ -74,11 +75,11 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Organization */}
+          {/* Product */}
           <div>
-            <p className="footer__col-title">Organization</p>
+            <p className="footer__col-title">Product</p>
             <div className="footer__col-links">
-              {ORG_LINKS.map((l) => (
+              {PRODUCT_LINKS.map((l) => (
                 <Link key={l.to + l.label} to={l.to} className="footer__col-link">
                   {l.label}
                 </Link>
@@ -86,11 +87,11 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Download */}
+          {/* Company */}
           <div>
-            <p className="footer__col-title">Download</p>
+            <p className="footer__col-title">Company</p>
             <div className="footer__col-links">
-              {DOWNLOAD_LINKS.map((l) => (
+              {COMPANY_LINKS.map((l) => (
                 <Link key={l.to + l.label} to={l.to} className="footer__col-link">
                   {l.label}
                 </Link>
@@ -98,11 +99,11 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Help */}
+          {/* Resources */}
           <div>
-            <p className="footer__col-title">Help</p>
+            <p className="footer__col-title">Resources</p>
             <div className="footer__col-links">
-              {HELP_LINKS.map((l) => (
+              {RESOURCE_LINKS.map((l) => (
                 <Link key={l.to + l.label} to={l.to} className="footer__col-link">
                   {l.label}
                 </Link>
@@ -112,7 +113,7 @@ export default function Footer() {
         </div>
 
         <div className="footer__bottom">
-          <p className="footer__copy">2026 © Secretly LLC. All rights reserved.</p>
+          <p className="footer__copy">© 2026 SIA Secretly. All rights reserved.</p>
           <div className="footer__legal">
             <Link to="/privacy-policy"   className="footer__legal-link">Privacy Policy</Link>
             <Link to="/terms-of-service" className="footer__legal-link">Terms of Service</Link>

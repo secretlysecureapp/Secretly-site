@@ -4,8 +4,8 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
+    "dev": "vite-react-ssg dev",
+    "build": "tsc -b && vite-react-ssg build",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -14,7 +14,8 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-i18next": "^17.0.4",
-    "react-router-dom": "^6.22.3"
+    "react-router-dom": "^6.22.3",
+    "vite-react-ssg": "^0.9.1-beta.1"
   },
   "devDependencies": {
     "@types/react": "^18.3.1",

@@ -5,8 +5,15 @@ import { useLocation } from 'react-router-dom'
 export default function PageTransition({ children }: { children: ReactNode }) {
   const { pathname } = useLocation()
   const ref = useRef<HTMLDivElement>(null)
+  const firstRender = useRef(true)
 
   useEffect(() => {
+    // Skip the initial paint: the pre-rendered / hydrated page must be
+    // visible immediately (and without JS). Only fade on real navigations.
+    if (firstRender.current) {
+      firstRender.current = false
+      return
+    }
     const el = ref.current
     if (!el) return
     el.style.opacity = '0'
@@ -22,8 +29,10 @@ export default function PageTransition({ children }: { children: ReactNode }) {
     return () => cancelAnimationFrame(id)
   }, [pathname])
 
+  // No inline opacity:0 — content is visible by default so static HTML
+  // (and no-JS visitors) render correctly.
   return (
-    <div ref={ref} style={{ opacity: 0 }}>
+    <div ref={ref}>
       {children}
     </div>
   )

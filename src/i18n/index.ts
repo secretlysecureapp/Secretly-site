@@ -25,15 +25,26 @@ export const LANGUAGES = [
   { code: 'it', label: 'Italiano',   flag: '🇮🇹' },
 ]
 
-const saved = typeof localStorage !== 'undefined' ? localStorage.getItem('lang') : null
-const browser = typeof navigator !== 'undefined' ? navigator.language.split('-')[0] : 'en'
-const fallback = LANGUAGES.find(l => l.code === browser) ? browser : 'en'
+/* Client-side language preference (saved choice → browser → English).
+   NOT used for the initial init: the pre-rendered HTML and the first
+   client render must both be English so React hydration matches. The
+   preferred language is applied after mount (see App.tsx). */
+export function detectPreferredLanguage(): string {
+  if (typeof window === 'undefined') return 'en'
+  try {
+    const saved = localStorage.getItem('lang')
+    if (saved && LANGUAGES.some(l => l.code === saved)) return saved
+  } catch { /* localStorage may be unavailable */ }
+  const browser = typeof navigator !== 'undefined' ? navigator.language.split('-')[0] : 'en'
+  return LANGUAGES.some(l => l.code === browser) ? browser : 'en'
+}
 
 i18n
   .use(initReactI18next)
   .init({
     resources: { en: { t: en }, ru: { t: ru }, es: { t: es }, fr: { t: fr }, de: { t: de }, pt: { t: pt }, ar: { t: ar }, zh: { t: zh }, ja: { t: ja }, it: { t: it } },
-    lng: saved || fallback,
+    // Deterministic initial language for SSG / first hydration paint.
+    lng: 'en',
     fallbackLng: 'en',
     ns: ['t'],
     defaultNS: 't',

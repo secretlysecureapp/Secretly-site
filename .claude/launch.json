@@ -3,9 +3,15 @@
   "configurations": [
     {
       "name": "secretly-dev",
-      "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev"],
+      "runtimeExecutable": "bash",
+      "runtimeArgs": ["-lc", "export PATH=\"$HOME/.local/node/bin:$PATH\"; exec npm run dev"],
       "port": 5173
+    },
+    {
+      "name": "secretly-preview",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": ["-lc", "export PATH=\"$HOME/.local/node/bin:$PATH\"; exec npm run preview"],
+      "port": 4173
     }
   ]
 }
