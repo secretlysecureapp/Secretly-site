@@ -1,9 +1,42 @@
 import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import { Head } from 'vite-react-ssg'
 import { useReveal } from '../hooks/useReveal'
 import { useCountUp } from '../hooks/useCountUp'
 import MagneticButton from '../components/MagneticButton'
+import { EncryptionFlow } from '../components/SecurityVisuals'
+
+/* Structured data (JSON-LD) for rich results — Organization + the app. */
+const STRUCTURED_DATA = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': 'https://www.secretlyapp.com/#organization',
+      name: 'Secretly',
+      legalName: 'SIA Secretly',
+      url: 'https://www.secretlyapp.com/',
+      logo: 'https://www.secretlyapp.com/logo.png',
+      email: 'support@secretlyapp.com',
+      sameAs: [
+        'https://x.com/Secretly_App',
+        'https://facebook.com/secretlysecureapp',
+        'https://github.com/secretlysecureapp/Secretly-site',
+      ],
+    },
+    {
+      '@type': 'SoftwareApplication',
+      name: 'Secretly',
+      operatingSystem: 'Android, iOS, Windows, macOS',
+      applicationCategory: 'CommunicationApplication',
+      description:
+        'Private, end-to-end encrypted messenger with no phone number, no email, no ads, and no trackers.',
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+      publisher: { '@id': 'https://www.secretlyapp.com/#organization' },
+    },
+  ],
+}
 
 const FEATURE_ICONS = [
   '/icons/chat.png', '/icons/phone.png', '/icons/camera.png',
@@ -56,6 +89,10 @@ export default function Home() {
 
   return (
     <>
+      <Head>
+        <script type="application/ld+json">{JSON.stringify(STRUCTURED_DATA)}</script>
+      </Head>
+
       {/* ── HERO ── */}
       <section id="hero-zone" className="hero bg-grid">
         {/* Atmospheric gradient */}
@@ -282,6 +319,10 @@ export default function Home() {
             ))}
           </div>
 
+          <div className="reveal reveal-delay-2" style={{ marginTop: 48, maxWidth: 920, marginLeft: 'auto', marginRight: 'auto' }}>
+            <EncryptionFlow />
+          </div>
+
           <div
             className="reveal reveal-delay-3"
             style={{
@@ -327,7 +368,11 @@ export default function Home() {
             ))}
           </div>
 
-          <p className="reveal reveal-delay-4" style={{ marginTop: 32, fontSize: 13, color: 'var(--text-muted)' }}>
+          <div className="reveal reveal-delay-4" style={{ marginTop: 28 }}>
+            <Link to="/pricing" className="btn btn--ghost">{t('home.s5Pricing')}</Link>
+          </div>
+
+          <p className="reveal reveal-delay-4" style={{ marginTop: 24, fontSize: 13, color: 'var(--text-muted)' }}>
             {t('home.s5Note')}
           </p>
         </div>

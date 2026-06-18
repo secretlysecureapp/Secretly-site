@@ -62,7 +62,7 @@ const it = {
   pillars: [
     { title: 'Open source', body: 'Il nostro codice è pubblico e verificabile. Nessuna backdoor.' },
     { title: 'Architettura a conoscenza zero', body: 'Non deteniamo le chiavi del tuo regno. Non sappiamo chi sei e non lo sapremo mai.' },
-    { title: 'Crittografia di grado svizzero', body: 'Crittografia open source testata e verificata ad ogni livello.' },
+    { title: 'Crittografia robusta', body: 'Crittografia end-to-end di livello Signal a ogni livello — messaggi, chiamate e file.' },
   ],
   platforms: { label: 'Scarica per', desktop: 'App desktop', note: 'Le app desktop richiedono Secretly installato sul tuo telefono.' },
   download: { kicker: 'Ottieni l\'app', title: 'Secretly su ogni dispositivo.', sub: 'Nessun telefono. Nessuna email. Solo un ID generato casualmente per il massimo anonimato.', sectionLabel: 'Tutte le piattaforme', sectionTitle: 'Scarica Secretly', downloadBtn: 'Scarica →', comingSoon: 'Prossimamente', noteTitle: 'Nota desktop', noteBody: 'Le app desktop (Windows e macOS) richiedono Secretly installato sul tuo dispositivo mobile.' },
@@ -70,7 +70,7 @@ const it = {
     kicker: 'La nostra storia', title: 'La privacy è un diritto,\nnon un lusso.', sub: 'Siamo un team di ingegneri e sostenitori della privacy.',
     s1: 'La Nostra Storia', p1: 'Secretly è la nostra risposta a un mondo di sorveglianza digitale costante.', p2: 'Abbiamo costruito Secretly come santuario digitale.', s2: 'La Nostra Missione', p3: 'Crediamo che il compromesso non sia un\'opzione in materia di sicurezza.', p4: 'Secretly è il tuo spazio. Oggi, domani, sempre.',
     s3: 'Fiducia attraverso la trasparenza', p5: 'Perché gli utenti si fidano di noi? Perché non abbiamo nulla da nascondere.',
-    trustItems: ['Open Source: pubblico e verificabile, nessuna backdoor.', 'Crittografia Svizzera: i più alti standard di crittografia verificata.', 'Conoscenza Zero: non deteniamo le chiavi. Non sappiamo chi sei.'],
+    trustItems: ['Open Source: pubblico e verificabile, nessuna backdoor.', 'Crittografia di livello Signal: ogni messaggio, chiamata e file protetto con un Double Ratchet collaudato.', 'Conoscenza Zero: non deteniamo le chiavi. Non sappiamo chi sei.'],
     s4: 'Open Source. Cuori Aperti.', p6: 'La nostra filosofia significa che costruiamo con integrità. Rispondiamo alla nostra comunità, non agli inserzionisti.',
   },
   help: {

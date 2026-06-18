@@ -12,7 +12,7 @@ export default function Terms() {
           <p className="page-hero__kicker">Legal</p>
           <h1 className="page-hero__title">Terms of Service</h1>
           <p className="page-hero__sub">
-            Effective date: May 01, 2026 · Operator: Secretly LLC
+            Effective date: May 01, 2026 · Operator: SIA Secretly
           </p>
         </div>
       </section>
@@ -216,13 +216,23 @@ export default function Terms() {
               <li>Secretly may be unable to decrypt your data</li>
             </ul>
 
-            <h2>10. Donations and Third-Party Payments</h2>
-            <p>Secretly may link to third-party payment providers.</p>
+            <h2>10. Subscriptions, Purchases, and Donations</h2>
+            <p>
+              Secretly is free to use. Optional paid plans (Premium and Teams) may be offered as
+              in-app purchases or subscriptions.
+            </p>
             <ul>
-              <li>Payments are processed externally</li>
-              <li>Secretly does not store card data</li>
+              <li>In-app subscriptions are sold and billed through the Apple App Store or Google Play under their terms.</li>
+              <li>Subscriptions renew automatically unless cancelled at least 24 hours before the end of the current period; you can manage or cancel them in your App Store or Google Play account settings.</li>
+              <li>A lifetime option, where offered, is a one-time purchase.</li>
+              <li>Refunds are handled according to the policy of the app store used for the purchase.</li>
+              <li>The agreement for the Secretly service itself is between you and SIA Secretly; Apple and Google act only as payment processors.</li>
             </ul>
-            <p>Donation features may change due to platform rules.</p>
+            <p>
+              Donations may be collected via third-party providers; those payments are processed
+              externally and Secretly does not store card data. Pricing and availability of paid
+              features may change.
+            </p>
 
             <h2>11. Third-Party Services</h2>
             <p>Secretly relies on third-party services, including:</p>
@@ -243,7 +253,7 @@ export default function Terms() {
             </ul>
             <p>For Apple users:</p>
             <ul>
-              <li>The agreement is between you and Secretly</li>
+              <li>The agreement is between you and SIA Secretly</li>
               <li>Apple does not provide support or maintenance</li>
             </ul>
 
@@ -334,7 +344,9 @@ export default function Terms() {
             <p>For support, privacy, or legal inquiries:</p>
             <p><a href="mailto:support@secretlyapp.com">support@secretlyapp.com</a></p>
             <p>
-              Secretly
+              SIA Secretly (Reg. No. 40203722244)
+              <br />
+              Pāvila Rožiša iela 1–13, Valmiera, LV-4201, Latvia
               <br />
               https://www.secretlyapp.com
             </p>

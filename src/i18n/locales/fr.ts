@@ -62,7 +62,7 @@ const fr = {
   pillars: [
     { title: 'Open source', body: 'Notre code est public et vérifiable. Aucune porte dérobée.' },
     { title: 'Architecture zéro connaissance', body: 'Nous ne détenons pas les clés de votre royaume. Nous ne savons pas qui vous êtes.' },
-    { title: 'Chiffrement de qualité suisse', body: 'Chiffrement audité et éprouvé à chaque couche — messages, appels et fichiers.' },
+    { title: 'Chiffrement robuste', body: 'Chiffrement de bout en bout de niveau Signal à chaque couche — messages, appels et fichiers.' },
   ],
   platforms: { label: 'Télécharger pour', desktop: 'Application bureau', note: 'Les applications bureau nécessitent Secretly installé sur votre téléphone.' },
   download: { kicker: 'Obtenir l\'app', title: 'Secretly sur chaque appareil.', sub: 'Sans téléphone. Sans e-mail. Juste un ID aléatoire pour un anonymat total.', sectionLabel: 'Toutes les plateformes', sectionTitle: 'Télécharger Secretly', downloadBtn: 'Télécharger →', comingSoon: 'Bientôt disponible', noteTitle: 'Note bureau', noteBody: 'Les apps bureau (Windows & macOS) nécessitent Secretly installé sur votre mobile.' },
@@ -70,7 +70,7 @@ const fr = {
     kicker: 'Notre histoire', title: 'La confidentialité est un droit,\npas un luxe.', sub: 'Nous sommes une équipe d\'ingénieurs et de défenseurs de la vie privée.',
     s1: 'Notre Histoire', p1: 'Secretly est notre réponse à un monde de surveillance numérique constante.', p2: 'Nous avons construit Secretly comme un sanctuaire numérique.', s2: 'Notre Mission', p3: 'Nous croyons que le compromis n\'est pas une option en matière de sécurité.', p4: 'Secretly est votre espace. Aujourd\'hui, demain, toujours.',
     s3: 'Confiance par la transparence', p5: 'Pourquoi les utilisateurs nous font-ils confiance ? Parce que nous n\'avons rien à cacher.',
-    trustItems: ['Open Source : code public et vérifiable, aucune porte dérobée.', 'Chiffrement Suisse : les plus hauts standards de chiffrement audité.', 'Zéro Connaissance : nous ne détenons pas les clés. Nous ne savons pas qui vous êtes.'],
+    trustItems: ['Open Source : code public et vérifiable, aucune porte dérobée.', 'Chiffrement de niveau Signal : chaque message, appel et fichier protégé par un Double Ratchet éprouvé.', 'Zéro Connaissance : nous ne détenons pas les clés. Nous ne savons pas qui vous êtes.'],
     s4: 'Open Source. Cœurs Ouverts.', p6: 'Notre philosophie signifie que nous construisons avec intégrité. Nous répondons à notre communauté, pas aux annonceurs.',
   },
   help: {

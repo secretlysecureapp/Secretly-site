@@ -10,7 +10,7 @@ export default function Privacy() {
           <p className="page-hero__kicker">Legal</p>
           <h1 className="page-hero__title">Privacy Policy</h1>
           <p className="page-hero__sub">
-            Effective Date: May 15, 2026 · Operator: Secretly LLC
+            Effective Date: May 15, 2026 · Operator: SIA Secretly
           </p>
         </div>
       </section>
@@ -33,7 +33,7 @@ export default function Privacy() {
 
             <h2>2. Data Controller and Contact Information</h2>
             <p><strong>Data Controller:</strong> Secretly</p>
-            <p><strong>Legal Name and Address:</strong> Secretly LLC, 1–13 Pavila Rozisa iela, Valmiera, Valmieras novads, LV-4201, Latvia (LV)</p>
+            <p><strong>Legal Name and Address:</strong> SIA Secretly, 1–13 Pavila Rozisa iela, Valmiera, Valmieras novads, LV-4201, Latvia (LV)</p>
             <p><strong>Contacts:</strong></p>
             <ul>
               <li>Technical Support: technical.support@secretlyapp.com</li>
@@ -44,8 +44,9 @@ export default function Privacy() {
             <h2>3. What Data We Collect</h2>
             <h3>3.1 Registration Data</h3>
             <p>
-              Secretly ID, alias/profile name, avatar (if uploaded), email address, or phone
-              number—only if you choose to provide them.
+              A randomly generated Secretly ID and, optionally, a profile name and avatar that
+              you set. Secretly does not require — and does not ask for — a phone number or email
+              address, and we do not collect them.
             </p>
             <h3>3.2 User Content</h3>
             <p>
@@ -55,9 +56,9 @@ export default function Privacy() {
             </p>
             <h3>3.3 Metadata and Identifiers</h3>
             <p>
-              Account and device identifiers, chat/room IDs, delivery metadata (sent/delivered
-              timestamps, message size), delivery statuses, push notification tokens, and
-              aggregated usage data.
+              Random device and profile identifiers (UUIDs, not linked to any real-world
+              identity), chat/room IDs, delivery metadata (sent/delivered timestamps, message
+              size), delivery statuses, and push notification tokens when notifications are enabled.
             </p>
             <h3>3.4 Payments and Donations</h3>
             <p>
@@ -83,9 +84,10 @@ export default function Privacy() {
             </p>
             <h3>3.7 Diagnostics and Analytics</h3>
             <p>
-              Anonymized or aggregated application usage data, error reports, and crash reports.
-              If third-party analytics or monitoring services are used, they are listed in the
-              "Third-Party Data Transfer and Processing" section below.
+              Secretly does not use third-party analytics, advertising, or crash-reporting
+              services in the app or on this website (see Section 18). We do not build behavioural
+              profiles, and we use privacy-respecting, cookieless measurement at most for basic
+              site health.
             </p>
 
             <h2>4. How We Use the Information</h2>
@@ -184,15 +186,17 @@ export default function Privacy() {
               technical.support@secretlyapp.com.
             </p>
 
-            <h2>9. Account Deletion and User Choices</h2>
+            <h2>9. Deletion and User Choices</h2>
             <p>
-              You can delete your account within the app via: Settings → Account → Delete Account.
-              Upon deletion:
+              Because Secretly holds no personal profile about you, there is very little to erase —
+              but you remain in control of the cryptographic identity registered for message
+              delivery. In the app you can delete it via: Settings → Account → Delete Account. Upon
+              deletion:
             </p>
             <ul>
-              <li>Your profile and account data (including linked devices and keys) will be deleted</li>
-              <li>Device keys and records will be removed</li>
-              <li>Service information associated with the account will be deleted within the specified retention periods</li>
+              <li>Your profile ID, public keys, and device records are removed from our key registry</li>
+              <li>Your push notification token is invalidated</li>
+              <li>Any undelivered encrypted envelopes queued for you are purged within the retention periods below</li>
             </ul>
             <p>
               Deletion does not affect data that has already been transmitted to other users (e.g.,
@@ -204,9 +208,11 @@ export default function Privacy() {
             <p>
               Depending on your jurisdiction, you may have the right to access, rectify, erase,
               restrict processing, and port your data, as well as the right to withdraw your
-              consent. To submit a request, write to technical.support@secretlyapp.com. We may
-              request proof of identity to process your request. We aim to respond to requests
-              within 30 days, except for complex cases that legally allow for an extension.
+              consent. In practice, because Secretly does not collect your name, phone number,
+              email, or message content, a data subject request typically concerns only the limited
+              technical data described in Section 3 (such as your random identifiers and push
+              token). To submit a request, write to technical.support@secretlyapp.com. We aim to
+              respond within 30 days, except for complex cases that legally allow for an extension.
             </p>
 
             <h2>11. International Transfers</h2>
@@ -278,9 +284,9 @@ export default function Privacy() {
                 provider, and Secretly does not store card data.
               </li>
               <li>
-                <strong>Sign in with Apple:</strong> When offering login via third-party services
-                (Google, Facebook, etc.), Apple's requirement to provide "Sign in with Apple" where
-                applicable is complied with.
+                <strong>No third-party sign-in:</strong> Secretly has no accounts and no social
+                login. You are identified only by a cryptographic Secretly ID, so there is no
+                Google, Facebook, or "Sign in with Apple" login to configure.
               </li>
               <li>
                 <strong>VoIP and Push:</strong> For incoming calls to function properly,
@@ -384,7 +390,7 @@ export default function Privacy() {
               https://www.secretlyapp.com
             </p>
             <p>
-              Secretly LLC (Reg.No. 40203722244)
+              SIA Secretly (Reg.No. 40203722244)
               <br />
               DUNS - 565891304
             </p>

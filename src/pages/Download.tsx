@@ -68,6 +68,28 @@ export default function Download() {
               <strong style={{ color: 'var(--text-primary)' }}>{t('download.noteTitle')}:</strong> {t('download.noteBody')}
             </p>
           </div>
+
+          {/* System requirements */}
+          <div className="reveal reveal-delay-3" style={{ marginTop: 40 }}>
+            <p className="section-label" style={{ marginBottom: 20 }}>System requirements</p>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 16 }}>
+              {[
+                { os: 'Android', req: 'Android 8.0 or later' },
+                { os: 'iPhone & iPad', req: 'iOS / iPadOS 15 or later' },
+                { os: 'Windows', req: 'Windows 10 or later' },
+                { os: 'macOS', req: 'macOS 11 Big Sur or later' },
+              ].map((r) => (
+                <div key={r.os} style={{ padding: '18px 20px', background: 'var(--bg-surface)', border: '1px solid var(--border)', borderRadius: 'var(--r-md)' }}>
+                  <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600, fontSize: 15, marginBottom: 4 }}>{r.os}</p>
+                  <p style={{ fontSize: 13, color: 'var(--text-muted)' }}>{r.req}</p>
+                </div>
+              ))}
+            </div>
+            <p style={{ fontSize: 13, color: 'var(--text-muted)', marginTop: 20 }}>
+              No phone number or email required. See{' '}
+              <Link to="/pricing" style={{ color: 'var(--accent)' }}>plans &amp; pricing</Link>.
+            </p>
+          </div>
         </div>
       </section>
     </div>

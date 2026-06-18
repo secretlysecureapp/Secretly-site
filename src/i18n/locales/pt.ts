@@ -62,7 +62,7 @@ const pt = {
   pillars: [
     { title: 'Código aberto', body: 'Nosso código é público e verificável. Sem portas traseiras.' },
     { title: 'Arquitetura de conhecimento zero', body: 'Não temos as chaves do seu reino. Não sabemos quem você é e nunca saberemos.' },
-    { title: 'Criptografia de padrão suíço', body: 'Criptografia auditada e testada em cada camada.' },
+    { title: 'Criptografia forte', body: 'Criptografia de ponta a ponta de nível Signal em cada camada — mensagens, chamadas e arquivos.' },
   ],
   platforms: { label: 'Baixar para', desktop: 'App desktop', note: 'Apps desktop requerem Secretly instalado no seu telefone.' },
   download: { kicker: 'Obter o app', title: 'Secretly em cada dispositivo.', sub: 'Sem telefone. Sem e-mail. Apenas um ID aleatório para anonimato total.', sectionLabel: 'Todas as plataformas', sectionTitle: 'Baixar Secretly', downloadBtn: 'Baixar →', comingSoon: 'Em breve', noteTitle: 'Nota desktop', noteBody: 'Apps desktop (Windows & macOS) requerem Secretly instalado no seu dispositivo móvel.' },
@@ -70,7 +70,7 @@ const pt = {
     kicker: 'Nossa história', title: 'Privacidade é um direito,\nnão um luxo.', sub: 'Somos uma equipe de engenheiros e defensores da privacidade.',
     s1: 'Nossa História', p1: 'Secretly é nossa resposta a um mundo de vigilância digital constante.', p2: 'Construímos o Secretly como um santuário digital.', s2: 'Nossa Missão', p3: 'Acreditamos que compromisso não é uma opção quando se trata de segurança.', p4: 'Secretly é o seu espaço. Hoje, amanhã, sempre.',
     s3: 'Confiança através da transparência', p5: 'Por que os usuários confiam em nós? Porque não temos nada a esconder.',
-    trustItems: ['Código Aberto: público e verificável, sem portas traseiras.', 'Criptografia Suíça: os mais altos padrões de criptografia auditada.', 'Conhecimento Zero: não temos as chaves. Não sabemos quem você é.'],
+    trustItems: ['Código Aberto: público e verificável, sem portas traseiras.', 'Criptografia de Nível Signal: cada mensagem, chamada e arquivo protegido com um design Double Ratchet comprovado.', 'Conhecimento Zero: não temos as chaves. Não sabemos quem você é.'],
     s4: 'Código Aberto. Corações Abertos.', p6: 'Nossa filosofia significa que construímos com integridade. Respondemos à nossa comunidade, não a anunciantes.',
   },
   help: {

@@ -62,7 +62,7 @@ const de = {
   pillars: [
     { title: 'Open Source', body: 'Unser Code ist öffentlich und überprüfbar. Keine Hintertüren.' },
     { title: 'Zero-Knowledge-Architektur', body: 'Wir halten nicht die Schlüssel zu Ihrem Königreich. Wir wissen nicht, wer Sie sind.' },
-    { title: 'Verschlüsselung auf Schweizer Niveau', body: 'Geprüfte Open-Source-Verschlüsselung auf jeder Ebene.' },
+    { title: 'Starke Verschlüsselung', body: 'Ende-zu-Ende-Verschlüsselung auf Signal-Niveau auf jeder Ebene — Nachrichten, Anrufe und Dateien.' },
   ],
   platforms: { label: 'Herunterladen für', desktop: 'Desktop-App', note: 'Desktop-Apps erfordern Secretly auf Ihrem Telefon.' },
   download: { kicker: 'App herunterladen', title: 'Secretly auf jedem Gerät.', sub: 'Keine Telefonnummer. Keine E-Mail. Nur eine zufällige ID für totale Anonymität.', sectionLabel: 'Alle Plattformen', sectionTitle: 'Secretly herunterladen', downloadBtn: 'Herunterladen →', comingSoon: 'Demnächst', noteTitle: 'Desktop-Hinweis', noteBody: 'Desktop-Apps (Windows & macOS) erfordern Secretly auf Ihrem Mobilgerät.' },
@@ -70,7 +70,7 @@ const de = {
     kicker: 'Unsere Geschichte', title: 'Privatsphäre ist ein Recht,\nkein Luxus.', sub: 'Wir sind ein Team von Ingenieuren und Datenschutzbeauftragten.',
     s1: 'Unsere Geschichte', p1: 'Secretly ist unsere Antwort auf eine Welt ständiger digitaler Überwachung.', p2: 'Wir haben Secretly als digitales Refugium aufgebaut.', s2: 'Unsere Mission', p3: 'Wir glauben, dass Kompromisse bei der Sicherheit keine Option sind.', p4: 'Secretly ist Ihr Raum. Heute, morgen, immer.',
     s3: 'Vertrauen durch Transparenz', p5: 'Warum vertrauen Nutzer uns? Weil wir nichts zu verbergen haben.',
-    trustItems: ['Open Source: öffentlich und überprüfbar, keine Hintertüren.', 'Schweizer Verschlüsselung: höchste Standards, geprüft und bewährt.', 'Zero-Knowledge: wir halten keine Schlüssel. Wir wissen nicht, wer Sie sind.'],
+    trustItems: ['Open Source: öffentlich und überprüfbar, keine Hintertüren.', 'Verschlüsselung auf Signal-Niveau: jede Nachricht, jeder Anruf und jede Datei mit einem bewährten Double-Ratchet-Design geschützt.', 'Zero-Knowledge: wir halten keine Schlüssel. Wir wissen nicht, wer Sie sind.'],
     s4: 'Open Source. Offene Herzen.', p6: 'Unsere Philosophie bedeutet, dass wir mit Integrität bauen. Wir antworten unserer Gemeinschaft, nicht Werbetreibenden.',
   },
   help: {

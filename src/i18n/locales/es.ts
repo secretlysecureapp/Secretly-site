@@ -62,7 +62,7 @@ const es = {
   pillars: [
     { title: 'Código abierto', body: 'Nuestro código es público y verificable. Sin puertas traseras.' },
     { title: 'Arquitectura de conocimiento cero', body: 'No tenemos las llaves de tu reino. No sabemos quién eres y nunca lo sabremos.' },
-    { title: 'Cifrado de grado suizo', body: 'Cifrado auditado y probado en cada capa — mensajes, llamadas y archivos.' },
+    { title: 'Cifrado robusto', body: 'Cifrado de extremo a extremo de nivel Signal en cada capa — mensajes, llamadas y archivos.' },
   ],
   platforms: { label: 'Descargar para', desktop: 'App de escritorio', note: 'Las apps de escritorio requieren Secretly instalado en tu teléfono.' },
   download: { kicker: 'Obtener la app', title: 'Secretly en cada dispositivo.', sub: 'Sin teléfono. Sin email. Solo un ID aleatorio para total anonimato.', sectionLabel: 'Todas las plataformas', sectionTitle: 'Descargar Secretly', downloadBtn: 'Descargar →', comingSoon: 'Próximamente', noteTitle: 'Nota de escritorio', noteBody: 'Las apps de escritorio requieren Secretly instalado en tu dispositivo móvil.' },
@@ -72,7 +72,7 @@ const es = {
     sub: 'Somos un equipo de ingenieros y defensores de la privacidad que creemos que tus conversaciones deben seguir siendo tuyas.',
     s1: 'Nuestra Historia', p1: 'Secretly es nuestra respuesta a un mundo de vigilancia digital constante.', p2: 'Construimos Secretly como un santuario digital para cada conexión.', s2: 'Nuestra Misión', p3: 'Creemos que el compromiso no es una opción en materia de seguridad.', p4: 'Secretly es tu espacio. Hoy, mañana, siempre.',
     s3: 'Confianza a través de la transparencia', p5: '¿Por qué los usuarios confían en nosotros? Porque no tenemos nada que ocultar.',
-    trustItems: ['Código Abierto: público y verificable, sin puertas traseras.', 'Cifrado Suizo: los más altos estándares de cifrado auditado.', 'Conocimiento Cero: no tenemos las llaves. No sabemos quién eres.'],
+    trustItems: ['Código Abierto: público y verificable, sin puertas traseras.', 'Cifrado de Nivel Signal: cada mensaje, llamada y archivo protegido con un diseño Double Ratchet probado.', 'Conocimiento Cero: no tenemos las llaves. No sabemos quién eres.'],
     s4: 'Código Abierto. Corazones Abiertos.', p6: 'Nuestra filosofía significa que construimos con integridad. No respondemos a anunciantes — respondemos a nuestra comunidad.',
   },
   help: {
