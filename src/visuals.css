@@ -94,3 +94,120 @@
   .sv-flow, .sv-lock-ring, .sv-scan, .sv-pop { animation: none !important; }
   .sv-flow { stroke-dasharray: none; opacity: 0.9; }
 }
+
+/* ════════════════════════════════════════════════════════════════
+   AMBIENT CIRCUIT FIELD — faint PCB traces with rare travelling pulses
+   Fixed behind all content (z-index:-1). Shows through transparent
+   sections; covered by opaque ones. CPU-cheap (stroke-dashoffset).
+   ════════════════════════════════════════════════════════════════ */
+.circuit-field {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+.circuit-field svg { width: 100%; height: 100%; display: block; }
+.circuit-trace { fill: none; stroke: rgba(255, 255, 255, 0.035); stroke-width: 1; }
+.circuit-node  { fill: rgba(88, 101, 242, 0.14); }
+.circuit-pulse {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-dasharray: 0.07 1;
+  filter: drop-shadow(0 0 5px var(--accent));
+  opacity: 0;
+  animation: circuit-run 16s linear infinite;
+}
+@keyframes circuit-run {
+  0%   { stroke-dashoffset: 1.07; opacity: 0; }
+  2%   { opacity: 0.95; }
+  13%  { stroke-dashoffset: 0; opacity: 0.95; }
+  16%  { opacity: 0; }
+  100% { stroke-dashoffset: 0; opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .circuit-pulse { animation: none; opacity: 0; }
+}
+
+/* ════════════════════════════════════════════════════════════════
+   CARD MOTION — subtle ambient background per feature card, hinting at
+   what the feature does. Low opacity; intensifies a touch on hover.
+   ════════════════════════════════════════════════════════════════ */
+.card-motion {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0.5;
+  transition: opacity var(--t-base);
+  z-index: 0;
+}
+.feature-cell:hover .card-motion { opacity: 0.9; }
+/* keep real card content above the motion layer */
+.feature-cell > .feature-cell__icon,
+.feature-cell > .feature-cell__title,
+.feature-cell > .feature-cell__body { position: relative; z-index: 1; }
+
+/* — flow: data/messages drifting upward — */
+.cm-flow span {
+  position: absolute;
+  bottom: -8px;
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0;
+  animation: cm-rise 4.5s linear infinite;
+}
+@keyframes cm-rise {
+  0%   { transform: translateY(0) scale(0.6); opacity: 0; }
+  15%  { opacity: 0.7; }
+  85%  { opacity: 0.5; }
+  100% { transform: translateY(-150px) scale(1); opacity: 0; }
+}
+
+/* — rings: signal / call pulses — */
+.cm-rings span {
+  position: absolute;
+  left: 28px; bottom: 26px;
+  width: 14px; height: 14px;
+  border: 1.5px solid var(--accent);
+  border-radius: 50%;
+  opacity: 0;
+  animation: cm-ring 3.6s ease-out infinite;
+}
+@keyframes cm-ring {
+  0%   { transform: scale(0.5); opacity: 0; }
+  10%  { opacity: 0.55; }
+  100% { transform: scale(5.5); opacity: 0; }
+}
+
+/* — cipher: faint shifting code (anonymity / encryption) — */
+.cm-cipher {
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(90deg, rgba(88,101,242,0.08) 0 2px, transparent 2px 12px);
+  -webkit-mask-image: linear-gradient(180deg, transparent, #000 40%, transparent);
+  mask-image: linear-gradient(180deg, transparent, #000 40%, transparent);
+  animation: cm-cipher-shift 6s linear infinite;
+  opacity: 0.5;
+}
+@keyframes cm-cipher-shift { from { background-position: 0 0; } to { background-position: 48px 0; } }
+
+/* — scan: a slow sweeping line (sync / multi-platform / alert) — */
+.cm-scan {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 42%, var(--accent-glow) 50%, transparent 58%);
+  background-size: 250% 100%;
+  animation: cm-sweep 5.5s ease-in-out infinite;
+  opacity: 0.6;
+}
+@keyframes cm-sweep { 0% { background-position: 130% 0; } 55%,100% { background-position: -30% 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .cm-flow span, .cm-rings span, .cm-cipher, .cm-scan { animation: none; }
+  .card-motion { opacity: 0.18; }
+}

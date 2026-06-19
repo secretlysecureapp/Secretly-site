@@ -8,6 +8,7 @@ import ScrollProgress  from './components/ScrollProgress'
 import BackToTop       from './components/BackToTop'
 import PageTransition  from './components/PageTransition'
 import CursorSystem    from './components/CursorSystem'
+import CircuitField    from './components/CircuitField'
 import Seo             from './components/Seo'
 import useLenis        from './hooks/useLenis'
 import i18n, { detectPreferredLanguage } from './i18n'
@@ -47,6 +48,7 @@ function AppShell() {
   return (
     <ErrorBoundary>
       <Seo />
+      <CircuitField />
       <CursorSystem />
       <ScrollProgress />
       <ScrollReset />
