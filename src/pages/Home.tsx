@@ -6,6 +6,7 @@ import { useReveal } from '../hooks/useReveal'
 import { useCountUp } from '../hooks/useCountUp'
 import MagneticButton from '../components/MagneticButton'
 import { EncryptionFlow } from '../components/SecurityVisuals'
+import FeatureScene from '../components/FeatureScenes'
 
 /* Structured data (JSON-LD) for rich results — Organization + the app. */
 const STRUCTURED_DATA = {
@@ -69,33 +70,6 @@ const PLATFORM_DATA = [
   { name: 'Windows',      icon: '/icons/monitor.png',  to: '/download/desktop'  },
   { name: 'macOS',        icon: '/icons/icons8-macbook-100.png', to: '/download/desktop'  },
 ]
-
-/* Ambient motion behind each feature card, hinting at what it does.
-   Index matches the `features` list: chats, voice, video, group calls,
-   files, anonymity, multi-platform, hidden chats, panic. */
-const MOTION_TYPES = ['flow', 'rings', 'rings', 'rings', 'flow', 'cipher', 'scan', 'cipher', 'scan']
-
-function CardMotion({ type }: { type: string }) {
-  if (type === 'flow')
-    return (
-      <div className="card-motion cm-flow" aria-hidden="true">
-        {[0, 1, 2, 3, 4].map((i) => (
-          <span key={i} style={{ left: `${14 + i * 18}%`, animationDelay: `${i * 0.85}s`, animationDuration: `${4 + (i % 3) * 0.7}s` }} />
-        ))}
-      </div>
-    )
-  if (type === 'rings')
-    return (
-      <div className="card-motion cm-rings" aria-hidden="true">
-        {[0, 1, 2].map((i) => (
-          <span key={i} style={{ animationDelay: `${i * 1.2}s` }} />
-        ))}
-      </div>
-    )
-  if (type === 'cipher')
-    return <div className="card-motion" aria-hidden="true"><div className="cm-cipher" /></div>
-  return <div className="card-motion" aria-hidden="true"><div className="cm-scan" /></div>
-}
 
 /* ══════════════════════════════════════════════════════════════
    HOME PAGE
@@ -316,9 +290,8 @@ export default function Home() {
                   el.style.transition = 'transform 0.6s cubic-bezier(0.23,1,0.32,1)'
                 }}
               >
-                <CardMotion type={MOTION_TYPES[i % MOTION_TYPES.length]} />
                 <div className="feature-cell__accent" />
-                <img src={FEATURE_ICONS[i]} alt="" className="feature-cell__icon" />
+                <FeatureScene type={i} />
                 <h3 className="feature-cell__title">{f.title}</h3>
                 <p className="feature-cell__body">{f.body}</p>
               </div>

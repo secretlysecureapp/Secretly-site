@@ -211,3 +211,58 @@
   .cm-flow span, .cm-rings span, .cm-cipher, .cm-scan { animation: none; }
   .card-motion { opacity: 0.18; }
 }
+
+/* ════════════════════════════════════════════════════════════════
+   3D FEATURE SCENES — animated mini-illustrations that demonstrate the
+   principle of each feature. Slight perspective tilt + float gives depth;
+   per-scene motion shows the mechanic. Reduced-motion freezes them.
+   ════════════════════════════════════════════════════════════════ */
+.fscene {
+  width: 76px; height: 76px; margin-bottom: 22px;
+  transform: perspective(620px) rotateX(9deg);
+  animation: fs-float 6.5s ease-in-out infinite;
+}
+@keyframes fs-float {
+  0%, 100% { transform: perspective(620px) rotateX(9deg) translateY(0); }
+  50%      { transform: perspective(620px) rotateX(9deg) translateY(-5px); }
+}
+.fscene svg { width: 100%; height: 100%; overflow: visible; display: block; filter: drop-shadow(0 7px 11px rgba(0, 0, 0, 0.5)); }
+
+.fs-acc   { fill: var(--accent); }
+.fs-acc-s { fill: none; stroke: var(--accent); stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+.fs-pl    { fill: var(--bg-elevated); stroke: rgba(255, 255, 255, 0.14); stroke-width: 1.5; }
+.fs-line  { stroke: rgba(255, 255, 255, 0.55); stroke-width: 2; stroke-linecap: round; }
+.fs-dim-s { fill: none; stroke: rgba(255, 255, 255, 0.30); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.fs-glow  { filter: drop-shadow(0 0 5px var(--accent)); }
+[class^="fs-"], [class*=" fs-"] { transform-box: fill-box; transform-origin: center; }
+
+.fs-pop  { animation: fs-pop 3.4s ease-in-out infinite; }
+@keyframes fs-pop { 0% { transform: scale(0.4); opacity: 0; } 13% { transform: scale(1.07); opacity: 1; } 26% { transform: scale(1); } 80% { opacity: 1; } 92%, 100% { transform: scale(0.4); opacity: 0; } }
+
+.fs-wave { animation: fs-wave 2.7s ease-out infinite; }
+@keyframes fs-wave { 0% { transform: scale(0.3); opacity: 0; } 18% { opacity: 0.85; } 100% { transform: scale(2.5); opacity: 0; } }
+
+.fs-scan { animation: fs-scan 2.6s ease-in-out infinite; }
+@keyframes fs-scan { 0%, 100% { transform: translateY(-9px); opacity: 0; } 22% { opacity: 0.95; } 50% { transform: translateY(9px); } 78% { opacity: 0.95; } }
+
+.fs-blink { animation: fs-blink 1.5s ease-in-out infinite; }
+@keyframes fs-blink { 0%, 100% { opacity: 0.35; transform: scale(0.8); } 50% { opacity: 1; transform: scale(1.15); } }
+
+.fs-travel { animation: fs-travel 3s ease-in-out infinite; }
+@keyframes fs-travel { 0%, 100% { transform: translateX(-13px); opacity: 0; } 14% { opacity: 1; } 50% { transform: translateX(13px); } 86% { opacity: 1; } }
+
+.fs-lift { animation: fs-lift 3.4s ease-in-out infinite; }
+@keyframes fs-lift { 0% { transform: translateY(8px); opacity: 0; } 22% { opacity: 1; } 72% { transform: translateY(-12px); opacity: 1; } 100% { transform: translateY(-22px); opacity: 0; } }
+
+.fs-lock { animation: fs-lock 3.2s ease-in-out infinite; transform-origin: 50% 78%; }
+@keyframes fs-lock { 0%, 38% { transform: translateY(-6px); } 55%, 100% { transform: translateY(0); } }
+
+.fs-press { animation: fs-press 2.2s ease-in-out infinite; }
+@keyframes fs-press { 0%, 100% { transform: scale(1); } 50% { transform: scale(0.85); } }
+
+.fs-shimmer { animation: fs-shimmer 3.2s ease-in-out infinite; }
+@keyframes fs-shimmer { 0%, 100% { opacity: 0.45; } 50% { opacity: 1; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .fscene, .fs-pop, .fs-wave, .fs-scan, .fs-blink, .fs-travel, .fs-lift, .fs-lock, .fs-press, .fs-shimmer { animation: none !important; }
+}
