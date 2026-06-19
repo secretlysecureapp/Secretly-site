@@ -13,7 +13,8 @@ export default function Navbar() {
   const currentLang                   = LANGUAGES.find(l => l.code === i18n.language) || LANGUAGES[0]
 
   const NAV_LINKS = [
-    { label: t('nav.home'),            to: '/'        },
+    { label: t('nav.home'),            to: '/'         },
+    { label: t('nav.features'),        to: '/features' },
     { label: t('nav.download'),        to: '/download' },
     { label: t('nav.about'),           to: '/about'    },
     { label: t('nav.help'),            to: '/help'     },

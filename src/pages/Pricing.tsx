@@ -4,9 +4,9 @@ import { useReveal } from '../hooks/useReveal'
 
 /* Non-translatable plan meta (price, link, emphasis); copy comes from i18n. */
 const PLAN_META = [
-  { price: '$0',    period: '',              note: '',                          to: '/download', featured: false },
-  { price: '$2.49', period: 'price.perMonth', note: 'price.premiumNote', to: '/download', featured: true  },
-  { price: '$6',    period: 'price.perSeat',  note: '',                          to: '/teams',    featured: false },
+  { price: '$0',    period: '',               note: '',                 to: '/download', featured: false, contact: false },
+  { price: '$2.99', period: 'price.perMonth', note: 'price.premiumNote', to: '/download', featured: true,  contact: false },
+  { price: '',      period: '',               note: '',                 to: '/teams',    featured: false, contact: true  },
 ]
 
 function Check() {
@@ -61,8 +61,14 @@ export default function Pricing() {
                   )}
                   <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: 20, marginBottom: 8 }}>{p.name}</h3>
                   <div style={{ display: 'flex', alignItems: 'baseline', gap: 6, marginBottom: 4 }}>
-                    <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: 38, letterSpacing: '-0.03em' }}>{meta.price}</span>
-                    {meta.period && <span style={{ fontSize: 14, color: 'var(--text-muted)' }}>{t(meta.period)}</span>}
+                    {meta.contact ? (
+                      <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: 26, letterSpacing: '-0.02em' }}>{t('price.contact')}</span>
+                    ) : (
+                      <>
+                        <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: 38, letterSpacing: '-0.03em' }}>{meta.price}</span>
+                        {meta.period && <span style={{ fontSize: 14, color: 'var(--text-muted)' }}>{t(meta.period)}</span>}
+                      </>
+                    )}
                   </div>
                   <div style={{ minHeight: 18, marginBottom: 14 }}>
                     {meta.note && <span style={{ fontSize: 13, color: 'var(--text-muted)' }}>{t(meta.note)}</span>}

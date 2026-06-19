@@ -1,6 +1,7 @@
 const en = {
   nav: {
     home: 'Home',
+    features: 'Features',
     download: 'Download',
     about: 'About',
     help: 'Help',
@@ -47,6 +48,7 @@ const en = {
     s5Sub: 'Download Secretly on your preferred platform. No phone number or email required to get started.',
     s5Note: 'Desktop apps require Secretly to be installed on your phone first.',
     s5Pricing: 'Compare plans & pricing',
+    allFeatures: 'Explore all features',
   },
   stats: {
     encryption: 'Encryption standard',
@@ -270,7 +272,7 @@ const en = {
     },
     rights: 'All rights reserved.',
   },
-  price: { perMonth: '/ month', perSeat: '/ seat / month', premiumNote: '$14.99 / year · $29 lifetime' },
+  price: { perMonth: '/ month', perSeat: '/ seat / month', premiumNote: '$12.99 / year · $29.99 lifetime', contact: 'Contact us' },
   visuals: { you: 'You', relay: 'Relay server', ciphertext: 'sees only ciphertext', recipient: 'Recipient', message: 'Message' },
   pricingPage: {
     kicker: 'Pricing',
@@ -390,7 +392,7 @@ const en = {
     ],
     includedLabel: 'What’s included',
     includedTitle: 'Premium for everyone, plus organizational control.',
-    includedPrice: 'per seat / month. Start with a 30-day pilot — no commitment.',
+    includedPrice: 'Custom per-seat pricing — get in touch. Start with a 30-day pilot, no commitment.',
     included: ['Everything in Premium for every member', 'Admin console to manage the organization', 'Organizational Secretly IDs', 'Policies: enforced disappearing messages and export lock', 'Centralized billing with invoices', 'Priority support'],
     complianceLabel: 'Compliance & control',
     complianceTitle: 'Common questions from security teams.',
@@ -441,6 +443,108 @@ const en = {
     body: 'Uninstalling Secretly removes your identity keys and local message history from your device. Any encrypted relay data expires automatically. For help, contact',
     bodyOr: 'or visit',
     support: 'Support',
+  },
+  featuresPage: {
+    kicker: 'Features',
+    title: 'Everything Secretly does.',
+    sub: 'A complete private messenger — every feature end-to-end encrypted. We never gate security: it is free, always. Premium simply adds power features.',
+    freeNote: 'Security is always free — Premium adds power features.',
+    premiumBadge: 'Premium',
+    groups: [
+      {
+        label: 'Messaging', title: 'Conversations, your way.',
+        items: [
+          { n: 'Encrypted text & rich formatting', d: 'Bold, italic, code and links — every message end-to-end encrypted.' },
+          { n: 'Voice messages', d: 'Record and send encrypted voice notes with adjustable playback speed.' },
+          { n: 'Video notes', d: 'Record short video messages, Telegram-style, right inside the chat.' },
+          { n: 'Reactions', d: 'React with hundreds of animated emoji; your recents stay one tap away.' },
+          { n: 'Reply, forward & edit', d: 'Quote, forward, edit or delete any message you have sent.' },
+          { n: 'Scheduled send', d: 'Write now and deliver later, at exactly the right moment.' },
+          { n: 'Pin & archive', d: 'Pin key messages and archive chats to keep things tidy.' },
+          { n: 'Message search', d: 'Find any message by keyword across all your chats.' },
+          { n: 'Silent send', d: 'Send a message without triggering a notification sound.' },
+          { n: 'Disappearing messages', d: 'Auto-delete from one hour to 30 days, set per chat.' },
+        ],
+      },
+      {
+        label: 'Calls', title: 'Crystal-clear, encrypted calls.',
+        items: [
+          { n: '1-to-1 voice & video', d: 'End-to-end encrypted calls over WebRTC, with camera and mic controls.' },
+          { n: 'Group calls', d: 'Encrypted group video — up to 8 participants free, up to 50 on Premium.', p: true },
+          { n: 'Picture-in-picture', d: 'Minimize a call and keep talking while you use other apps.' },
+          { n: 'Call history', d: 'A full log of incoming, outgoing, missed and declined calls.' },
+          { n: 'Network quality', d: 'Real-time indicators warn you when the connection gets weak.' },
+        ],
+      },
+      {
+        label: 'Privacy & Security', title: 'Private by design, from the first message.',
+        items: [
+          { n: 'End-to-end encryption', d: 'Signal-class Double Ratchet on every message, call and file.' },
+          { n: 'No phone number or email', d: 'Your identity is a random Secretly ID — nothing personal required.' },
+          { n: 'App lock', d: 'Lock the app with Face ID, fingerprint, password or pattern.' },
+          { n: 'Locked Personal chats', d: 'Keep your most sensitive conversations behind a separate lock.' },
+          { n: 'Screenshot protection', d: 'Discourage captures of sensitive conversations.' },
+          { n: 'Contact verification', d: 'Compare safety codes to confirm there is no one in the middle.' },
+          { n: 'Block & requests', d: 'Block anyone; messages from unknown people wait in Requests.' },
+          { n: 'Recovery kit', d: 'Restore your account on a new device with an encrypted recovery kit.' },
+        ],
+      },
+      {
+        label: 'Customization', title: 'Make it unmistakably yours.',
+        items: [
+          { n: 'Light & dark themes', d: 'Switch the entire app between light and dark.' },
+          { n: 'Accent colors', d: 'Tint the interface to match your taste.' },
+          { n: 'Chat wallpapers', d: 'Decorative, animated backgrounds for your chats.', p: true },
+          { n: 'Premium themes', d: 'Exclusive color schemes and accent tints.', p: true },
+          { n: 'Animated avatar frames', d: 'Choose from animated rings that frame your profile photo.', p: true },
+          { n: 'Profile covers', d: 'Animated video backdrops for your profile.', p: true },
+          { n: 'Emoji status', d: 'Show an animated emoji next to your name.', p: true },
+          { n: 'Custom Secretly ID', d: 'Pick your own ID instead of the random default.', p: true },
+        ],
+      },
+      {
+        label: 'AI & Productivity', title: 'Smarter, faster conversations.',
+        items: [
+          { n: 'Voice-to-text', d: 'On-device AI transcribes voice messages into readable text.', p: true },
+          { n: 'Voice dictation', d: 'Speak to compose a message — transcribed privately on your device.', p: true },
+          { n: 'Scheduled messages', d: 'Plan messages ahead and send them at the perfect time.' },
+          { n: 'Favorites & personal notes', d: 'A private chat with yourself for notes, links and files.' },
+        ],
+      },
+      {
+        label: 'Groups & Teams', title: 'From small circles to whole organizations.',
+        items: [
+          { n: 'Group chats', d: 'Up to 50 members free, up to 500 with Premium.', p: true },
+          { n: 'Roles & admins', d: 'Owner, admin and member roles with fine-grained permissions.' },
+          { n: 'Slow mode', d: 'Rate-limit busy groups so conversations stay readable.' },
+          { n: 'Group permissions', d: 'Control who can post text, media or reactions.' },
+          { n: 'Secretly for Teams', d: 'Admin console, organizational IDs and policies for businesses.', p: true },
+        ],
+      },
+      {
+        label: 'Multi-device & Backup', title: 'Everywhere you need it, safely backed up.',
+        items: [
+          { n: 'Desktop companion', d: 'Link a Windows or macOS app to your phone with a QR code.', p: true },
+          { n: 'Cross-device sync', d: 'Your chats and settings follow you across linked devices.', p: true },
+          { n: 'Encrypted backup', d: 'Back up locally or to the server, encrypted with your password.' },
+          { n: 'Automatic backup', d: 'Schedule backups from every few hours to weekly.' },
+          { n: 'Server-free recovery', d: 'Your recovery kit restores everything without trusting the server.' },
+        ],
+      },
+      {
+        label: 'Files & Media', title: 'Share anything, beautifully.',
+        items: [
+          { n: 'Photos & videos', d: 'Send media with captions; large videos are trimmed and compressed.' },
+          { n: 'File sharing', d: 'Send files up to 25 MB free, or up to 1 GB with Premium.', p: true },
+          { n: 'Stickers', d: 'Free sticker packs plus exclusive Premium collections.', p: true },
+          { n: 'Media gallery', d: 'Browse every photo, video and file shared in a chat.' },
+        ],
+      },
+    ],
+    ctaTitle: 'Try every feature, free.',
+    ctaSub: 'No phone number or email required to start.',
+    ctaDownload: 'Download Secretly',
+    ctaPricing: 'See pricing',
   },
 }
 

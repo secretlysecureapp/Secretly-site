@@ -296,6 +296,9 @@ export default function Home() {
               </div>
             ))}
           </div>
+          <div className="reveal reveal-delay-3" style={{ textAlign: 'center', marginTop: 44 }}>
+            <Link to="/features" className="btn btn--ghost">{t('home.allFeatures')}</Link>
+          </div>
         </div>
       </section>
       <div className="divider" />

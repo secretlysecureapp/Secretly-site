@@ -55,6 +55,11 @@ export const SEO_BY_PATH: Record<string, SeoEntry> = {
     description:
       'An honest comparison of Secretly, Signal, Threema, and Session — registration, encryption, open source, audits, desktop, groups, calls, and pricing.',
   },
+  '/features': {
+    title: 'Secretly Features — Everything It Does',
+    description:
+      'Every Secretly feature: end-to-end encrypted chats, video notes, voice transcription, calls, deep customization, app lock with Face ID, scheduled messages, and more.',
+  },
   '/pricing': {
     title: 'Secretly Pricing — Free, Premium & Teams',
     description:

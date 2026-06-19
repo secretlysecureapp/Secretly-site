@@ -80,6 +80,7 @@ export const routes: RouteRecord[] = [
       { path: 'download/desktop',    lazy: () => import('./pages/PlatformPage').then(m => ({ Component: () => <m.default platform="desktop" /> })) },
       { path: 'security',            lazy: () => import('./pages/Security').then(m => ({ Component: m.default })) },
       { path: 'compare',             lazy: () => import('./pages/Compare').then(m => ({ Component: m.default })) },
+      { path: 'features',            lazy: () => import('./pages/Features').then(m => ({ Component: m.default })) },
       { path: 'pricing',             lazy: () => import('./pages/Pricing').then(m => ({ Component: m.default })) },
       { path: 'teams',               lazy: () => import('./pages/Teams').then(m => ({ Component: m.default })) },
       { path: 'help',                lazy: () => import('./pages/Help').then(m => ({ Component: m.default })) },

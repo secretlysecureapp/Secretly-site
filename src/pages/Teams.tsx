@@ -64,7 +64,6 @@ export default function Teams() {
                 {t('teamsPage.includedTitle')}
               </h2>
               <p className="section-body reveal reveal-delay-2">
-                <span style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)', fontWeight: 600 }}>$6</span>{' '}
                 {t('teamsPage.includedPrice')}
               </p>
             </div>

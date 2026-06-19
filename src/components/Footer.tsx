@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { SITE } from '../config'
 
 const PRODUCT_LINKS = [
+  { label: 'Features',  to: '/features' },
   { label: 'Download',  to: '/download' },
   { label: 'Pricing',   to: '/pricing'  },
   { label: 'Security',  to: '/security' },
