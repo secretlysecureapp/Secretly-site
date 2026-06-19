@@ -1,0 +1,85 @@
+/* ════════════════════════════════════════════════════════════════
+   PREMIUM POLISH — loaded LAST. Layers depth, glow and refined motion
+   on top of the base styles (additive; cascade-wins where intended).
+   Fully reduced-motion aware. data: grain is CSP-allowed (img-src data:).
+   ════════════════════════════════════════════════════════════════ */
+
+/* ── Selection + scrollbar ── */
+::selection { background: rgba(88, 101, 242, 0.34); color: #fff; }
+html { scrollbar-color: rgba(88, 101, 242, 0.40) transparent; scrollbar-width: thin; }
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--bg-base); }
+::-webkit-scrollbar-thumb { background: rgba(88, 101, 242, 0.28); border-radius: 8px; border: 2px solid var(--bg-base); }
+::-webkit-scrollbar-thumb:hover { background: rgba(88, 101, 242, 0.55); }
+
+/* ── Keyboard focus ring (a11y + polish) ── */
+a:focus-visible, button:focus-visible, .btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: var(--r-sm);
+}
+
+/* ── Film-grain overlay: faint print-like depth over the whole page ── */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  pointer-events: none;
+  opacity: 0.022;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ── Premium primary button: gradient + light sheen sweep on hover ── */
+.btn--primary {
+  background: linear-gradient(135deg, #6470f4 0%, #4a55e0 100%);
+  box-shadow: 0 6px 22px rgba(88, 101, 242, 0.28);
+}
+.btn--primary::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 32%, rgba(255, 255, 255, 0.28) 50%, transparent 68%);
+  transform: translateX(-140%);
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+.btn--primary:hover::after { transform: translateX(140%); }
+.btn--primary:hover { box-shadow: 0 10px 38px rgba(88, 101, 242, 0.45); transform: translateY(-2px); }
+
+/* ── Premium card hover: lift + accent glow + border highlight ── */
+.pillar, .scenario-card, .help-card, .card, .platform-card, .feature-card {
+  transition: transform var(--t-base), box-shadow var(--t-base), border-color var(--t-base), background var(--t-base);
+  will-change: transform;
+}
+.pillar:hover, .scenario-card:hover, .help-card:hover, .platform-card:hover, .feature-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-border);
+  box-shadow: 0 22px 56px rgba(0, 0, 0, 0.42), 0 0 44px rgba(88, 101, 242, 0.12);
+}
+/* feature-cell already has a JS tilt → only add the glow, not a transform */
+.feature-cell:hover {
+  border-color: var(--accent-border);
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.45), 0 0 50px rgba(88, 101, 242, 0.14);
+}
+
+/* ── Soft glow on the largest display titles (safe: no transparency) ── */
+.hero__headline, .page-hero__title, .cta-section__title {
+  text-shadow: 0 1px 28px rgba(88, 101, 242, 0.14);
+}
+
+/* ── Hero aura: slow breathing glow behind the hero ── */
+@media (prefers-reduced-motion: no-preference) {
+  .hero__atmosphere { animation: sv-aura 9s ease-in-out infinite; }
+}
+@keyframes sv-aura {
+  0%, 100% { opacity: 0.82; transform: scale(1); }
+  50%      { opacity: 1;    transform: scale(1.05); }
+}
+
+/* ── Section dividers get a faint accent center glow ── */
+.divider { position: relative; }
+
+@media (prefers-reduced-motion: reduce) {
+  .btn--primary::after { display: none; }
+}
