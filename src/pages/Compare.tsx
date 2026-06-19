@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { useReveal } from '../hooks/useReveal'
 
 type Cell = boolean | string
-interface Row { label: string; secretly: Cell; signal: Cell; threema: Cell; session: Cell }
+interface Row { label: string; header?: boolean; secretly?: Cell; signal?: Cell; threema?: Cell; session?: Cell }
 
 /* Brand names — never translated. */
 const COLS = ['Secretly', 'Signal', 'Threema', 'Session'] as const
@@ -22,10 +22,11 @@ function No() {
     </svg>
   )
 }
-function renderCell(v: Cell) {
+function renderCell(v: Cell | undefined) {
   if (v === true) return <Yes />
   if (v === false) return <No />
-  return <span style={{ fontSize: 13.5, color: 'var(--text-secondary)' }}>{v}</span>
+  if (v === undefined || v === '') return null
+  return <span style={{ fontSize: 13, color: 'var(--text-secondary)' }}>{v}</span>
 }
 
 export default function Compare() {
@@ -62,15 +63,23 @@ export default function Compare() {
                 </tr>
               </thead>
               <tbody>
-                {rows.map((r, i) => (
-                  <tr key={i}>
-                    <td style={{ ...td, fontSize: 14, color: 'var(--text-primary)', fontWeight: 500 }}>{r.label}</td>
-                    <td style={{ ...td, textAlign: 'center', background: 'var(--accent-dim)' }}><div style={{ display: 'flex', justifyContent: 'center' }}>{renderCell(r.secretly)}</div></td>
-                    <td style={{ ...td, textAlign: 'center' }}><div style={{ display: 'flex', justifyContent: 'center' }}>{renderCell(r.signal)}</div></td>
-                    <td style={{ ...td, textAlign: 'center' }}><div style={{ display: 'flex', justifyContent: 'center' }}>{renderCell(r.threema)}</div></td>
-                    <td style={{ ...td, textAlign: 'center' }}><div style={{ display: 'flex', justifyContent: 'center' }}>{renderCell(r.session)}</div></td>
-                  </tr>
-                ))}
+                {rows.map((r, i) =>
+                  r.header ? (
+                    <tr key={i}>
+                      <td colSpan={5} style={{ padding: '20px 18px 10px', borderTop: i === 0 ? 'none' : '1px solid var(--border)', fontFamily: "'Space Grotesk', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--accent)', background: 'var(--bg-elevated)' }}>
+                        {r.label}
+                      </td>
+                    </tr>
+                  ) : (
+                    <tr key={i}>
+                      <td style={{ ...td, fontSize: 14, color: 'var(--text-primary)', fontWeight: 500 }}>{r.label}</td>
+                      <td style={{ ...td, textAlign: 'center', background: 'var(--accent-dim)' }}><div style={{ display: 'flex', justifyContent: 'center' }}>{renderCell(r.secretly)}</div></td>
+                      <td style={{ ...td, textAlign: 'center' }}><div style={{ display: 'flex', justifyContent: 'center' }}>{renderCell(r.signal)}</div></td>
+                      <td style={{ ...td, textAlign: 'center' }}><div style={{ display: 'flex', justifyContent: 'center' }}>{renderCell(r.threema)}</div></td>
+                      <td style={{ ...td, textAlign: 'center' }}><div style={{ display: 'flex', justifyContent: 'center' }}>{renderCell(r.session)}</div></td>
+                    </tr>
+                  ),
+                )}
               </tbody>
             </table>
           </div>
