@@ -272,7 +272,7 @@ const en = {
     },
     rights: 'All rights reserved.',
   },
-  price: { perMonth: '/ month', perSeat: '/ seat / month', premiumNote: '$12.99 / year · $29.99 lifetime', contact: 'Contact us' },
+  price: { perMonth: '/ month', perSeat: '/ seat / month', premiumNote: '$14.99 / year · $29.99 lifetime', contact: 'Contact us' },
   visuals: { you: 'You', relay: 'Relay server', ciphertext: 'sees only ciphertext', recipient: 'Recipient', message: 'Message' },
   pricingPage: {
     kicker: 'Pricing',

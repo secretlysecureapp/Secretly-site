@@ -231,7 +231,7 @@ const ru = {
     },
     rights: 'Все права защищены.',
   },
-  price: { perMonth: '/ месяц', perSeat: '/ место / месяц', premiumNote: '$12.99 / год · $29.99 навсегда', contact: 'Свяжитесь с нами' },
+  price: { perMonth: '/ месяц', perSeat: '/ место / месяц', premiumNote: '$14.99 / год · $29.99 навсегда', contact: 'Свяжитесь с нами' },
   visuals: { you: 'Вы', relay: 'Сервер-ретранслятор', ciphertext: 'видит только шифртекст', recipient: 'Получатель', message: 'Сообщение' },
   pricingPage: {
     kicker: 'Тарифы',
