@@ -281,7 +281,7 @@ const en = {
     popular: 'Most popular',
     plans: [
       { name: 'Free', tagline: 'Private, encrypted messaging for everyone — forever.', features: ['End-to-end encrypted chats, voice & video', '1-to-1 calls and group calls up to 8', 'Disappearing messages & screenshot protection', 'Contact verification & recovery kit', 'File sharing up to 25 MB', 'One device'], cta: 'Get Secretly' },
-      { name: 'Premium', tagline: 'Power features for people who live in Secretly.', features: ['Everything in Free', 'Desktop & multi-device sync', 'File sharing up to 1 GB', 'Custom Secretly ID', 'Groups up to 500 · group calls up to 50', 'Automatic encrypted backup', 'Themes, sticker packs & a supporter badge'], cta: 'Get Premium' },
+      { name: 'Premium', tagline: 'Power features for people who live in Secretly.', features: ['7-day free trial', 'Everything in Free', 'Desktop & multi-device sync', 'File sharing up to 1 GB', 'Custom Secretly ID', 'Groups up to 500 · group calls up to 50', 'Automatic encrypted backup', 'Themes, sticker packs & a supporter badge'], cta: 'Get Premium' },
       { name: 'Teams', tagline: 'Encrypted communication with organizational control.', features: ['Everything in Premium', 'Admin console & organizational IDs', 'Policies: enforced disappearing, export lock', 'Centralized billing & invoices', 'Priority support'], cta: 'Request a pilot' },
     ],
     note: 'Premium is rolling out gradually. Prices are indicative and may vary by region and store; taxes may apply. Subscriptions are billed through the App Store or Google Play.',
@@ -375,6 +375,7 @@ const en = {
       { label: 'Reactions', secretly: true, signal: true, threema: true, session: true },
       { label: 'Edit & delete sent messages', secretly: true, signal: true, threema: true, session: '—' },
       { label: 'Scheduled send', secretly: true, signal: false, threema: false, session: false },
+      { label: 'Chat folders', secretly: true, signal: false, threema: false, session: false },
       { label: 'Stickers', secretly: true, signal: true, threema: true, session: '—' },
 
       { label: 'Calls', header: true },
@@ -382,6 +383,7 @@ const en = {
       { label: 'Group calls', secretly: true, signal: true, threema: true, session: '—' },
 
       { label: 'AI & productivity', header: true },
+      { label: 'Message translation (on-device)', secretly: true, signal: false, threema: false, session: false },
       { label: 'Voice-to-text transcription', secretly: true, signal: false, threema: false, session: false },
       { label: 'Voice dictation', secretly: true, signal: false, threema: false, session: false },
 
@@ -498,6 +500,7 @@ const en = {
           { n: 'Reply, forward & edit', d: 'Quote, forward, edit or delete any message you have sent.' },
           { n: 'Scheduled send', d: 'Write now and deliver later, at exactly the right moment.' },
           { n: 'Pin & archive', d: 'Pin key messages and archive chats to keep things tidy.' },
+          { n: 'Chat folders', d: 'Sort chats into folders — All, Unread and your own — for a tidy inbox.' },
           { n: 'Message search', d: 'Find any message by keyword across all your chats.' },
           { n: 'Silent send', d: 'Send a message without triggering a notification sound.' },
           { n: 'Disappearing messages', d: 'Auto-delete from one hour to 30 days, set per chat.' },
@@ -542,8 +545,9 @@ const en = {
       {
         label: 'AI & Productivity', title: 'Smarter, faster conversations.',
         items: [
-          { n: 'Voice-to-text', d: 'On-device AI transcribes voice messages into readable text.', p: true },
-          { n: 'Voice dictation', d: 'Speak to compose a message — transcribed privately on your device.', p: true },
+          { n: 'Message translation', d: 'Translate received messages on-device with Google ML Kit — your text never leaves the phone.', p: true },
+          { n: 'Voice-message transcription', d: 'On-device AI turns a voice message into readable text; the audio never leaves your phone.', p: true },
+          { n: 'Voice dictation', d: 'Speak to compose messages using your device’s speech recognizer (on-device on Android).', p: true },
           { n: 'Scheduled messages', d: 'Plan messages ahead and send them at the perfect time.' },
           { n: 'Favorites & personal notes', d: 'A private chat with yourself for notes, links and files.' },
         ],
