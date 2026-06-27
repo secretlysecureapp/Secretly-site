@@ -10,7 +10,7 @@ export default function Privacy() {
           <p className="page-hero__kicker">Legal</p>
           <h1 className="page-hero__title">Privacy Policy</h1>
           <p className="page-hero__sub">
-            Effective Date: May 15, 2026 · Operator: SIA Secretly
+            Effective Date: June 27, 2026 · Operator: SIA Secretly
           </p>
         </div>
       </section>
@@ -69,6 +69,17 @@ export default function Privacy() {
               through platform solutions (Apple In-App Purchase on iOS, Google Play Billing on
               Android) in accordance with the respective app store policies.
             </p>
+            <p>
+              When you buy a subscription or a one-time upgrade, the Apple App Store or Google Play
+              processes the payment; Secretly never receives or stores your card number, CVV, or
+              billing address. To activate the purchase, the app sends a purchase receipt — an
+              Apple StoreKit signed transaction (JWS) on iOS, or a Google Play purchase token and
+              product identifier on Android — together with your random Secretly ID and the platform
+              name to our entitlement server, which verifies it directly with Apple or Google. The
+              resulting entitlement (your plan tier and its expiry date) is stored on our server
+              keyed only to your random Secretly ID and is never linked to a name, email address,
+              or phone number.
+            </p>
             <h3>3.5 Technical, Operational, and Service Data</h3>
             <p>
               IP addresses, request and error logs, security events, and rate-limiting data. This
@@ -89,6 +100,35 @@ export default function Privacy() {
               profiles, and we use privacy-respecting, cookieless measurement at most for basic
               site health.
             </p>
+
+            <h3>3.8 AI and Speech Features</h3>
+            <p>
+              Some optional features use machine-learning models. We do not operate our own AI
+              servers and we do not use your content to train any model.
+            </p>
+            <ul>
+              <li>
+                <strong>Message translation</strong> runs entirely on your device using Google ML
+                Kit. Your message text is never sent to a server for translation. The first time you
+                use a given language, the matching ML Kit model (around 30&nbsp;MB) is downloaded
+                from Google; only the model file is downloaded — never your messages.
+              </li>
+              <li>
+                <strong>Voice-message transcription</strong> (the “Show text” option under a voice
+                note) runs entirely on your device. The audio is never uploaded. The transcription
+                model is downloaded once from a model host; only the model file is downloaded —
+                never your audio.
+              </li>
+              <li>
+                <strong>Voice dictation</strong> (the microphone button in the message field) uses
+                your device’s built-in speech recognizer — Apple’s on iOS, Google’s on Android.
+                Depending on your device and its settings, this recognizer may send the audio you
+                dictate to Apple or Google for conversion to text, under their respective privacy
+                policies. Dictation is optional and runs only while you are actively using the
+                dictation button. If you prefer not to use a device speech service, simply type your
+                message instead.
+              </li>
+            </ul>
 
             <h2>4. How We Use the Information</h2>
             <p>Collected data is used to:</p>
@@ -155,7 +195,9 @@ export default function Privacy() {
               <li>Infrastructure providers (hosting, S3, CDN)</li>
               <li>Push notification services (Apple APNs, Firebase Cloud Messaging)</li>
               <li>Audio/video providers (TURN/STUN/media relays)</li>
-              <li>Payment providers (Stripe, PayPal, etc.)—only in case of external payment processing</li>
+              <li>In-app purchase processing (Apple App Store, Google Play); and, for optional website donations only, payment providers such as Stripe or PayPal</li>
+              <li>On-device machine-learning model distribution (Google ML Kit translation models; the voice-transcription model host)</li>
+              <li>Device speech-recognition services (Apple, Google) — only if and when you use voice dictation</li>
               <li>Support and communication services (email, ticketing systems)</li>
               <li>Analytics and monitoring services (if applicable)</li>
               <li>Legal authorities—only in response to a valid legal request</li>

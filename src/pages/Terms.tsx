@@ -56,6 +56,8 @@ export default function Terms() {
               <li>Backups and recovery</li>
               <li>Device linking</li>
               <li>Account deletion tools</li>
+              <li>On-device message translation and voice-message transcription</li>
+              <li>Voice dictation (uses your device’s speech recognizer)</li>
             </ul>
             <p>Secretly is designed so that:</p>
             <ul>
@@ -227,6 +229,7 @@ export default function Terms() {
               <li>A lifetime option, where offered, is a one-time purchase.</li>
               <li>Refunds are handled according to the policy of the app store used for the purchase.</li>
               <li>The agreement for the Secretly service itself is between you and SIA Secretly; Apple and Google act only as payment processors.</li>
+              <li>The name, duration, price, and contents of each paid plan are shown to you in the app and in the App Store / Google Play listing before you confirm; payment is charged to your store account upon confirmation, and the price of a renewal is the then-current price for that plan.</li>
             </ul>
             <p>
               Donations may be collected via third-party providers; those payments are processed
@@ -251,10 +254,14 @@ export default function Terms() {
             <ul>
               <li>The store provider is not responsible for the app</li>
             </ul>
-            <p>For Apple users:</p>
+            <p>For applications obtained through the Apple App Store, you agree:</p>
             <ul>
-              <li>The agreement is between you and SIA Secretly</li>
-              <li>Apple does not provide support or maintenance</li>
+              <li>This agreement is between you and SIA Secretly only, not Apple; Apple is not responsible for the application or its content.</li>
+              <li>Apple has no obligation to provide maintenance or support for the application.</li>
+              <li>Apple is not responsible for any product warranties, whether express or implied; any warranty claim and the cost of fulfilling it are SIA Secretly’s responsibility.</li>
+              <li>SIA Secretly, not Apple, is responsible for addressing any claims relating to the application or your use of it (including product-liability, legal/regulatory, and intellectual-property claims).</li>
+              <li>You represent that you are not located in a country subject to a U.S. Government embargo or designated “terrorist-supporting,” and are not on any U.S. Government prohibited-or-restricted-parties list.</li>
+              <li>Apple and its subsidiaries are third-party beneficiaries of these Terms and may enforce them against you.</li>
             </ul>
 
             <h2>13. Updates and Beta Features</h2>
