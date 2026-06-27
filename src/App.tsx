@@ -52,8 +52,9 @@ function AppShell() {
       <CursorSystem />
       <ScrollProgress />
       <ScrollReset />
+      <a href="#main" className="skip-link">Skip to content</a>
       <Navbar />
-      <main>
+      <main id="main">
         <PageTransition>
           <Outlet />
         </PageTransition>

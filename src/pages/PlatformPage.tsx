@@ -111,8 +111,10 @@ export default function PlatformPage({ platform }: PlatformPageProps) {
             justifyContent: 'center',
           }}>
             <picture>
+              <source srcSet="/Chat.avif" type="image/avif" />
               <source srcSet="/Chat.webp" type="image/webp" />
               <img src="/Chat-fallback.png" alt={`${title} preview`}
+                   width={1200} height={675}
                    style={{ maxWidth: '100%', maxHeight: 360, height: 'auto', objectFit: 'contain' }}
                    draggable={false} loading="lazy" />
             </picture>

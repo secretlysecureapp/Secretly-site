@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useReveal } from '../hooks/useReveal'
 import { SITE, isAvailable } from '../config'
+import StoreBadges from '../components/StoreBadges'
 
 const PLATFORMS = [
   { name: 'Android',       sub: 'Google Play Store',  icon: '/icons/android.png', to: '/download/android', available: isAvailable(SITE.download.android) },
@@ -21,6 +22,22 @@ export default function Download() {
           <p className="page-hero__kicker reveal">{t('download.kicker')}</p>
           <h1 className="page-hero__title reveal reveal-delay-1">{t('download.title')}</h1>
           <p className="page-hero__sub reveal reveal-delay-2">{t('download.sub')}</p>
+        </div>
+      </section>
+      <div className="divider" />
+
+      {/* ── Store badges + QR ── */}
+      <section className="section" style={{ paddingTop: 48, paddingBottom: 40 }}>
+        <div className="container">
+          <div className="reveal" style={{ display: 'flex', flexWrap: 'wrap', gap: '32px 56px', alignItems: 'center', justifyContent: 'space-between' }}>
+            <StoreBadges />
+            <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
+              <img src="/qr-download.png" width={104} height={104} loading="lazy"
+                alt="QR code to open the Secretly download page on your phone"
+                style={{ borderRadius: 12, background: '#fff', padding: 7, flexShrink: 0 }} />
+              <span style={{ fontSize: 13, color: 'var(--text-muted)', maxWidth: 150, lineHeight: 1.5 }}>{t('download.scanQr')}</span>
+            </div>
+          </div>
         </div>
       </section>
       <div className="divider" />

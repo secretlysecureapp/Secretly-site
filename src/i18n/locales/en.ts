@@ -133,6 +133,7 @@ const en = {
     sectionLabel: 'All platforms',
     sectionTitle: 'Download Secretly',
     downloadBtn: 'Download →',
+    scanQr: 'Scan to download on your phone',
     comingSoon: 'Coming soon',
     noteTitle: 'Desktop note',
     noteBody: 'Desktop apps (Windows & macOS) require Secretly to be installed and active on your mobile device first.',

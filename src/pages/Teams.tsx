@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import { Head } from 'vite-react-ssg'
 import { useReveal } from '../hooks/useReveal'
 import { SITE } from '../config'
 
@@ -21,9 +22,17 @@ export default function Teams() {
   const audiences = t('teamsPage.audiences', { returnObjects: true }) as Array<{ title: string; body: string }>
   const included = t('teamsPage.included', { returnObjects: true }) as string[]
   const compliance = t('teamsPage.compliance', { returnObjects: true }) as Array<{ q: string; a: string }>
+  const faqLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: compliance.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+  }
 
   return (
     <div ref={ref}>
+      <Head>
+        <script type="application/ld+json">{JSON.stringify(faqLd)}</script>
+      </Head>
       <section className="page-hero">
         <div className="container">
           <p className="page-hero__kicker reveal">{t('teamsPage.kicker')}</p>

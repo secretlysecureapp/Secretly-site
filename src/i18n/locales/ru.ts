@@ -92,6 +92,7 @@ const ru = {
     sectionLabel: 'Все платформы',
     sectionTitle: 'Скачать Secretly',
     downloadBtn: 'Скачать →',
+    scanQr: 'Отсканируйте, чтобы скачать на телефон',
     comingSoon: 'Скоро будет',
     noteTitle: 'Примечание',
     noteBody: 'Десктопные приложения (Windows и macOS) требуют установленного Secretly на мобильном устройстве.',

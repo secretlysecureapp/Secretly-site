@@ -1,0 +1,5 @@
+Contact: mailto:security@secretlyapp.com
+Expires: 2027-06-27T00:00:00.000Z
+Preferred-Languages: en, ru
+Canonical: https://www.secretlyapp.com/.well-known/security.txt
+Policy: https://www.secretlyapp.com/security

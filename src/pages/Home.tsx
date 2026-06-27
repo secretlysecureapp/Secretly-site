@@ -91,6 +91,7 @@ export default function Home() {
   return (
     <>
       <Head>
+        <link rel="preload" as="image" href="/Chat.avif" type="image/avif" />
         <script type="application/ld+json">{JSON.stringify(STRUCTURED_DATA)}</script>
       </Head>
 
@@ -148,11 +149,14 @@ export default function Home() {
               <div className="hero__devices-wrap">
                 <div className="hero__devices-glow" />
                 <picture>
+                  <source srcSet="/Chat.avif" type="image/avif" />
                   <source srcSet="/Chat.webp" type="image/webp" />
                   <img
                     src="/Chat-fallback.png"
-                    alt="Secretly app on phone and desktop"
+                    alt="Secretly running on a phone and a desktop, showing an encrypted chat"
                     className="hero__devices-img hero__devices-img--landscape"
+                    width={1200}
+                    height={675}
                     draggable={false}
                     loading="eager"
                   />
@@ -256,8 +260,10 @@ export default function Home() {
           <div style={{ marginTop: 64, padding: 0, background: 'var(--bg-elevated)', border: '1px solid var(--border)', borderRadius: 'var(--r-xl)', display: 'flex', justifyContent: 'center', overflow: 'hidden' }}
             className="reveal reveal-delay-2">
             <picture>
+              <source srcSet="/ChatGPT.avif" type="image/avif" />
               <source srcSet="/ChatGPT.webp" type="image/webp" />
-              <img src="/ChatGPT-fallback.png" alt="Secretly app interface preview"
+              <img src="/ChatGPT-fallback.png" alt="A preview of the Secretly chat interface"
+                   width={1899} height={828}
                    style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'cover' }}
                    draggable={false} loading="lazy" />
             </picture>

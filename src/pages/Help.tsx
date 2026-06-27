@@ -1,14 +1,23 @@
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
+import { Head } from 'vite-react-ssg'
 import { useReveal } from '../hooks/useReveal'
 
 export default function Help() {
   const ref = useReveal()
   const { t } = useTranslation()
   const faqs = t('help.faqs', { returnObjects: true }) as Array<{q:string;a:string}>
+  const faqLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+  }
 
   return (
     <div ref={ref}>
+      <Head>
+        <script type="application/ld+json">{JSON.stringify(faqLd)}</script>
+      </Head>
       <section className="page-hero">
         <div className="container">
           <p className="page-hero__kicker reveal">{t('help.kicker')}</p>
