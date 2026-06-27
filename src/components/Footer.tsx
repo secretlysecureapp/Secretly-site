@@ -17,6 +17,7 @@ const COMPANY_LINKS = [
 ]
 
 const RESOURCE_LINKS = [
+  { label: 'Blog',           to: '/blog'           },
   { label: 'Help Center',    to: '/help'           },
   { label: 'Support',        to: '/support'        },
   { label: 'Privacy Policy', to: '/privacy-policy' },

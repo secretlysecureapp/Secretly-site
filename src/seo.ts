@@ -75,6 +75,11 @@ export const SEO_BY_PATH: Record<string, SeoEntry> = {
     description:
       'Secretly is built by engineers and privacy advocates. Learn about our mission to make secure, anonymous communication available to everyone.',
   },
+  '/blog': {
+    title: 'Secretly Blog — Privacy & Security Notes',
+    description:
+      'Plain-language writing from the Secretly team on private messaging, end-to-end encryption, disappearing messages, and staying anonymous online.',
+  },
   '/help': {
     title: 'Secretly Help & FAQ',
     description:

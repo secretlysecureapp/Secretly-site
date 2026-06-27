@@ -1,0 +1,44 @@
+name: CI
+
+# Build + prerender smoke test on every push/PR.
+# On push to main, also deploy to Cloudflare (requires the two repo
+# secrets below — Settings → Secrets and variables → Actions):
+#   CLOUDFLARE_API_TOKEN   — token with "Edit Cloudflare Workers" perms
+#   CLOUDFLARE_ACCOUNT_ID  — your Cloudflare account id
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  build-test-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Build (prerender + sitemap)
+        run: npm run build
+
+      - name: Smoke test
+        run: npm run test:smoke
+
+      - name: Deploy to Cloudflare
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: deploy

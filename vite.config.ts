@@ -1,5 +1,13 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import { readdirSync } from 'node:fs'
+import { fileURLToPath } from 'node:url'
+
+/* Blog post slugs (src/content/blog/*.md) — expanded into concrete
+   pre-rendered paths for the dynamic `blog/:slug` route. */
+const BLOG_SLUGS = readdirSync(fileURLToPath(new URL('./src/content/blog', import.meta.url)))
+  .filter((f) => f.endsWith('.md'))
+  .map((f) => f.replace(/\.md$/, ''))
 
 /* Legacy / short slugs that redirect client-side — not pre-rendered.
    They are served via the host's SPA fallback and redirect on the client.
@@ -26,10 +34,19 @@ export default defineConfig(({ isSsrBuild }) => ({
     dirStyle: 'nested',
     // Pre-render every real content route; skip redirect slugs + wildcard.
     includedRoutes(paths: string[]) {
-      return paths.filter((p) => {
+      const out: string[] = []
+      for (const p of paths) {
         const key = p.replace(/^\//, '') // normalize: paths come without a leading slash
-        return !REDIRECT_PATHS.has(key) && !key.includes('*') && !key.includes(':')
-      })
+        if (REDIRECT_PATHS.has(key) || key.includes('*')) continue
+        // Expand the dynamic blog route into one path per markdown post.
+        if (key === 'blog/:slug') {
+          for (const slug of BLOG_SLUGS) out.push(`blog/${slug}`)
+          continue
+        }
+        if (key.includes(':')) continue
+        out.push(p)
+      }
+      return out
     },
   },
 

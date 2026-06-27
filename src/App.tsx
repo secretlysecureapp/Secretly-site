@@ -10,6 +10,7 @@ import PageTransition  from './components/PageTransition'
 import CursorSystem    from './components/CursorSystem'
 import CircuitField    from './components/CircuitField'
 import Seo             from './components/Seo'
+import Analytics       from './components/Analytics'
 import useLenis        from './hooks/useLenis'
 import i18n, { detectPreferredLanguage } from './i18n'
 
@@ -48,6 +49,7 @@ function AppShell() {
   return (
     <ErrorBoundary>
       <Seo />
+      <Analytics />
       <CircuitField />
       <CursorSystem />
       <ScrollProgress />
@@ -91,6 +93,8 @@ export const routes: RouteRecord[] = [
       { path: 'contact',             lazy: () => import('./pages/Contact').then(m => ({ Component: m.default })) },
       { path: 'donate',              lazy: () => import('./pages/Donate').then(m => ({ Component: m.default })) },
       { path: 'delete-account',      lazy: () => import('./pages/DeleteAccount').then(m => ({ Component: m.default })) },
+      { path: 'blog',                lazy: () => import('./pages/BlogIndex').then(m => ({ Component: m.default })) },
+      { path: 'blog/:slug',          lazy: () => import('./pages/BlogPost').then(m => ({ Component: m.default })) },
 
       /* ── Legal — canonical paths MUST match the previously published
            site (referenced by app-store listings & shipped apps) ── */

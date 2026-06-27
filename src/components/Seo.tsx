@@ -15,6 +15,9 @@ import { getSeo, OG_IMAGE } from '../seo'
    ────────────────────────────────────────────────────────────── */
 export default function Seo() {
   const { pathname } = useLocation()
+  // Individual blog posts manage their own <head> (title/canonical/JSON-LD)
+  // in BlogPost.tsx, so the shell-level manager steps aside for them.
+  if (pathname.startsWith('/blog/')) return null
   const { title, description, canonical, indexable } = getSeo(pathname)
 
   return (

@@ -32,6 +32,19 @@ export const SITE = {
     windows: '',  // Coming soon
     macos:   '',  // Coming soon
   },
+
+  /* Privacy-friendly, COOKIELESS analytics — OFF by default (ships no
+     third-party requests until you fill this in).
+     • Recommended: Cloudflare Web Analytics (free, cookieless; the site
+       is already on Cloudflare). Paste its beacon token below — the CSP
+       already allows static.cloudflareinsights.com.
+     • Or self-host Plausible/Umami: set `script` (+ `domain`) and add
+       your analytics origin to public/_headers CSP. */
+  analytics: {
+    cloudflareToken: '',  // e.g. '0a1b2c3d...' → enables CF Web Analytics
+    script: '',           // e.g. 'https://plausible.example.com/js/script.js'
+    domain: 'secretlyapp.com',
+  },
 }
 
 /** True when a download URL points somewhere real (not empty / not '#'). */
