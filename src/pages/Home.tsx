@@ -228,7 +228,7 @@ export default function Home() {
               {(t('scenarios', { returnObjects: true }) as Array<{title:string;body:string}>).map((s, i) => (
                 <div key={i} className="scenario-card">
                   <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
-                    <img src={SCENARIO_ICONS[i]} alt="" style={{ width: 24, height: 24, filter: 'brightness(0) invert(0.6) sepia(1) saturate(3) hue-rotate(160deg)', opacity: 0.8 }} />
+                    <img src={SCENARIO_ICONS[i]} alt="" style={{ width: 24, height: 24, filter: 'var(--icon-filter)', opacity: 0.8 }} />
                     <h3 className="scenario-card__title" style={{ marginBottom: 0 }}>{s.title}</h3>
                   </div>
                   <p className="scenario-card__body">{s.body}</p>
