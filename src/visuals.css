@@ -11,7 +11,7 @@
   border: 1px solid var(--border);
   border-radius: var(--r-xl);
   background:
-    radial-gradient(120% 90% at 50% -10%, rgba(88, 101, 242, 0.10), transparent 60%),
+    radial-gradient(120% 90% at 50% -10%, rgba(var(--accent-rgb), 0.10), transparent 60%),
     linear-gradient(180deg, var(--bg-elevated) 0%, var(--bg-surface) 100%);
   padding: clamp(20px, 4vw, 44px);
   overflow: hidden;
@@ -42,9 +42,9 @@
 .sv-label { fill: var(--text-secondary); font: 600 13px 'Space Grotesk', sans-serif; letter-spacing: 0.02em; }
 .sv-sub   { fill: var(--text-muted); font: 500 11px 'Inter', sans-serif; }
 .sv-cipher { fill: var(--text-muted); font: 600 12px ui-monospace, 'SFMono-Regular', Menlo, monospace; letter-spacing: 0.06em; }
-.sv-readable { fill: #fff; }
+.sv-readable { fill: var(--text-primary); }
 .sv-bubble { fill: var(--accent); }
-.sv-bubble-line { stroke: rgba(255,255,255,0.85); stroke-width: 2.2; stroke-linecap: round; }
+.sv-bubble-line { stroke: var(--on-accent); stroke-width: 2.2; stroke-linecap: round; }
 
 /* Connector + flow */
 .sv-track { stroke: var(--border); stroke-width: 2; fill: none; }
@@ -108,8 +108,8 @@
   overflow: hidden;
 }
 .circuit-field svg { width: 100%; height: 100%; display: block; }
-.circuit-trace { fill: none; stroke: rgba(255, 255, 255, 0.035); stroke-width: 1; }
-.circuit-node  { fill: rgba(88, 101, 242, 0.14); }
+.circuit-trace { fill: none; stroke: var(--grid-line); stroke-width: 1; }
+.circuit-node  { fill: rgba(var(--accent-rgb), 0.14); }
 .circuit-pulse {
   fill: none;
   stroke: var(--accent);
@@ -188,7 +188,7 @@
 .cm-cipher {
   position: absolute;
   inset: 0;
-  background-image: repeating-linear-gradient(90deg, rgba(88,101,242,0.08) 0 2px, transparent 2px 12px);
+  background-image: repeating-linear-gradient(90deg, rgba(var(--accent-rgb), 0.08) 0 2px, transparent 2px 12px);
   -webkit-mask-image: linear-gradient(180deg, transparent, #000 40%, transparent);
   mask-image: linear-gradient(180deg, transparent, #000 40%, transparent);
   animation: cm-cipher-shift 6s linear infinite;

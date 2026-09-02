@@ -5,12 +5,12 @@
    ════════════════════════════════════════════════════════════════ */
 
 /* ── Selection + scrollbar ── */
-::selection { background: rgba(88, 101, 242, 0.34); color: #fff; }
-html { scrollbar-color: rgba(88, 101, 242, 0.40) transparent; scrollbar-width: thin; }
+::selection { background: rgba(var(--accent-rgb), 0.34); color: #fff; }
+html { scrollbar-color: rgba(var(--accent-rgb), 0.40) transparent; scrollbar-width: thin; }
 ::-webkit-scrollbar { width: 10px; height: 10px; }
 ::-webkit-scrollbar-track { background: var(--bg-base); }
-::-webkit-scrollbar-thumb { background: rgba(88, 101, 242, 0.28); border-radius: 8px; border: 2px solid var(--bg-base); }
-::-webkit-scrollbar-thumb:hover { background: rgba(88, 101, 242, 0.55); }
+::-webkit-scrollbar-thumb { background: rgba(var(--accent-rgb), 0.28); border-radius: 8px; border: 2px solid var(--bg-base); }
+::-webkit-scrollbar-thumb:hover { background: rgba(var(--accent-rgb), 0.55); }
 
 /* ── Skip-to-content link (a11y): hidden until keyboard-focused ── */
 .skip-link {
@@ -27,7 +27,7 @@ html { scrollbar-color: rgba(88, 101, 242, 0.40) transparent; scrollbar-width: t
   font-weight: 600;
   font-size: 14px;
   text-decoration: none;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 8px 24px var(--shadow-strong);
   transition: transform var(--t-fast);
 }
 .skip-link:focus { transform: translateY(0); outline: none; }
@@ -52,20 +52,20 @@ body::after {
 
 /* ── Premium primary button: gradient + light sheen sweep on hover ── */
 .btn--primary {
-  background: linear-gradient(135deg, #6470f4 0%, #4a55e0 100%);
-  box-shadow: 0 6px 22px rgba(88, 101, 242, 0.28);
+  background: linear-gradient(135deg, var(--accent-hover) 0%, var(--accent-solid) 100%);
+  box-shadow: 0 6px 22px rgba(var(--accent-rgb), 0.28);
 }
 .btn--primary::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(120deg, transparent 32%, rgba(255, 255, 255, 0.28) 50%, transparent 68%);
+  background: linear-gradient(120deg, transparent 32%, var(--sheen) 50%, transparent 68%);
   transform: translateX(-140%);
   transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
   pointer-events: none;
 }
 .btn--primary:hover::after { transform: translateX(140%); }
-.btn--primary:hover { box-shadow: 0 10px 38px rgba(88, 101, 242, 0.45); transform: translateY(-2px); }
+.btn--primary:hover { box-shadow: 0 10px 38px rgba(var(--accent-rgb), 0.45); transform: translateY(-2px); }
 
 /* ── Premium card hover: lift + accent glow + border highlight ── */
 .pillar, .scenario-card, .help-card, .card, .platform-card, .feature-card {
@@ -75,17 +75,17 @@ body::after {
 .pillar:hover, .scenario-card:hover, .help-card:hover, .platform-card:hover, .feature-card:hover {
   transform: translateY(-5px);
   border-color: var(--accent-border);
-  box-shadow: 0 22px 56px rgba(0, 0, 0, 0.42), 0 0 44px rgba(88, 101, 242, 0.12);
+  box-shadow: 0 22px 56px var(--shadow-strong), 0 0 44px rgba(var(--accent-rgb), 0.12);
 }
 /* feature-cell already has a JS tilt → only add the glow, not a transform */
 .feature-cell:hover {
   border-color: var(--accent-border);
-  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.45), 0 0 50px rgba(88, 101, 242, 0.14);
+  box-shadow: 0 22px 60px var(--shadow-strong), 0 0 50px rgba(var(--accent-rgb), 0.14);
 }
 
 /* ── Soft glow on the largest display titles (safe: no transparency) ── */
 .hero__headline, .page-hero__title, .cta-section__title {
-  text-shadow: 0 1px 28px rgba(88, 101, 242, 0.14);
+  text-shadow: 0 1px 28px rgba(var(--accent-rgb), 0.14);
 }
 
 /* ── Hero aura: slow breathing glow behind the hero ── */
@@ -184,7 +184,7 @@ body::after {
 .prose strong { color: var(--text-primary); font-weight: 600; }
 .prose a {
   color: var(--accent); text-decoration: underline;
-  text-decoration-color: rgba(124, 92, 255, 0.45); text-underline-offset: 3px;
+  text-decoration-color: rgba(var(--accent-blue-rgb), 0.45); text-underline-offset: 3px;
 }
 .prose a:hover { text-decoration-color: var(--accent); }
 .prose ul, .prose ol { padding-left: 1.3em; }

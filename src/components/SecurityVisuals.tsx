@@ -13,14 +13,14 @@ function Phone({ x, label }: { x: number; label: string }) {
       <rect className="sv-node" x={x} y={48} width={104} height={168} rx={18} />
       <rect className="sv-screen" x={x + 12} y={62} width={80} height={140} rx={10} />
       {/* incoming (neutral) bubble */}
-      <rect x={x + 22} y={80} width={44} height={20} rx={8} fill="rgba(255,255,255,0.10)" />
-      <line className="sv-bubble-line" x1={x + 30} y1={90} x2={x + 56} y2={90} stroke="rgba(255,255,255,0.45)" />
+      <rect x={x + 22} y={80} width={44} height={20} rx={8} fill="var(--hover-soft)" />
+      <line className="sv-bubble-line" x1={x + 30} y1={90} x2={x + 56} y2={90} stroke="var(--text-muted)" />
       {/* outgoing (accent) bubble — readable */}
       <rect className="sv-bubble" x={x + 40} y={112} width={44} height={22} rx={8} />
       <line className="sv-bubble-line" x1={x + 48} y1={120} x2={x + 76} y2={120} />
       <line className="sv-bubble-line" x1={x + 48} y1={127} x2={x + 66} y2={127} />
       {/* a third short line */}
-      <rect x={x + 22} y={146} width={36} height={16} rx={7} fill="rgba(255,255,255,0.10)" />
+      <rect x={x + 22} y={146} width={36} height={16} rx={7} fill="var(--hover-soft)" />
       <text className="sv-label" x={x + 52} y={238} textAnchor="middle">{label}</text>
     </g>
   )

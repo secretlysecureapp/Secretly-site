@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import i18n, { LANGUAGES } from '../i18n'
+import ThemeToggle from './ThemeToggle'
 
 export default function Navbar() {
   const [scrolled,    setScrolled]    = useState(false)
@@ -70,6 +71,8 @@ export default function Navbar() {
                   {l.label}
                 </Link>
               ))}
+
+              <ThemeToggle />
 
               {/* Language switcher */}
               <div ref={langRef} className="lang-switcher">
