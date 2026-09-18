@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useReveal } from '../hooks/useReveal'
@@ -15,7 +15,15 @@ export default function Donate() {
   const { t } = useTranslation()
   const benefits = t('donate.benefits', { returnObjects: true }) as string[]
 
+  /* Форма пожертвований — сторонний сервис. Раньше скрипт и iframe грузились
+     при открытии страницы, то есть Donorbox получал IP и мог поставить своё
+     хранилище до того, как человек что-то решил, — при том что политика
+     обещает «только строго необходимые cookie». Теперь ничего не загружается,
+     пока человек сам не нажмёт кнопку. */
+  const [formLoaded, setFormLoaded] = useState(false)
+
   useEffect(() => {
+    if (!formLoaded) return
     const id = 'donorbox-widget-script'
     if (document.getElementById(id)) return
     const s = document.createElement('script')
@@ -23,7 +31,7 @@ export default function Donate() {
     s.src = 'https://donorbox.org/widgets.js'
     s.setAttribute('paypalExpress', 'false')
     document.body.appendChild(s)
-  }, [])
+  }, [formLoaded])
 
   return (
     <div ref={ref}>
@@ -95,6 +103,30 @@ export default function Donate() {
                 maxWidth: 500,
                 margin: '0 auto',
               }}>
+              {!formLoaded ? (
+                <div style={{ padding: '40px 28px', textAlign: 'center', color: '#1a1a1a' }}>
+                  <p style={{ fontSize: 16, fontWeight: 600, marginBottom: 10 }}>
+                    The donation form is provided by Donorbox
+                  </p>
+                  <p style={{ fontSize: 14, lineHeight: 1.7, marginBottom: 22, color: '#444' }}>
+                    Loading it connects you to donorbox.org, which will see your IP
+                    address and may store data in your browser. Nothing is loaded
+                    until you choose to.{' '}
+                    <a href="https://donorbox.org/privacy" target="_blank" rel="noopener noreferrer"
+                      style={{ color: '#0b57d0' }}>
+                      Donorbox privacy policy
+                    </a>
+                  </p>
+                  <button type="button" onClick={() => setFormLoaded(true)}
+                    style={{
+                      padding: '12px 26px', fontSize: 15, fontWeight: 600,
+                      borderRadius: 999, border: 'none', cursor: 'pointer',
+                      background: '#1a1a1a', color: '#fff',
+                    }}>
+                    Load the donation form
+                  </button>
+                </div>
+              ) : (
               <iframe
                 title="Donate to Secretly"
                 src={DONORBOX_SRC}
@@ -107,6 +139,7 @@ export default function Donate() {
                 width="100%"
                 style={{ width: '100%', minWidth: 250, maxHeight: 'none', border: 'none', display: 'block' }}
               />
+              )}
             </div>
           </div>
         </div>

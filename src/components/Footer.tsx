@@ -125,6 +125,7 @@ export default function Footer() {
           <div className="footer__legal">
             <Link to="/privacy-policy"   className="footer__legal-link">Privacy Policy</Link>
             <Link to="/terms-of-service" className="footer__legal-link">Terms of Service</Link>
+            <Link to="/verify"           className="footer__legal-link">Verify a build</Link>
           </div>
         </div>
       </div>

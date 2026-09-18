@@ -234,8 +234,18 @@ export default function Terms() {
               <li>Subscriptions renew automatically unless cancelled at least 24 hours before the end of the current period; you can manage or cancel them in your App Store or Google Play account settings.</li>
               <li>Where a free trial is offered with a subscription plan (for example, a trial period preceding an annual Premium subscription), the trial duration and the fact that it automatically converts into a paid subscription at the then-current price unless cancelled before the trial ends are clearly stated in the app and in the App Store / Google Play listing before you confirm purchase; you can cancel during the trial at no charge via your App Store or Google Play account settings.</li>
               <li>A lifetime option, where offered, is a one-time purchase.</li>
-              <li>Refunds are handled according to the policy of the app store used for the purchase.</li>
-              <li>The agreement for the Secretly service itself is between you and SIA Secretly; Apple and Google act only as payment processors.</li>
+              <li>Refunds are handled according to the policy of the app store used for the purchase: <a href="https://support.apple.com/en-us/HT204084" target="_blank" rel="noopener noreferrer">Apple</a>, <a href="https://support.google.com/googleplay/answer/2479637" target="_blank" rel="noopener noreferrer">Google Play</a>.</li>
+              <li>
+                <strong>Right of withdrawal.</strong> Every paid plan is bought from
+                the store, not from us: Apple and Google are the sellers of record
+                for those transactions, so the statutory 14-day right of withdrawal
+                for EU and EEA consumers, and its exceptions for digital content
+                whose delivery has begun, are handled under their terms and through
+                their refund process. We do not currently sell subscriptions
+                directly. Should we ever do so, the 14-day right would apply to that
+                purchase and the withdrawal form would be published here.
+              </li>
+              <li>The agreement for the Secretly <em>service</em> — the accounts, servers and support behind the app — is between you and SIA Secretly.</li>
               <li>The name, duration, price, and contents of each paid plan are shown to you in the app and in the App Store / Google Play listing before you confirm; payment is charged to your store account upon confirmation, and the price of a renewal is the then-current price for that plan.</li>
             </ul>
             <p>
@@ -345,16 +355,24 @@ export default function Terms() {
             </ul>
 
             <h2>17. Limitation of Liability</h2>
-            <p>To the maximum extent permitted by law:</p>
+            <p>
+              <strong>Nothing in these Terms limits or excludes our liability for
+              death or personal injury caused by our negligence, for fraud or
+              fraudulent misrepresentation, for wilful misconduct or gross
+              negligence, or for anything else that cannot lawfully be limited or
+              excluded.</strong> If you are a consumer, your mandatory statutory
+              rights are unaffected by this section.
+            </p>
+            <p>Subject to that, and to the maximum extent permitted by law:</p>
             <ul>
-              <li>Secretly is not liable for indirect or consequential damages</li>
-              <li>Including loss of data, service interruptions, or security issues</li>
+              <li>we are not liable for indirect or consequential damages,</li>
+              <li>including loss of data, service interruptions, or security issues.</li>
             </ul>
-            <p>Total liability is limited to:</p>
-            <ul>
-              <li>Amount paid in the last 12 months, or</li>
-              <li>USD $100</li>
-            </ul>
+            <p>
+              Subject to the same reservation, our total liability is limited to the
+              greater of the amount you paid us in the twelve months before the claim
+              arose, or EUR 100.
+            </p>
 
             <h2>18. Indemnity</h2>
             <p>You agree to indemnify Secretly against claims arising from:</p>
@@ -365,13 +383,31 @@ export default function Terms() {
             </ul>
 
             <h2>19. Governing Law and Disputes</h2>
-            <p>These Terms are governed by applicable law.</p>
-            <p>Before filing a claim:</p>
+            <p>
+              These Terms are governed by the law of the <strong>Republic of
+              Latvia</strong>, where SIA Secretly is established, excluding its
+              conflict-of-laws rules. Disputes are subject to the courts of the
+              Republic of Latvia.
+            </p>
+            <p>
+              <strong>If you are a consumer resident in the EU or EEA, this does
+              not deprive you of anything.</strong> You keep the protection of the
+              mandatory law of your country of residence, and you may bring
+              proceedings against us in the courts of that country. We may sue a
+              consumer only in the courts of the country where they live.
+            </p>
+            <p>Before filing a claim, please write to us and allow a reasonable time to resolve it:</p>
             <ul>
-              <li>Contact: technical.support@secretlyapp.com</li>
-              <li>Allow a reasonable time for resolution</li>
+              <li>Legal notices and disputes: legal@secretlyapp.com</li>
+              <li>Everything else: support@secretlyapp.com</li>
             </ul>
-            <p>Your legal rights remain protected where required by law.</p>
+            <p>
+              The European Commission also runs an{' '}
+              <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener noreferrer">
+                online dispute resolution platform
+              </a>. We are not obliged to use an alternative dispute resolution body
+              and, at present, we do not.
+            </p>
 
             <h2>20. Changes to Terms</h2>
             <p>We may update these Terms.</p>
