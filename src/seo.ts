@@ -50,6 +50,11 @@ export const SEO_BY_PATH: Record<string, SeoEntry> = {
     description:
       'How Secretly protects you: Signal-class end-to-end encryption, zero-knowledge servers, no phone number or email, and a public, verifiable codebase.',
   },
+  '/verify': {
+    title: 'Verify a Secretly Build — Checksums & Reproducing',
+    description:
+      'Rebuild Secretly from source with the pinned toolchains, and check the SHA-256 of what we upload to the stores — including an honest account of what store distribution makes impossible to verify.',
+  },
   '/compare': {
     title: 'Secretly vs Signal, Threema & Session',
     description:
