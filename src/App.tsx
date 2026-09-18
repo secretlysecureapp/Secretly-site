@@ -101,6 +101,7 @@ export const routes: RouteRecord[] = [
            site (referenced by app-store listings & shipped apps) ── */
       { path: 'privacy-policy',      lazy: () => import('./pages/Privacy').then(m => ({ Component: m.default })) },
       { path: 'terms-of-service',    lazy: () => import('./pages/Terms').then(m => ({ Component: m.default })) },
+      { path: 'dpa',                 lazy: () => import('./pages/Dpa').then(m => ({ Component: m.default })) },
 
       /* ── Backward-compatible redirects from legacy / short slugs.
            Excluded from pre-rendering (see vite.config ssgOptions);

@@ -156,5 +156,17 @@ const it = {
     links: { download: 'Scarica', platforms: 'Piattaforme', help: 'Centro assistenza', about: 'Chi siamo', contact: 'Contatti', donate: 'Dona', privacy: 'Informativa sulla privacy', terms: 'Termini di servizio' },
     rights: 'Tutti i diritti riservati.',
   },
+  visuals: { you: 'Tu', relay: 'Server di inoltro', ciphertext: 'vede solo testo cifrato', recipient: 'Destinatario', message: 'Messaggio' },
+  price: { perMonth: '/ mese', perSeat: '/ postazione / mese', premiumNote: '14,99 $ / anno · 29,99 $ a vita', contact: 'Contattaci' },
+  deletePage: {
+    kicker: 'Account',
+    title: 'Elimina il tuo account.',
+    sub: 'Secretly non conserva il tuo numero di telefono, la tua e-mail né alcun profilo personale: non esiste quindi un account lato server da cancellare nel senso tradizionale.',
+    howLabel: 'Come eliminare i tuoi dati',
+    howTitle: 'I tuoi dati sono sul tuo dispositivo.',
+    body: 'Disinstallando Secretly vengono rimossi dal dispositivo le tue chiavi di identità e la cronologia locale dei messaggi. I dati cifrati sul relay scadono automaticamente. Per assistenza scrivi a',
+    bodyOr: 'oppure visita',
+    support: 'Assistenza',
+  },
 }
 export default it

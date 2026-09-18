@@ -427,7 +427,17 @@ export default function Terms() {
               <br />
               https://www.secretlyapp.com
             </p>
-          </div>
+                      <h2>22. Language</h2>
+            <p>
+              These Terms are published in English, and the English text is the
+              only binding version. Parts of this website are available in other
+              languages for convenience; a translation of a marketing page does
+              not change a term of this agreement. We would rather leave a legal
+              text in one language we can keep accurate than publish ten versions
+              that quietly drift apart.
+            </p>
+
+</div>
         </div>
       </section>
     </div>

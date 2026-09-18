@@ -156,5 +156,17 @@ const ja = {
     links: { download: 'ダウンロード', platforms: 'プラットフォーム', help: 'ヘルプセンター', about: '私たちについて', contact: 'お問い合わせ', donate: '寄付', privacy: 'プライバシーポリシー', terms: '利用規約' },
     rights: '全著作権所有。',
   },
+  visuals: { you: 'あなた', relay: 'リレーサーバー', ciphertext: '暗号文しか見えません', recipient: '受信者', message: 'メッセージ' },
+  price: { perMonth: '／月', perSeat: '／ユーザー／月', premiumNote: '年額 14.99 ドル・買い切り 29.99 ドル', contact: 'お問い合わせ' },
+  deletePage: {
+    kicker: 'アカウント',
+    title: 'アカウントを削除する。',
+    sub: 'Secretly は電話番号もメールアドレスも個人プロフィールも保存しません。そのため、従来の意味でサーバー上から消すアカウントは存在しません。',
+    howLabel: 'データを削除する方法',
+    howTitle: 'データは端末の中にあります。',
+    body: 'Secretly をアンインストールすると、端末から本人確認鍵とローカルのメッセージ履歴が削除されます。リレー上の暗号化データは自動的に期限切れになります。お困りの場合はこちらへ',
+    bodyOr: 'または',
+    support: 'サポート',
+  },
 }
 export default ja

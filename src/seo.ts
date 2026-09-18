@@ -50,6 +50,11 @@ export const SEO_BY_PATH: Record<string, SeoEntry> = {
     description:
       'How Secretly protects you: Signal-class end-to-end encryption, zero-knowledge servers, no phone number or email, and a public, verifiable codebase.',
   },
+  '/dpa': {
+    title: 'Data Processing Agreement — Secretly Teams',
+    description:
+      'Our GDPR Article 28 agreement for organisations: what we process, the sub-processors, security measures, breach notification and deletion — written around the fact that end-to-end encryption means we never hold the message content.',
+  },
   '/verify': {
     title: 'Verify a Secretly Build — Checksums & Reproducing',
     description:

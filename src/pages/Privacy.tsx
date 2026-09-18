@@ -395,6 +395,15 @@ export default function Privacy() {
               Android Keystore APIs) for key storage.
             </p>
 
+            <h2>17a. Language of this policy</h2>
+            <p>
+              This policy is published in English, and the English text is the
+              authoritative version. Where a page of this website appears in
+              another language, that translation is for convenience and does not
+              change what we do with your data. If anything here is unclear in
+              your language, write to us and we will explain it in writing.
+            </p>
+
             <h2>18. Key Vendor List</h2>
 
             <h3>Hosting / Infrastructure</h3>

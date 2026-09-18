@@ -156,5 +156,17 @@ const zh = {
     links: { download: '下载', platforms: '平台', help: '帮助中心', about: '关于我们', contact: '联系我们', donate: '捐赠', privacy: '隐私政策', terms: '服务条款' },
     rights: '保留所有权利。',
   },
+  visuals: { you: '你', relay: '中继服务器', ciphertext: '只能看到密文', recipient: '接收方', message: '消息' },
+  price: { perMonth: ' / 月', perSeat: ' / 席位 / 月', premiumNote: '14.99 美元 / 年 · 29.99 美元买断', contact: '联系我们' },
+  deletePage: {
+    kicker: '账户',
+    title: '删除你的账户。',
+    sub: 'Secretly 不保存你的手机号、邮箱或任何个人资料，因此并不存在传统意义上需要在服务器端删除的账户。',
+    howLabel: '如何删除你的数据',
+    howTitle: '你的数据在你的设备上。',
+    body: '卸载 Secretly 会从设备上移除你的身份密钥和本地消息记录。中继服务器上的加密数据会自动过期。如需帮助，请联系',
+    bodyOr: '或访问',
+    support: '支持',
+  },
 }
 export default zh
