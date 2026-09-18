@@ -264,6 +264,26 @@ export default function Privacy() {
               respond within 30 days, except for complex cases that legally allow for an extension.
             </p>
 
+            <h3>10.1 Right to object</h3>
+            <p>
+              Where we rely on legitimate interests, you have the right to object
+              to that processing at any time. Tell us and we will stop, unless we
+              can show compelling legitimate grounds that override your interests,
+              or the processing is needed for legal claims.
+            </p>
+
+            <h3>10.2 Complaining to a supervisory authority</h3>
+            <p>
+              Exercising any of these rights is free of charge and we answer within
+              30 days. If you are not satisfied with how we handled your request, you
+              may lodge a complaint with a data protection supervisory authority. Our
+              lead authority is the Latvian <strong>Datu valsts inspekcija</strong>
+              {' '}(Data State Inspectorate), Elijas iela 17, Riga, LV-1050, Latvia —{' '}
+              <a href="https://www.dvi.gov.lv" target="_blank" rel="noopener noreferrer">dvi.gov.lv</a>.
+              You may also complain to the authority in the EU country where you live
+              or work.
+            </p>
+
             <h2>11. International Transfers</h2>
             <p>
               All persistent server-side data (encrypted message mailbox, public-key registry,
@@ -398,6 +418,8 @@ export default function Privacy() {
             <h3>GIF Search</h3>
             <ul>
               <li>Giphy — receives the search terms you type when using the in-app GIF picker, to return matching GIF results; not linked to your Secretly ID — <a href="https://support.giphy.com/hc/en-us/articles/360032872931-GIPHY-Privacy-Policy" target="_blank" rel="noopener noreferrer">privacy policy</a></li>
+              <li>Cloudflare (Cloudflare, Inc.) — serves this website and its assets; receives the request data any web server sees, including your IP address — <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer">privacy policy</a>. This concerns the website only, not the messenger: message traffic never passes through it</li>
+              <li>Formspree (Formspree, Inc.) — delivers the contact form on this website; receives whatever you type into that form, including the address you give for a reply — <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noopener noreferrer">privacy policy</a></li>
             </ul>
 
             <h3>Payments (Android only)</h3>

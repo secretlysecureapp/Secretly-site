@@ -115,7 +115,13 @@ export default function Footer() {
         </div>
 
         <div className="footer__bottom">
-          <p className="footer__copy">© 2026 SIA Secretly. All rights reserved.</p>
+          {/* Не «All rights reserved»: код мессенджера выпущен под AGPL-3.0,
+              и эта формула прямо ей противоречила. */}
+          <p className="footer__copy">
+            © 2026 SIA Secretly · Messenger source code under{' '}
+            <a href="https://github.com/Arkhanhel/Secretly" target="_blank" rel="noopener noreferrer">AGPL-3.0</a>
+            {' '}· This site under MIT
+          </p>
           <div className="footer__legal">
             <Link to="/privacy-policy"   className="footer__legal-link">Privacy Policy</Link>
             <Link to="/terms-of-service" className="footer__legal-link">Terms of Service</Link>

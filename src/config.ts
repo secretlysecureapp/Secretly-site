@@ -6,8 +6,15 @@
    ════════════════════════════════════════════════════════════════ */
 
 export const SITE = {
-  /* Open-source repository (shown in footer) */
-  github: 'https://github.com/secretlysecureapp/Secretly-site',
+  /* Open-source repository of the MESSENGER (shown in footer, on /security
+     and in the Organization JSON-LD). Until 18.09.2026 this pointed at the
+     repository of THIS marketing site, so everyone who clicked "open source"
+     landed on the website's code instead of the application's. */
+  github: 'https://github.com/Arkhanhel/Secretly',
+
+  /* Repository of this website itself. Separate licence: the site is MIT,
+     the messenger is AGPL-3.0. */
+  githubSite: 'https://github.com/secretlysecureapp/Secretly-site',
 
   /* Contact form delivery (Formspree). Empty = fall back to mailto. */
   formspreeEndpoint: 'https://formspree.io/f/xvznglzq',

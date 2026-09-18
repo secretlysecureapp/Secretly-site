@@ -286,16 +286,42 @@ export default function Terms() {
             </ul>
             <p>Updates may be required to continue using the service.</p>
 
-            <h2>14. Intellectual Property</h2>
-            <p>Secretly and its components are protected by law.</p>
-            <p>You receive:</p>
-            <ul>
-              <li>A limited</li>
-              <li>Non-exclusive</li>
-              <li>Non-transferable</li>
-              <li>Revocable license</li>
-            </ul>
-            <p>Use is allowed only for lawful purposes.</p>
+            <h2>14. Intellectual Property and Open Source</h2>
+            <p>
+              The Secretly client and server source code is free software,
+              published under the <strong>GNU Affero General Public License,
+              version 3</strong>, with an additional permission that allows
+              distribution through application stores. The licence is granted by
+              the copyright holder and is irrevocable on its own terms: it lets
+              you use, study, modify and redistribute the code, and it is not
+              limited by these Terms. Nothing in this section takes away any
+              right the AGPL gives you.
+            </p>
+            <p>
+              The source, the licence and its additional permission are at{' '}
+              <a href="https://github.com/Arkhanhel/Secretly" target="_blank" rel="noopener noreferrer">
+                github.com/Arkhanhel/Secretly
+              </a>. If you run a modified version of our server software as a
+              network service, section 13 of the AGPL requires you to offer its
+              source to its users; we do the same, which is why this repository
+              exists.
+            </p>
+            <p>
+              What these Terms do govern is the <strong>service we operate</strong> —
+              the servers at <code>keys.secretlyapp.com</code> and{' '}
+              <code>relay.secretlyapp.com</code> — and access to it. For that
+              service you receive a limited, non-exclusive, non-transferable and
+              revocable right of access, for lawful purposes only. A fork runs on
+              its own infrastructure.
+            </p>
+            <p>
+              The name &ldquo;Secretly&rdquo;, the logo and the application icons
+              are trademarks and are <strong>not</strong> covered by the AGPL. Fork
+              freely; publish under your own name and icon.
+            </p>
+            <p>
+              This website is a separate work, published under the MIT licence.
+            </p>
 
             <h2>15. Suspension and Termination</h2>
             <p>You may stop using Secretly at any time.</p>
