@@ -7,7 +7,7 @@ const zh = {
     ctaDownload: '立即下载',
     ctaHow: 'Secretly 如何保护你',
     proofOpenSource: '开源',
-    proofVerified: '经过验证的安全性',
+    proofVerified: '可验证的安全性',
     proofZK: '零知识架构',
   },
   trust: {
@@ -32,7 +32,7 @@ const zh = {
   },
   stats: {
     encryption: '加密标准',
-    platforms:  '支持的平台',
+    platforms:  '现已可用的平台',
     languages:  '语言',
     noData:     '收集的个人数据',
   },

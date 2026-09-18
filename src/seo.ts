@@ -26,9 +26,9 @@ export const SEO_BY_PATH: Record<string, SeoEntry> = {
       'Secretly is an end-to-end encrypted messenger with no phone number, no email, no ads, and no trackers. Private chats, calls, and file sharing on every device.',
   },
   '/download': {
-    title: 'Download Secretly — Android, iOS, Windows & macOS',
+    title: 'Download Secretly — Android and iOS',
     description:
-      'Get Secretly free on Android, iPhone, iPad, Windows, and macOS. No phone number or email required — just a private Secretly ID to start.',
+      'Get Secretly free on Android, iPhone and iPad. No phone number or email required — just a private Secretly ID to start. Desktop clients are in development.',
   },
   '/download/android': {
     title: 'Download Secretly for Android',
@@ -41,9 +41,9 @@ export const SEO_BY_PATH: Record<string, SeoEntry> = {
       'Install Secretly for iPhone and iPad from the App Store. End-to-end encrypted chats, calls, and files with no phone number or email.',
   },
   '/download/desktop': {
-    title: 'Secretly for Windows & macOS Desktop',
+    title: 'Secretly for Desktop — in development',
     description:
-      'Use Secretly on your computer. Link the desktop app to your phone for end-to-end encrypted chats, calls, and files on a bigger screen.',
+      'Desktop clients for Windows and macOS are being built. When they are ready you will link one to your phone for end-to-end encrypted chats, calls and files on a bigger screen. Until then, Secretly runs on Android and iOS.',
   },
   '/security': {
     title: 'Secretly Security — Zero-Knowledge & E2EE',

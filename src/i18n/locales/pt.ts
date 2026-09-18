@@ -7,11 +7,11 @@ const pt = {
     ctaDownload: 'Baixar',
     ctaHow: 'Como o Secretly protege você',
     proofOpenSource: 'Código aberto',
-    proofVerified: 'Segurança verificada',
+    proofVerified: 'Segurança verificável',
     proofZK: 'Arquitetura de conhecimento zero',
   },
   trust: {
-    items: ['Sem número de telefone','Sem e-mail','Criptografia E2E','Código aberto','Conhecimento zero','Segurança verificada','Identidade anônima','Multiplataforma','Sem coleta de dados','Sem publicidade'],
+    items: ['Sem número de telefone','Sem e-mail','Criptografia E2E','Código aberto','Conhecimento zero','Segurança verificável','Identidade anônima','Multiplataforma','Sem coleta de dados','Sem publicidade'],
   },
   home: {
     s1Label: 'Criado para privacidade real',
@@ -32,7 +32,7 @@ const pt = {
   },
   stats: {
     encryption: 'Padrão de criptografia',
-    platforms:  'Plataformas suportadas',
+    platforms:  'Plataformas já disponíveis',
     languages:  'Idiomas',
     noData:     'Dados pessoais coletados',
   },

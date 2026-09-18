@@ -84,7 +84,10 @@ export default function Home() {
   const statsRef = useReveal()
 
   const [encRef,    encVal]    = useCountUp(256, 1800, '-bit')
-  const [platRef,   platVal]   = useCountUp(5, 1400, '')
+  // Доступны две платформы: Android и iOS. Windows и macOS в config.ts —
+  // пустые ссылки, страница загрузки честно пишет «Coming soon», а счётчик
+  // обещал пять. Обещание в рекламе, которого нет в продукте.
+  const [platRef,   platVal]   = useCountUp(2, 1400, '')
   const [langRef,   langVal]   = useCountUp(10, 1600, '')
   const [noDataRef, noDataVal] = useCountUp(0, 800, '')
 

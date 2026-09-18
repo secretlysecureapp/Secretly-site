@@ -7,11 +7,11 @@ const it = {
     ctaDownload: 'Scarica',
     ctaHow: 'Come Secretly ti protegge',
     proofOpenSource: 'Open source',
-    proofVerified: 'Sicurezza verificata',
+    proofVerified: 'Sicurezza verificabile',
     proofZK: 'Architettura a conoscenza zero',
   },
   trust: {
-    items: ['Nessun numero di telefono','Nessuna email','Crittografato E2E','Open source','Conoscenza zero','Sicurezza verificata','Identità anonima','Multipiattaforma','Nessuna raccolta dati','Nessuna pubblicità'],
+    items: ['Nessun numero di telefono','Nessuna email','Crittografato E2E','Open source','Conoscenza zero','Sicurezza verificabile','Identità anonima','Multipiattaforma','Nessuna raccolta dati','Nessuna pubblicità'],
   },
   home: {
     s1Label: 'Progettato per la vera privacy',
@@ -32,7 +32,7 @@ const it = {
   },
   stats: {
     encryption: 'Standard di crittografia',
-    platforms:  'Piattaforme supportate',
+    platforms:  'Piattaforme già disponibili',
     languages:  'Lingue',
     noData:     'Dati personali raccolti',
   },
