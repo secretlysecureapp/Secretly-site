@@ -12,7 +12,7 @@ export default function Terms() {
           <p className="page-hero__kicker">Legal</p>
           <h1 className="page-hero__title">Terms of Service</h1>
           <p className="page-hero__sub">
-            Effective date: May 01, 2026 · Operator: SIA Secretly
+            Effective date: July 01, 2026 · Operator: SIA Secretly
           </p>
         </div>
       </section>
@@ -57,7 +57,13 @@ export default function Terms() {
               <li>Device linking</li>
               <li>Account deletion tools</li>
               <li>On-device message translation and voice-message transcription</li>
-              <li>Voice dictation (uses your device’s speech recognizer)</li>
+              <li>
+                Voice dictation (by default, sends the audio you dictate to your device's
+                operating-system speech-recognition service — Apple's or Google's — for conversion
+                to text; an offline, fully on-device transcription mode is available as an
+                alternative where supported)
+              </li>
+              <li>GIF search (powered by Giphy)</li>
             </ul>
             <p>Secretly is designed so that:</p>
             <ul>
@@ -226,6 +232,7 @@ export default function Terms() {
             <ul>
               <li>In-app subscriptions are sold and billed through the Apple App Store or Google Play under their terms.</li>
               <li>Subscriptions renew automatically unless cancelled at least 24 hours before the end of the current period; you can manage or cancel them in your App Store or Google Play account settings.</li>
+              <li>Where a free trial is offered with a subscription plan (for example, a trial period preceding an annual Premium subscription), the trial duration and the fact that it automatically converts into a paid subscription at the then-current price unless cancelled before the trial ends are clearly stated in the app and in the App Store / Google Play listing before you confirm purchase; you can cancel during the trial at no charge via your App Store or Google Play account settings.</li>
               <li>A lifetime option, where offered, is a one-time purchase.</li>
               <li>Refunds are handled according to the policy of the app store used for the purchase.</li>
               <li>The agreement for the Secretly service itself is between you and SIA Secretly; Apple and Google act only as payment processors.</li>
@@ -245,6 +252,7 @@ export default function Terms() {
               <li>Push providers</li>
               <li>Hosting infrastructure</li>
               <li>Media providers</li>
+              <li>GIF search (Giphy) — if you use the GIF search feature, the text you type into the GIF search box is sent to Giphy to retrieve matching results</li>
             </ul>
             <p>These services operate under their own terms.</p>
             <p>Secretly is not responsible for services outside its control.</p>

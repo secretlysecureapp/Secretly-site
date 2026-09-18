@@ -10,7 +10,7 @@ export default function Privacy() {
           <p className="page-hero__kicker">Legal</p>
           <h1 className="page-hero__title">Privacy Policy</h1>
           <p className="page-hero__sub">
-            Effective Date: June 27, 2026 · Operator: SIA Secretly
+            Effective Date: July 01, 2026 · Operator: SIA Secretly
           </p>
         </div>
       </section>
@@ -130,6 +130,14 @@ export default function Privacy() {
               </li>
             </ul>
 
+            <h3>3.9 GIF Search</h3>
+            <p>
+              If you use the in-app GIF search feature, the search terms you type are sent to
+              Giphy to retrieve matching results. This is the only data shared with Giphy; it is
+              not linked to your Secretly ID, and Giphy is not used for any other purpose. See
+              Section 18 for Giphy's privacy policy.
+            </p>
+
             <h2>4. How We Use the Information</h2>
             <p>Collected data is used to:</p>
             <ul>
@@ -198,6 +206,7 @@ export default function Privacy() {
               <li>In-app purchase processing (Apple App Store, Google Play); and, for optional website donations only, payment providers such as Stripe or PayPal</li>
               <li>On-device machine-learning model distribution (Google ML Kit translation models; the voice-transcription model host)</li>
               <li>Device speech-recognition services (Apple, Google) — only if and when you use voice dictation</li>
+              <li>GIF search (Giphy) — receives the search terms you type when using the GIF picker; not linked to your Secretly ID</li>
               <li>Support and communication services (email, ticketing systems)</li>
               <li>Analytics and monitoring services (if applicable)</li>
               <li>Legal authorities—only in response to a valid legal request</li>
@@ -211,12 +220,10 @@ export default function Privacy() {
             <h2>8. Data Retention Periods</h2>
             <p>
               Data is retained only for the period necessary to fulfill the purposes described in
-              this Policy, unless otherwise required by law. Examples of recommended retention
-              periods (replace with the actual values):
+              this Policy, unless otherwise required by law. Retention periods:
             </p>
             <ul>
-              <li>Pending/undelivered messages (on the server): up to 30 days</li>
-              <li>Copies for delivery/relay: deleted immediately after delivery, maximum 30 days</li>
+              <li>Pending/undelivered messages (on the server): deleted immediately upon delivery; if never delivered, automatically deleted after 7 days by default, and in no case more than 30 days</li>
               <li>Request and error logs: 30–90 days</li>
               <li>Security/audit logs: up to 365 days</li>
               <li>Backups: up to 180 days</li>
@@ -386,6 +393,11 @@ export default function Privacy() {
               <li>Coturn (self-hosted) — open-source TURN/STUN server running on our own Hetzner infrastructure for WebRTC NAT traversal — <a href="https://github.com/coturn/coturn" target="_blank" rel="noopener noreferrer">project page</a></li>
               <li>LiveKit (self-hosted) — open-source SFU running on our own infrastructure for group calls — <a href="https://livekit.io/privacy" target="_blank" rel="noopener noreferrer">privacy policy</a></li>
               <li>WebRTC (Google open-source library, embedded in the app, no data sent to Google) — <a href="https://webrtc.org/" target="_blank" rel="noopener noreferrer">webrtc.org</a></li>
+            </ul>
+
+            <h3>GIF Search</h3>
+            <ul>
+              <li>Giphy — receives the search terms you type when using the in-app GIF picker, to return matching GIF results; not linked to your Secretly ID — <a href="https://support.giphy.com/hc/en-us/articles/360032872931-GIPHY-Privacy-Policy" target="_blank" rel="noopener noreferrer">privacy policy</a></li>
             </ul>
 
             <h3>Payments (Android only)</h3>
