@@ -133,7 +133,7 @@ const pt = {
     channelSecurity: 'Relatórios de segurança',
     channelBusiness: 'Consultas comerciais',
     securityNoteTitle: 'Nota de segurança',
-    securityNoteBody: 'Se você encontrou uma vulnerabilidade de segurança, relate-a por e-mail criptografado para support@secretlyapp.com. Levamos todos os relatos a sério e respondemos prontamente.',
+    securityNoteBody: 'Se você encontrou uma vulnerabilidade de segurança, relate-a por e-mail criptografado para security@secretlyapp.com. Levamos todos os relatos a sério e respondemos prontamente.',
     formTitle: 'Enviar mensagem',
     fieldName: 'Seu nome',
     fieldEmail: 'E-mail',

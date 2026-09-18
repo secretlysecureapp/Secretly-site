@@ -239,7 +239,7 @@ const en = {
     channelSecurity: 'Security reports',
     channelBusiness: 'Business inquiries',
     securityNoteTitle: 'Security note',
-    securityNoteBody: 'If you have found a security vulnerability, please report it via encrypted email to support@secretlyapp.com. We take all reports seriously and respond promptly.',
+    securityNoteBody: 'If you have found a security vulnerability, please report it via encrypted email to security@secretlyapp.com. We take all reports seriously and respond promptly.',
     formTitle: 'Send a message',
     fieldName: 'Your name',
     fieldEmail: 'Email',

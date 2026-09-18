@@ -133,7 +133,7 @@ const de = {
     channelSecurity: 'Sicherheitsmeldungen',
     channelBusiness: 'Geschäftsanfragen',
     securityNoteTitle: 'Sicherheitshinweis',
-    securityNoteBody: 'Wenn du eine Sicherheitslücke gefunden hast, melde sie per verschlüsselter E-Mail an support@secretlyapp.com. Wir nehmen alle Meldungen ernst und antworten umgehend.',
+    securityNoteBody: 'Wenn du eine Sicherheitslücke gefunden hast, melde sie per verschlüsselter E-Mail an security@secretlyapp.com. Wir nehmen alle Meldungen ernst und antworten umgehend.',
     formTitle: 'Nachricht senden',
     fieldName: 'Dein Name',
     fieldEmail: 'E-Mail',

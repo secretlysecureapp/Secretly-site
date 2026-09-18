@@ -135,7 +135,7 @@ const es = {
     channelSecurity: 'Informes de seguridad',
     channelBusiness: 'Consultas comerciales',
     securityNoteTitle: 'Nota de seguridad',
-    securityNoteBody: 'Si has encontrado una vulnerabilidad de seguridad, repórtala por correo cifrado a support@secretlyapp.com. Tomamos en serio todos los informes y respondemos con prontitud.',
+    securityNoteBody: 'Si has encontrado una vulnerabilidad de seguridad, repórtala por correo cifrado a security@secretlyapp.com. Tomamos en serio todos los informes y respondemos con prontitud.',
     formTitle: 'Enviar un mensaje',
     fieldName: 'Tu nombre',
     fieldEmail: 'Correo electrónico',

@@ -133,7 +133,7 @@ const fr = {
     channelSecurity: 'Signalements de sécurité',
     channelBusiness: 'Demandes professionnelles',
     securityNoteTitle: 'Note de sécurité',
-    securityNoteBody: 'Si vous avez découvert une faille de sécurité, signalez-la par e-mail chiffré à support@secretlyapp.com. Nous prenons tous les signalements au sérieux et répondons rapidement.',
+    securityNoteBody: 'Si vous avez découvert une faille de sécurité, signalez-la par e-mail chiffré à security@secretlyapp.com. Nous prenons tous les signalements au sérieux et répondons rapidement.',
     formTitle: 'Envoyer un message',
     fieldName: 'Votre nom',
     fieldEmail: 'E-mail',

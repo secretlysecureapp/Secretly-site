@@ -83,7 +83,7 @@ export default function Support() {
             <div className="reveal reveal-delay-2" style={{ padding: '28px 28px', background: 'var(--bg-surface)', border: '1px solid var(--border)', borderRadius: 'var(--r-xl)' }}>
               <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 16, fontWeight: 600, marginBottom: 8 }}>{channels[1]?.title}</h3>
               <p style={{ fontSize: 14, color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: 12 }}>{channels[1]?.body}</p>
-              <a href="mailto:support@secretlyapp.com" style={{ color: 'var(--accent)', fontSize: 14 }}>support@secretlyapp.com</a>
+              <a href="mailto:security@secretlyapp.com" style={{ color: 'var(--accent)', fontSize: 14 }}>security@secretlyapp.com</a>
             </div>
             <div className="reveal reveal-delay-3" style={{ padding: '28px 28px', background: 'var(--bg-surface)', border: '1px solid var(--border)', borderRadius: 'var(--r-xl)' }}>
               <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 16, fontWeight: 600, marginBottom: 8 }}>{channels[2]?.title}</h3>
