@@ -171,7 +171,7 @@ export default function Security() {
             </div>
             <p style={{ fontSize: 14, color: 'var(--text-muted)', lineHeight: 1.7 }}>
               {t('securityPage.vulnA')}{' '}
-              <a href="mailto:security@secretlyapp.com" style={{ color: 'var(--accent)' }}>security@secretlyapp.com</a>{t('securityPage.vulnB')}{' '}
+              <a href="mailto:support@secretlyapp.com" style={{ color: 'var(--accent)' }}>support@secretlyapp.com</a>{t('securityPage.vulnB')}{' '}
               <a href={SITE.github} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent)' }}>GitHub</a>{t('securityPage.vulnC')}
             </p>
           </div>

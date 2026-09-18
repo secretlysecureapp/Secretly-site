@@ -121,7 +121,7 @@ export default function Contact() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: 20, marginTop: 12 }}>
                 {[
                   { label: t('contactUi.channelGeneral'),  value: 'support@secretlyapp.com',  icon: '✉️' },
-                  { label: t('contactUi.channelSecurity'), value: 'security@secretlyapp.com', icon: '🔒' },
+                  { label: t('contactUi.channelSecurity'), value: 'support@secretlyapp.com', icon: '🔒' },
                   { label: t('contactUi.channelBusiness'), value: 'business@secretlyapp.com', icon: '💼' },
                 ].map((c, i) => (
                   <div key={i} style={{

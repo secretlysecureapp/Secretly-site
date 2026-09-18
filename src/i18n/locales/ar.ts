@@ -133,7 +133,7 @@ const ar = {
     channelSecurity: 'تقارير الأمان',
     channelBusiness: 'الاستفسارات التجارية',
     securityNoteTitle: 'ملاحظة أمنية',
-    securityNoteBody: 'إذا اكتشفت ثغرة أمنية، يرجى الإبلاغ عنها عبر بريد إلكتروني مشفّر إلى security@secretlyapp.com. نتعامل مع جميع البلاغات بجدية ونرد بسرعة.',
+    securityNoteBody: 'إذا اكتشفت ثغرة أمنية، يرجى الإبلاغ عنها عبر بريد إلكتروني مشفّر إلى support@secretlyapp.com. نتعامل مع جميع البلاغات بجدية ونرد بسرعة.',
     formTitle: 'إرسال رسالة',
     fieldName: 'اسمك',
     fieldEmail: 'البريد الإلكتروني',

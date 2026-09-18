@@ -133,7 +133,7 @@ const it = {
     channelSecurity: 'Segnalazioni di sicurezza',
     channelBusiness: 'Richieste commerciali',
     securityNoteTitle: 'Nota sulla sicurezza',
-    securityNoteBody: 'Se hai trovato una vulnerabilità di sicurezza, segnalala via email crittografata a security@secretlyapp.com. Prendiamo sul serio tutte le segnalazioni e rispondiamo tempestivamente.',
+    securityNoteBody: 'Se hai trovato una vulnerabilità di sicurezza, segnalala via email crittografata a support@secretlyapp.com. Prendiamo sul serio tutte le segnalazioni e rispondiamo tempestivamente.',
     formTitle: 'Invia un messaggio',
     fieldName: 'Il tuo nome',
     fieldEmail: 'Email',

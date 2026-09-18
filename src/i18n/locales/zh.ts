@@ -133,7 +133,7 @@ const zh = {
     channelSecurity: '安全报告',
     channelBusiness: '商务咨询',
     securityNoteTitle: '安全提示',
-    securityNoteBody: '如果您发现了安全漏洞，请通过加密邮件报告至 security@secretlyapp.com。我们认真对待所有报告并迅速回复。',
+    securityNoteBody: '如果您发现了安全漏洞，请通过加密邮件报告至 support@secretlyapp.com。我们认真对待所有报告并迅速回复。',
     formTitle: '发送消息',
     fieldName: '您的姓名',
     fieldEmail: '邮箱',

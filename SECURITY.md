@@ -5,7 +5,7 @@ appreciate responsible disclosure.
 
 ## Reporting a vulnerability
 
-Please email **security@secretlyapp.com** with:
+Please email **support@secretlyapp.com** with:
 
 - a description of the issue and its impact,
 - steps to reproduce (proof-of-concept if possible),

@@ -35,7 +35,7 @@ const checks = [
   [`${DIST}/teams/index.html`, 'FAQPage', 'FAQ schema on /teams'],
   [`${DIST}/blog/how-encryption-works/index.html`, 'BlogPosting', 'Article schema on blog post'],
   [`${DIST}/index.html`, 'SoftwareApplication', 'SoftwareApplication schema on home'],
-  [`${DIST}/.well-known/security.txt`, 'security@secretlyapp.com', 'security.txt contact'],
+  [`${DIST}/.well-known/security.txt`, 'support@secretlyapp.com', 'security.txt contact'],
   [`${DIST}/sitemap.xml`, '/blog/how-encryption-works', 'sitemap includes blog posts'],
   [`${DIST}/manifest.json`, 'icon-512.png', 'manifest references PWA icon'],
   [`${DIST}/pricing/index.html`, '14.99', 'pricing shows correct annual price'],

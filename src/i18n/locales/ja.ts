@@ -133,7 +133,7 @@ const ja = {
     channelSecurity: 'セキュリティ報告',
     channelBusiness: 'ビジネスに関するお問い合わせ',
     securityNoteTitle: 'セキュリティに関する注意',
-    securityNoteBody: 'セキュリティ上の脆弱性を発見した場合は、暗号化メールで security@secretlyapp.com までご報告ください。すべての報告を真剣に受け止め、迅速に対応します。',
+    securityNoteBody: 'セキュリティ上の脆弱性を発見した場合は、暗号化メールで support@secretlyapp.com までご報告ください。すべての報告を真剣に受け止め、迅速に対応します。',
     formTitle: 'メッセージを送信',
     fieldName: 'お名前',
     fieldEmail: 'メール',

@@ -122,6 +122,13 @@ export default function Footer() {
             <a href="https://github.com/Arkhanhel/Secretly" target="_blank" rel="noopener noreferrer">AGPL-3.0</a>
             {' '}· This site under MIT
           </p>
+          {/* Реквизиты на каждой странице: директива об электронной коммерции
+              требует, чтобы они были «легко, непосредственно и постоянно
+              доступны». До этого они лежали только внутри условий и политики. */}
+          <p className="footer__copy" style={{ opacity: 0.72, fontSize: '0.78rem', marginTop: 6 }}>
+            SIA Secretly · Reg. No. 40203722244 · Pāvila Rozīša iela 1–13, Valmiera, LV-4201, Latvia ·{' '}
+            <a href="mailto:support@secretlyapp.com">support@secretlyapp.com</a>
+          </p>
           <div className="footer__legal">
             <Link to="/privacy-policy"   className="footer__legal-link">Privacy Policy</Link>
             <Link to="/terms-of-service" className="footer__legal-link">Terms of Service</Link>
