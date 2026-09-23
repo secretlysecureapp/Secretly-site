@@ -28,7 +28,7 @@ const fr = {
     s5Label: 'Disponible partout',
     s5Title: 'Disponible sur tous vos appareils.',
     s5Sub: 'Téléchargez Secretly sur votre plateforme préférée. Aucun téléphone ni e-mail requis.',
-    s5Note: 'Les applications de bureau nécessitent Secretly installé sur votre téléphone.',
+    s5Note: 'Sans téléphone : créez un compte sur l\'ordinateur ou associez votre téléphone.',
   },
   stats: {
     encryption: 'Norme de chiffrement',
@@ -64,7 +64,7 @@ const fr = {
     { title: 'Architecture zéro connaissance', body: 'Nous ne détenons pas les clés de votre royaume. Nous ne savons pas qui vous êtes.' },
     { title: 'Chiffrement robuste', body: 'Chiffrement de bout en bout de niveau Signal à chaque couche — messages, appels et fichiers.' },
   ],
-  platforms: { label: 'Télécharger pour', desktop: 'Application bureau', note: 'Les applications bureau nécessitent Secretly installé sur votre téléphone.' },
+  platforms: { label: 'Télécharger pour', desktop: 'Application bureau', note: 'Sans téléphone : créez un compte sur l\'ordinateur ou associez votre téléphone.' },
   download: { kicker: 'Obtenir l\'app', title: 'Secretly sur chaque appareil.', sub: 'Sans téléphone. Sans e-mail. Juste un ID aléatoire pour un anonymat total.', sectionLabel: 'Toutes les plateformes', sectionTitle: 'Télécharger Secretly', downloadBtn: 'Télécharger →', comingSoon: 'Bientôt disponible', noteTitle: 'Note bureau', noteBody: 'Les apps bureau (Windows & macOS) nécessitent Secretly installé sur votre mobile.' },
   about: {
     kicker: 'Notre histoire', title: 'La confidentialité est un droit,\npas un luxe.', sub: 'Nous sommes une équipe d\'ingénieurs et de défenseurs de la vie privée.',
@@ -118,7 +118,7 @@ const fr = {
     viewAll: 'Voir tous les téléchargements →',
     android: { title: 'Secretly pour Android',        cta: 'Télécharger pour Android',         note: 'Ou visitez secretlyapp.com/download depuis votre téléphone.', store: 'Disponible sur Google Play' },
     ios:     { title: 'Secretly pour iPhone et iPad', cta: 'Télécharger pour iPhone ou iPad',  note: 'Ou visitez secretlyapp.com/download depuis votre téléphone.', store: 'Disponible sur l\'App Store' },
-    desktop: { title: 'Secretly pour ordinateur',     cta: 'Télécharger pour Windows',         note: 'Pour utiliser l\'app de bureau, Secretly doit d\'abord être installé sur votre téléphone.', store: 'Windows et macOS' },
+    desktop: { title: 'Secretly pour ordinateur',     cta: 'Télécharger pour Windows',         note: 'Créez un compte directement sur l\'ordinateur, restaurez-le depuis le kit de récupération ou associez un téléphone que vous utilisez déjà.', store: 'Windows et macOS' },
   },
   notFound: {
     code: '404 — Page introuvable',

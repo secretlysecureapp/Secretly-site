@@ -28,7 +28,7 @@ const ja = {
     s5Label: 'どこでも利用可能',
     s5Title: 'すべてのデバイスで利用可能。',
     s5Sub: 'お好みのプラットフォームでSecretlyをダウンロード。電話番号やメールは不要です。',
-    s5Note: 'デスクトップアプリにはスマートフォンへのSecretlyインストールが必要です。',
+    s5Note: 'スマートフォンは不要です。パソコンでアカウントを作成するか、スマホを連携できます。',
   },
   stats: {
     encryption: '暗号化規格',
@@ -64,7 +64,7 @@ const ja = {
     { title: 'ゼロ知識アーキテクチャ', body: '私たちはあなたの王国の鍵を持っていません。あなたが誰であるかを知らず、知ることもありません。' },
     { title: '強力な暗号化', body: 'すべての層を保護するSignalクラスのエンドツーエンド暗号化 — メッセージ、通話、ファイル。' },
   ],
-  platforms: { label: 'ダウンロード', desktop: 'デスクトップアプリ', note: 'デスクトップアプリにはスマートフォンへのインストールが必要です。' },
+  platforms: { label: 'ダウンロード', desktop: 'デスクトップアプリ', note: 'スマートフォンは不要です。パソコンでアカウントを作成するか、スマホを連携できます。' },
   download: { kicker: 'アプリを入手', title: 'すべてのデバイスでSecretly。', sub: '電話番号不要。メール不要。完全な匿名性のためのランダム生成Secretly IDのみ。', sectionLabel: 'すべてのプラットフォーム', sectionTitle: 'Secretlyをダウンロード', downloadBtn: 'ダウンロード →', comingSoon: '近日公開', noteTitle: 'デスクトップメモ', noteBody: 'デスクトップアプリ（WindowsおよびmacOS）はモバイルデバイスへのインストールが必要です。' },
   about: {
     kicker: '私たちのストーリー', title: 'プライバシーは権利であり、\n贅沢ではありません。', sub: '私たちはエンジニアとプライバシー擁護者のチームです。',
@@ -118,7 +118,7 @@ const ja = {
     viewAll: 'すべてのダウンロードを見る →',
     android: { title: 'Android 版 Secretly',        cta: 'Android 版をダウンロード',        note: 'または、スマホから secretlyapp.com/download にアクセスしてください。', store: 'Google Play で入手可能' },
     ios:     { title: 'iPhone & iPad 版 Secretly',   cta: 'iPhone または iPad 版をダウンロード', note: 'または、スマホから secretlyapp.com/download にアクセスしてください。', store: 'App Store で入手可能' },
-    desktop: { title: 'デスクトップ版 Secretly',      cta: 'Windows 版をダウンロード',        note: 'デスクトップアプリを使用するには、まずスマホに Secretly をインストールする必要があります。', store: 'Windows と macOS' },
+    desktop: { title: 'デスクトップ版 Secretly',      cta: 'Windows 版をダウンロード',        note: 'パソコンで直接アカウントを作成するか、リカバリキットから復元するか、すでに使っているスマホを連携できます。', store: 'Windows と macOS' },
   },
   notFound: {
     code: '404 — ページが見つかりません',

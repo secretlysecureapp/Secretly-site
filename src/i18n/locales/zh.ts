@@ -28,7 +28,7 @@ const zh = {
     s5Label: '随处可用',
     s5Title: '适用于您的所有设备。',
     s5Sub: '在您偏好的平台上下载 Secretly。无需手机号或邮箱即可开始。',
-    s5Note: '桌面应用需要先在手机上安装 Secretly。',
+    s5Note: '无需手机：可在电脑上创建账户，或关联手机。',
   },
   stats: {
     encryption: '加密标准',
@@ -64,7 +64,7 @@ const zh = {
     { title: '零知识架构', body: '我们不持有您王国的钥匙。我们不知道您是谁，也永远不会知道。' },
     { title: '强加密', body: 'Signal 级端到端加密，覆盖每个层面——消息、通话和文件。' },
   ],
-  platforms: { label: '下载适用于', desktop: '桌面应用', note: '桌面应用需要先在手机上安装 Secretly。' },
+  platforms: { label: '下载适用于', desktop: '桌面应用', note: '无需手机：可在电脑上创建账户，或关联手机。' },
   download: { kicker: '获取应用', title: 'Secretly 适用于每台设备。', sub: '无需手机号。无需邮箱。只需一个随机生成的 Secretly ID 即可完全匿名。', sectionLabel: '所有平台', sectionTitle: '下载 Secretly', downloadBtn: '下载 →', comingSoon: '即将推出', noteTitle: '桌面说明', noteBody: '桌面应用（Windows 和 macOS）需要先在移动设备上安装并激活 Secretly。' },
   about: {
     kicker: '我们的故事', title: '隐私是一项权利，\n而非奢侈品。', sub: '我们是一支工程师和隐私倡导者组成的团队，相信您的对话应该始终属于您。',
@@ -118,7 +118,7 @@ const zh = {
     viewAll: '查看所有下载 →',
     android: { title: 'Secretly Android 版',     cta: '下载 Android 版',      note: '或在手机上访问 secretlyapp.com/download。', store: '在 Google Play 上提供' },
     ios:     { title: 'Secretly iPhone 和 iPad 版', cta: '下载 iPhone 或 iPad 版', note: '或在手机上访问 secretlyapp.com/download。', store: '在 App Store 上提供' },
-    desktop: { title: 'Secretly 桌面版',          cta: '下载 Windows 版',      note: '要使用桌面应用，需先在手机上安装 Secretly。', store: 'Windows 和 macOS' },
+    desktop: { title: 'Secretly 桌面版',          cta: '下载 Windows 版',      note: '可直接在电脑上创建账户、从恢复套件恢复，或关联你已在使用的手机。', store: 'Windows 和 macOS' },
   },
   notFound: {
     code: '404 — 页面未找到',

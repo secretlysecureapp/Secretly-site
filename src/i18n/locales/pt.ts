@@ -28,7 +28,7 @@ const pt = {
     s5Label: 'Disponível em todo lugar',
     s5Title: 'Disponível em todos os seus dispositivos.',
     s5Sub: 'Baixe o Secretly na sua plataforma preferida. Nenhum telefone ou e-mail necessário.',
-    s5Note: 'Apps desktop requerem o Secretly instalado no seu telefone.',
+    s5Note: 'Sem telefone: crie uma conta no computador ou vincule o seu telefone.',
   },
   stats: {
     encryption: 'Padrão de criptografia',
@@ -64,7 +64,7 @@ const pt = {
     { title: 'Arquitetura de conhecimento zero', body: 'Não temos as chaves do seu reino. Não sabemos quem você é e nunca saberemos.' },
     { title: 'Criptografia forte', body: 'Criptografia de ponta a ponta de nível Signal em cada camada — mensagens, chamadas e arquivos.' },
   ],
-  platforms: { label: 'Baixar para', desktop: 'App desktop', note: 'Apps desktop requerem Secretly instalado no seu telefone.' },
+  platforms: { label: 'Baixar para', desktop: 'App desktop', note: 'Sem telefone: crie uma conta no computador ou vincule o seu telefone.' },
   download: { kicker: 'Obter o app', title: 'Secretly em cada dispositivo.', sub: 'Sem telefone. Sem e-mail. Apenas um ID aleatório para anonimato total.', sectionLabel: 'Todas as plataformas', sectionTitle: 'Baixar Secretly', downloadBtn: 'Baixar →', comingSoon: 'Em breve', noteTitle: 'Nota desktop', noteBody: 'Apps desktop (Windows & macOS) requerem Secretly instalado no seu dispositivo móvel.' },
   about: {
     kicker: 'Nossa história', title: 'Privacidade é um direito,\nnão um luxo.', sub: 'Somos uma equipe de engenheiros e defensores da privacidade.',
@@ -118,7 +118,7 @@ const pt = {
     viewAll: 'Ver todos os downloads →',
     android: { title: 'Secretly para Android',        cta: 'Baixar para Android',          note: 'Ou acesse secretlyapp.com/download pelo seu telefone.', store: 'Disponível no Google Play' },
     ios:     { title: 'Secretly para iPhone e iPad',  cta: 'Baixar para iPhone ou iPad',   note: 'Ou acesse secretlyapp.com/download pelo seu telefone.', store: 'Disponível na App Store' },
-    desktop: { title: 'Secretly para desktop',        cta: 'Baixar para Windows',          note: 'Para usar o app de desktop, o Secretly precisa estar instalado primeiro no seu telefone.', store: 'Windows e macOS' },
+    desktop: { title: 'Secretly para desktop',        cta: 'Baixar para Windows',          note: 'Crie uma conta diretamente no computador, restaure a partir do kit de recuperação ou vincule um telefone que já usa.', store: 'Windows e macOS' },
   },
   notFound: {
     code: '404 — Página não encontrada',

@@ -28,7 +28,7 @@ const ar = {
     s5Label: 'متاح في كل مكان',
     s5Title: 'متاح على جميع أجهزتك.',
     s5Sub: 'حمِّل Secretly على منصتك المفضلة. لا يلزم رقم هاتف أو بريد إلكتروني.',
-    s5Note: 'تطبيقات سطح المكتب تتطلب تثبيت Secretly على هاتفك.',
+    s5Note: 'لا حاجة إلى هاتف: أنشئ حسابًا على الكمبيوتر أو اربط هاتفك.',
   },
   stats: {
     encryption: 'معيار التشفير',
@@ -64,7 +64,7 @@ const ar = {
     { title: 'بنية المعرفة الصفرية', body: 'لا نحتفظ بمفاتيح مملكتك. لا نعرف من أنت ولن نعرف أبداً.' },
     { title: 'تشفير قوي', body: 'تشفير شامل بمستوى Signal في كل طبقة — الرسائل والمكالمات والملفات.' },
   ],
-  platforms: { label: 'تحميل لـ', desktop: 'تطبيق سطح المكتب', note: 'تطبيقات سطح المكتب تتطلب تثبيت Secretly على هاتفك.' },
+  platforms: { label: 'تحميل لـ', desktop: 'تطبيق سطح المكتب', note: 'لا حاجة إلى هاتف: أنشئ حسابًا على الكمبيوتر أو اربط هاتفك.' },
   download: { kicker: 'احصل على التطبيق', title: 'Secretly على كل جهاز.', sub: 'بدون هاتف. بدون بريد إلكتروني. فقط معرِّف عشوائي لإخفاء هوية كامل.', sectionLabel: 'جميع المنصات', sectionTitle: 'تحميل Secretly', downloadBtn: 'تحميل ←', comingSoon: 'قريباً', noteTitle: 'ملاحظة سطح المكتب', noteBody: 'تطبيقات سطح المكتب تتطلب تثبيت Secretly على جهازك المحمول.' },
   about: {
     kicker: 'قصتنا', title: 'الخصوصية حق،\nليست رفاهية.', sub: 'نحن فريق من المهندسين والمدافعين عن الخصوصية.',
@@ -118,7 +118,7 @@ const ar = {
     viewAll: 'عرض جميع التنزيلات ←',
     android: { title: 'Secretly لنظام Android',      cta: 'تحميل لـ Android',        note: 'أو قم بزيارة secretlyapp.com/download من هاتفك.', store: 'متوفر على Google Play' },
     ios:     { title: 'Secretly لـ iPhone وiPad',    cta: 'تحميل لـ iPhone أو iPad', note: 'أو قم بزيارة secretlyapp.com/download من هاتفك.', store: 'متوفر على App Store' },
-    desktop: { title: 'Secretly لسطح المكتب',        cta: 'تحميل لـ Windows',        note: 'لاستخدام تطبيق سطح المكتب، يجب أولاً تثبيت Secretly على هاتفك.', store: 'Windows وmacOS' },
+    desktop: { title: 'Secretly لسطح المكتب',        cta: 'تحميل لـ Windows',        note: 'أنشئ حسابًا مباشرة على الكمبيوتر، أو استعده من حزمة الاستعادة، أو اربط هاتفًا تستخدمه بالفعل.', store: 'Windows وmacOS' },
   },
   notFound: {
     code: '404 — الصفحة غير موجودة',
