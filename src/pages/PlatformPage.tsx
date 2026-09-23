@@ -23,6 +23,17 @@ export default function PlatformPage({ platform }: PlatformPageProps) {
   const available = isAvailable(meta.href)
   const macAvailable = isAvailable(SITE.download.macos)
 
+  // Windows ещё не вышла, а macOS уже — значит главной должна быть она.
+  const macFirst = platform === 'desktop' && macAvailable && !available
+
+  const downloadArrow = (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+      <polyline points="7 10 12 15 17 10"/>
+      <line x1="12" y1="15" x2="12" y2="3"/>
+    </svg>
+  )
+
   return (
     <div ref={ref}>
       <section className="page-hero">
@@ -62,38 +73,54 @@ export default function PlatformPage({ platform }: PlatformPageProps) {
               <p style={{ fontSize: 13, color: 'var(--text-muted)', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 8 }}>
                 {t(`platform.${platform}.store`)}
               </p>
-              {available ? (
-                <a
-                  href={meta.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn--primary btn--large"
-                >
-                  {t(`platform.${platform}.cta`)}
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                    <polyline points="7 10 12 15 17 10"/>
-                    <line x1="12" y1="15" x2="12" y2="3"/>
-                  </svg>
-                </a>
-              ) : (
-                <span className="btn btn--primary btn--large" aria-disabled="true"
-                      style={{ opacity: 0.55, pointerEvents: 'none', cursor: 'default' }}>
-                  {t('platform.comingSoon')}
-                </span>
-              )}
-              {platform === 'desktop' && (
-                macAvailable ? (
+              {/* 🔴 ГЛАВНОЙ СТОИТ ДОСТУПНАЯ ПЛОЩАДКА. macOS вышла 23.09.2026,
+                  Windows ещё нет. Пока порядок был жёстким, человек первым
+                  делом видел большую кнопку «Coming soon», а рабочую ссылку —
+                  бледной и сбоку, и уходил в уверенности, что скачать нечего. */}
+              {macFirst ? (
+                <>
                   <a href={SITE.download.macos} target="_blank" rel="noopener noreferrer"
-                     className="btn btn--ghost btn--large" style={{ marginLeft: 12 }}>
+                     className="btn btn--primary btn--large">
                     {t('platform.macDownload')}
+                    {downloadArrow}
                   </a>
-                ) : (
                   <span className="btn btn--ghost btn--large" aria-disabled="true"
                         style={{ marginLeft: 12, opacity: 0.55, pointerEvents: 'none', cursor: 'default' }}>
-                    {t('platform.macComingSoon')}
+                    {t('platform.comingSoon')}
                   </span>
-                )
+                </>
+              ) : (
+                <>
+                  {available ? (
+                    <a
+                      href={meta.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn btn--primary btn--large"
+                    >
+                      {t(`platform.${platform}.cta`)}
+                      {downloadArrow}
+                    </a>
+                  ) : (
+                    <span className="btn btn--primary btn--large" aria-disabled="true"
+                          style={{ opacity: 0.55, pointerEvents: 'none', cursor: 'default' }}>
+                      {t('platform.comingSoon')}
+                    </span>
+                  )}
+                  {platform === 'desktop' && (
+                    macAvailable ? (
+                      <a href={SITE.download.macos} target="_blank" rel="noopener noreferrer"
+                         className="btn btn--ghost btn--large" style={{ marginLeft: 12 }}>
+                        {t('platform.macDownload')}
+                      </a>
+                    ) : (
+                      <span className="btn btn--ghost btn--large" aria-disabled="true"
+                            style={{ marginLeft: 12, opacity: 0.55, pointerEvents: 'none', cursor: 'default' }}>
+                        {t('platform.macComingSoon')}
+                      </span>
+                    )
+                  )}
+                </>
               )}
             </div>
 

@@ -37,7 +37,10 @@ export const SITE = {
     android: 'https://play.google.com/store/apps/details?id=com.secretly.secretly_app&pcampaignid=web_share',
     ios:     'https://apps.apple.com/ua/app/secretly-secure-messenger/id6760417329?l=ru',
     windows: '',  // Coming soon
-    macos:   '',  // Coming soon
+    // Постоянный адрес: ссылка на сервере переставляется при каждом выпуске,
+    // поэтому сайт не нужно править. Отдаётся с no-store — иначе промежуточные
+    // узлы весь год держали бы по этому адресу старую версию.
+    macos:   'https://updates.secretlyapp.com/Secretly-latest.dmg',
   },
 
   /* Privacy-friendly, COOKIELESS analytics — OFF by default (ships no
