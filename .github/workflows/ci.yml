@@ -41,4 +41,10 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          # Без явной версии действие пыталось запустить wrangler через npx без
+          # согласия на установку, падало на «npx canceled … no YES option» и
+          # откатывалось на старый встроенный wrangler, который не понимает
+          # конфиг только со статикой («Missing entry-point»). Так падала каждая
+          # отправка с 24.09.
+          wranglerVersion: "4.139.0"
           command: deploy
