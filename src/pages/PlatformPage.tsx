@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useReveal } from '../hooks/useReveal'
@@ -23,8 +24,15 @@ export default function PlatformPage({ platform }: PlatformPageProps) {
   const available = isAvailable(meta.href)
   const macAvailable = isAvailable(SITE.download.macos)
 
-  // Windows ещё не вышла, а macOS уже — значит главной должна быть она.
-  const macFirst = platform === 'desktop' && macAvailable && !available
+  // Главной стоит кнопка той системы, с которой пришёл человек. Узнаём это
+  // только в браузере, после загрузки: страница собрана заранее, и там
+  // `navigator` нет. iPad называет себя «Macintosh», но у него сенсорный
+  // экран — его отсекаем по точкам касания.
+  const [onMac, setOnMac] = useState(false)
+  useEffect(() => {
+    setOnMac(/Macintosh|Mac OS X/.test(navigator.userAgent) && navigator.maxTouchPoints < 2)
+  }, [])
+  const macFirst = platform === 'desktop' && macAvailable && (!available || onMac)
 
   const downloadArrow = (
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -74,7 +82,7 @@ export default function PlatformPage({ platform }: PlatformPageProps) {
                 {t(`platform.${platform}.store`)}
               </p>
               {/* 🔴 ГЛАВНОЙ СТОИТ ДОСТУПНАЯ ПЛОЩАДКА. macOS вышла 23.09.2026,
-                  Windows ещё нет. Пока порядок был жёстким, человек первым
+                  Windows — 24.09.2026. Пока порядок был жёстким, человек первым
                   делом видел большую кнопку «Coming soon», а рабочую ссылку —
                   бледной и сбоку, и уходил в уверенности, что скачать нечего. */}
               {macFirst ? (
@@ -84,10 +92,17 @@ export default function PlatformPage({ platform }: PlatformPageProps) {
                     {t('platform.macDownload')}
                     {downloadArrow}
                   </a>
-                  <span className="btn btn--ghost btn--large" aria-disabled="true"
-                        style={{ marginLeft: 12, opacity: 0.55, pointerEvents: 'none', cursor: 'default' }}>
-                    {t('platform.comingSoon')}
-                  </span>
+                  {available ? (
+                    <a href={meta.href} target="_blank" rel="noopener noreferrer"
+                       className="btn btn--ghost btn--large" style={{ marginLeft: 12 }}>
+                      {t(`platform.${platform}.cta`)}
+                    </a>
+                  ) : (
+                    <span className="btn btn--ghost btn--large" aria-disabled="true"
+                          style={{ marginLeft: 12, opacity: 0.55, pointerEvents: 'none', cursor: 'default' }}>
+                      {t('platform.comingSoon')}
+                    </span>
+                  )}
                 </>
               ) : (
                 <>

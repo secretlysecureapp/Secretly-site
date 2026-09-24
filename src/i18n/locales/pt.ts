@@ -65,7 +65,7 @@ const pt = {
     { title: 'Criptografia forte', body: 'Criptografia de ponta a ponta de nível Signal em cada camada — mensagens, chamadas e arquivos.' },
   ],
   platforms: { label: 'Baixar para', desktop: 'App desktop', note: 'Sem telefone: crie uma conta no computador ou vincule o seu telefone.' },
-  download: { kicker: 'Obter o app', title: 'Secretly em cada dispositivo.', sub: 'Sem telefone. Sem e-mail. Apenas um ID aleatório para anonimato total.', sectionLabel: 'Todas as plataformas', sectionTitle: 'Baixar Secretly', downloadBtn: 'Baixar →', comingSoon: 'Em breve', noteTitle: 'Nota desktop', noteBody: 'Apps desktop (Windows & macOS) requerem Secretly instalado no seu dispositivo móvel.' },
+  download: { kicker: 'Obter o app', title: 'Secretly em cada dispositivo.', sub: 'Sem telefone. Sem e-mail. Apenas um ID aleatório para anonimato total.', sectionLabel: 'Todas as plataformas', sectionTitle: 'Baixar Secretly', downloadBtn: 'Baixar →', comingSoon: 'Em breve', noteTitle: 'Nota desktop', noteBody: 'Crie uma conta diretamente no computador, restaure a partir do kit de recuperação ou vincule um telefone que já usa.' },
   about: {
     kicker: 'Nossa história', title: 'Privacidade é um direito,\nnão um luxo.', sub: 'Somos uma equipe de engenheiros e defensores da privacidade.',
     s1: 'Nossa História', p1: 'Secretly é nossa resposta a um mundo de vigilância digital constante.', p2: 'Construímos o Secretly como um santuário digital.', s2: 'Nossa Missão', p3: 'Acreditamos que compromisso não é uma opção quando se trata de segurança.', p4: 'Secretly é o seu espaço. Hoje, amanhã, sempre.',

@@ -65,7 +65,7 @@ const es = {
     { title: 'Cifrado robusto', body: 'Cifrado de extremo a extremo de nivel Signal en cada capa — mensajes, llamadas y archivos.' },
   ],
   platforms: { label: 'Descargar para', desktop: 'App de escritorio', note: 'Sin teléfono: crea una cuenta en el ordenador o vincula tu teléfono.' },
-  download: { kicker: 'Obtener la app', title: 'Secretly en cada dispositivo.', sub: 'Sin teléfono. Sin email. Solo un ID aleatorio para total anonimato.', sectionLabel: 'Todas las plataformas', sectionTitle: 'Descargar Secretly', downloadBtn: 'Descargar →', comingSoon: 'Próximamente', noteTitle: 'Nota de escritorio', noteBody: 'Las apps de escritorio requieren Secretly instalado en tu dispositivo móvil.' },
+  download: { kicker: 'Obtener la app', title: 'Secretly en cada dispositivo.', sub: 'Sin teléfono. Sin email. Solo un ID aleatorio para total anonimato.', sectionLabel: 'Todas las plataformas', sectionTitle: 'Descargar Secretly', downloadBtn: 'Descargar →', comingSoon: 'Próximamente', noteTitle: 'Nota de escritorio', noteBody: 'Crea una cuenta directamente en el ordenador, restáurala desde el kit de recuperación o vincula un teléfono que ya uses.' },
   about: {
     kicker: 'Nuestra historia',
     title: 'La privacidad es un derecho,\nno un lujo.',

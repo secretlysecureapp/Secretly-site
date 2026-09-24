@@ -65,7 +65,7 @@ const de = {
     { title: 'Starke Verschlüsselung', body: 'Ende-zu-Ende-Verschlüsselung auf Signal-Niveau auf jeder Ebene — Nachrichten, Anrufe und Dateien.' },
   ],
   platforms: { label: 'Herunterladen für', desktop: 'Desktop-App', note: 'Kein Telefon nötig: Konto am Computer erstellen oder Telefon verbinden.' },
-  download: { kicker: 'App herunterladen', title: 'Secretly auf jedem Gerät.', sub: 'Keine Telefonnummer. Keine E-Mail. Nur eine zufällige ID für totale Anonymität.', sectionLabel: 'Alle Plattformen', sectionTitle: 'Secretly herunterladen', downloadBtn: 'Herunterladen →', comingSoon: 'Demnächst', noteTitle: 'Desktop-Hinweis', noteBody: 'Desktop-Apps (Windows & macOS) erfordern Secretly auf Ihrem Mobilgerät.' },
+  download: { kicker: 'App herunterladen', title: 'Secretly auf jedem Gerät.', sub: 'Keine Telefonnummer. Keine E-Mail. Nur eine zufällige ID für totale Anonymität.', sectionLabel: 'Alle Plattformen', sectionTitle: 'Secretly herunterladen', downloadBtn: 'Herunterladen →', comingSoon: 'Demnächst', noteTitle: 'Desktop-Hinweis', noteBody: 'Erstelle ein Konto direkt am Computer, stelle es aus dem Wiederherstellungsset wieder her oder verbinde ein Telefon, das du bereits nutzt.' },
   about: {
     kicker: 'Unsere Geschichte', title: 'Privatsphäre ist ein Recht,\nkein Luxus.', sub: 'Wir sind ein Team von Ingenieuren und Datenschutzbeauftragten.',
     s1: 'Unsere Geschichte', p1: 'Secretly ist unsere Antwort auf eine Welt ständiger digitaler Überwachung.', p2: 'Wir haben Secretly als digitales Refugium aufgebaut.', s2: 'Unsere Mission', p3: 'Wir glauben, dass Kompromisse bei der Sicherheit keine Option sind.', p4: 'Secretly ist Ihr Raum. Heute, morgen, immer.',

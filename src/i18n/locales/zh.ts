@@ -65,7 +65,7 @@ const zh = {
     { title: '强加密', body: 'Signal 级端到端加密，覆盖每个层面——消息、通话和文件。' },
   ],
   platforms: { label: '下载适用于', desktop: '桌面应用', note: '无需手机：可在电脑上创建账户，或关联手机。' },
-  download: { kicker: '获取应用', title: 'Secretly 适用于每台设备。', sub: '无需手机号。无需邮箱。只需一个随机生成的 Secretly ID 即可完全匿名。', sectionLabel: '所有平台', sectionTitle: '下载 Secretly', downloadBtn: '下载 →', comingSoon: '即将推出', noteTitle: '桌面说明', noteBody: '桌面应用（Windows 和 macOS）需要先在移动设备上安装并激活 Secretly。' },
+  download: { kicker: '获取应用', title: 'Secretly 适用于每台设备。', sub: '无需手机号。无需邮箱。只需一个随机生成的 Secretly ID 即可完全匿名。', sectionLabel: '所有平台', sectionTitle: '下载 Secretly', downloadBtn: '下载 →', comingSoon: '即将推出', noteTitle: '桌面说明', noteBody: '可直接在电脑上创建账户、从恢复套件恢复，或关联你已在使用的手机。' },
   about: {
     kicker: '我们的故事', title: '隐私是一项权利，\n而非奢侈品。', sub: '我们是一支工程师和隐私倡导者组成的团队，相信您的对话应该始终属于您。',
     s1: '我们的故事', p1: 'Secretly 不仅仅是一款通讯工具，它是我们对数字监控世界的回应。', p2: '我们将 Secretly 打造为数字庇护所，为每一次连接提供安全基础。', s2: '我们的使命', p3: '我们相信在安全方面妥协不是选项，因此彻底消除了对手机号、邮箱和任何数据收集的需求。', p4: 'Secretly 是您的空间。今天、明天、永远。',

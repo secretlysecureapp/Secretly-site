@@ -65,7 +65,7 @@ const fr = {
     { title: 'Chiffrement robuste', body: 'Chiffrement de bout en bout de niveau Signal à chaque couche — messages, appels et fichiers.' },
   ],
   platforms: { label: 'Télécharger pour', desktop: 'Application bureau', note: 'Sans téléphone : créez un compte sur l\'ordinateur ou associez votre téléphone.' },
-  download: { kicker: 'Obtenir l\'app', title: 'Secretly sur chaque appareil.', sub: 'Sans téléphone. Sans e-mail. Juste un ID aléatoire pour un anonymat total.', sectionLabel: 'Toutes les plateformes', sectionTitle: 'Télécharger Secretly', downloadBtn: 'Télécharger →', comingSoon: 'Bientôt disponible', noteTitle: 'Note bureau', noteBody: 'Les apps bureau (Windows & macOS) nécessitent Secretly installé sur votre mobile.' },
+  download: { kicker: 'Obtenir l\'app', title: 'Secretly sur chaque appareil.', sub: 'Sans téléphone. Sans e-mail. Juste un ID aléatoire pour un anonymat total.', sectionLabel: 'Toutes les plateformes', sectionTitle: 'Télécharger Secretly', downloadBtn: 'Télécharger →', comingSoon: 'Bientôt disponible', noteTitle: 'Note bureau', noteBody: 'Créez un compte directement sur l\'ordinateur, restaurez-le depuis le kit de récupération ou associez un téléphone que vous utilisez déjà.' },
   about: {
     kicker: 'Notre histoire', title: 'La confidentialité est un droit,\npas un luxe.', sub: 'Nous sommes une équipe d\'ingénieurs et de défenseurs de la vie privée.',
     s1: 'Notre Histoire', p1: 'Secretly est notre réponse à un monde de surveillance numérique constante.', p2: 'Nous avons construit Secretly comme un sanctuaire numérique.', s2: 'Notre Mission', p3: 'Nous croyons que le compromis n\'est pas une option en matière de sécurité.', p4: 'Secretly est votre espace. Aujourd\'hui, demain, toujours.',

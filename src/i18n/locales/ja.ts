@@ -65,7 +65,7 @@ const ja = {
     { title: '強力な暗号化', body: 'すべての層を保護するSignalクラスのエンドツーエンド暗号化 — メッセージ、通話、ファイル。' },
   ],
   platforms: { label: 'ダウンロード', desktop: 'デスクトップアプリ', note: 'スマートフォンは不要です。パソコンでアカウントを作成するか、スマホを連携できます。' },
-  download: { kicker: 'アプリを入手', title: 'すべてのデバイスでSecretly。', sub: '電話番号不要。メール不要。完全な匿名性のためのランダム生成Secretly IDのみ。', sectionLabel: 'すべてのプラットフォーム', sectionTitle: 'Secretlyをダウンロード', downloadBtn: 'ダウンロード →', comingSoon: '近日公開', noteTitle: 'デスクトップメモ', noteBody: 'デスクトップアプリ（WindowsおよびmacOS）はモバイルデバイスへのインストールが必要です。' },
+  download: { kicker: 'アプリを入手', title: 'すべてのデバイスでSecretly。', sub: '電話番号不要。メール不要。完全な匿名性のためのランダム生成Secretly IDのみ。', sectionLabel: 'すべてのプラットフォーム', sectionTitle: 'Secretlyをダウンロード', downloadBtn: 'ダウンロード →', comingSoon: '近日公開', noteTitle: 'デスクトップメモ', noteBody: 'パソコンで直接アカウントを作成するか、リカバリキットから復元するか、すでに使っているスマホを連携できます。' },
   about: {
     kicker: '私たちのストーリー', title: 'プライバシーは権利であり、\n贅沢ではありません。', sub: '私たちはエンジニアとプライバシー擁護者のチームです。',
     s1: '私たちのストーリー', p1: 'Secretlyは、絶え間ないデジタル監視の世界への私たちの回答です。', p2: '私たちはSecretlyをデジタルサンクチュアリとして構築しました。', s2: '私たちのミッション', p3: 'セキュリティに関して妥協は選択肢ではないと信じています。', p4: 'Secretlyはあなたのスペースです。今日も、明日も、いつも。',

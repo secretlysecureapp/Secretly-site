@@ -65,7 +65,7 @@ const it = {
     { title: 'Crittografia robusta', body: 'Crittografia end-to-end di livello Signal a ogni livello — messaggi, chiamate e file.' },
   ],
   platforms: { label: 'Scarica per', desktop: 'App desktop', note: 'Senza telefono: crea un account sul computer o collega il telefono.' },
-  download: { kicker: 'Ottieni l\'app', title: 'Secretly su ogni dispositivo.', sub: 'Nessun telefono. Nessuna email. Solo un ID generato casualmente per il massimo anonimato.', sectionLabel: 'Tutte le piattaforme', sectionTitle: 'Scarica Secretly', downloadBtn: 'Scarica →', comingSoon: 'Prossimamente', noteTitle: 'Nota desktop', noteBody: 'Le app desktop (Windows e macOS) richiedono Secretly installato sul tuo dispositivo mobile.' },
+  download: { kicker: 'Ottieni l\'app', title: 'Secretly su ogni dispositivo.', sub: 'Nessun telefono. Nessuna email. Solo un ID generato casualmente per il massimo anonimato.', sectionLabel: 'Tutte le piattaforme', sectionTitle: 'Scarica Secretly', downloadBtn: 'Scarica →', comingSoon: 'Prossimamente', noteTitle: 'Nota desktop', noteBody: 'Crea un account direttamente sul computer, ripristinalo dal kit di recupero oppure collega un telefono che usi già.' },
   about: {
     kicker: 'La nostra storia', title: 'La privacy è un diritto,\nnon un lusso.', sub: 'Siamo un team di ingegneri e sostenitori della privacy.',
     s1: 'La Nostra Storia', p1: 'Secretly è la nostra risposta a un mondo di sorveglianza digitale costante.', p2: 'Abbiamo costruito Secretly come santuario digitale.', s2: 'La Nostra Missione', p3: 'Crediamo che il compromesso non sia un\'opzione in materia di sicurezza.', p4: 'Secretly è il tuo spazio. Oggi, domani, sempre.',
