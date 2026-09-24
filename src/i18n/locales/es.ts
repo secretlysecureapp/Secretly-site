@@ -7,11 +7,11 @@ const es = {
     ctaDownload: 'Descargar',
     ctaHow: 'Cómo Secretly te protege',
     proofOpenSource: 'Código abierto',
-    proofVerified: 'Seguridad verificable',
-    proofZK: 'Arquitectura de conocimiento cero',
+    proofVerified: 'Modelo de amenazas público',
+    proofZK: 'Cifrado de extremo a extremo',
   },
   trust: {
-    items: ['Sin número de teléfono','Sin email','Cifrado E2E','Código abierto','Conocimiento cero','Seguridad verificable','Identidad anónima','Multiplataforma','Sin recopilación de datos','Sin publicidad'],
+    items: ['Sin número de teléfono','Sin email','Cifrado E2E','Código abierto','El servidor no puede leer tus mensajes','Modelo de amenazas público','ID de Secretly aleatorio','Multiplataforma','Sin analíticas ni rastreadores','Sin publicidad'],
   },
   home: {
     s1Label: 'Diseñado para la privacidad real',
@@ -34,7 +34,7 @@ const es = {
     encryption: 'Estándar de cifrado',
     platforms:  'Plataformas ya disponibles',
     languages:  'Idiomas',
-    noData:     'Datos personales recopilados',
+    noData:     'Números de teléfono o emails requeridos',
   },
   scenarios: [
     { title: 'Conversaciones personales', body: 'Mantén los chats privados sin revelar datos personales.' },
@@ -44,8 +44,8 @@ const es = {
   ],
   steps: [
     { num: '01', title: 'Empieza con un ID de Secretly', body: 'Crea y usa un ID aleatorio en lugar de vincular tu cuenta a un teléfono o email.' },
-    { num: '02', title: 'Cifra cada ruta de mensaje', body: 'Mensajes, llamadas y archivos protegidos con E2E para que solo los participantes accedan.' },
-    { num: '03', title: 'Mantén el servicio ciego', body: 'Arquitectura de conocimiento cero y almacenamiento mínimo reducen tu huella digital.' },
+    { num: '02', title: 'Cifra cada ruta de mensaje', body: 'Mensajes, archivos y llamadas individuales están protegidos con cifrado de extremo a extremo, así que solo las personas de la conversación pueden leerlos.' },
+    { num: '03', title: 'Mantén el servidor fuera del contenido', body: 'Nuestro servidor retransmite mensajes cifrados que no puede leer y los guarda solo hasta que se entregan. Lo que sí puede ver — qué dispositivo escribe a cuál y cuándo — figura en nuestro modelo de amenazas.' },
     { num: '04', title: 'Verifica sin exponer identidad', body: 'Verificación multinivel para confirmar con quién hablas sin revelar datos personales.' },
   ],
   features: [
@@ -54,25 +54,25 @@ const es = {
     { title: 'Videollamadas', body: 'Permanece cara a cara con personas de confianza en una llamada segura.' },
     { title: 'Llamadas grupales', body: 'Reúne equipos en conversaciones grupales cifradas.' },
     { title: 'Compartir archivos', body: 'Comparte documentos, medios y archivos con protección E2E.' },
-    { title: 'Anonimato total', body: 'Usa un ID aleatorio — no se requiere teléfono ni email.' },
+    { title: 'Sin número de teléfono', body: 'Usa un ID aleatorio — no se requiere teléfono ni email.' },
     { title: 'Multiplataforma', body: 'Disponible en Android, iOS, Windows y macOS.' },
     { title: 'Chats ocultos', body: 'Oculta conversaciones sensibles con controles de privacidad integrados.' },
     { title: 'Botón de pánico', body: 'Herramientas de emergencia para proteger rápidamente tus conversaciones.' },
   ],
   pillars: [
-    { title: 'Código abierto', body: 'Nuestro código es público y verificable. Sin puertas traseras.' },
-    { title: 'Arquitectura de conocimiento cero', body: 'No tenemos las llaves de tu reino. No sabemos quién eres y nunca lo sabremos.' },
-    { title: 'Cifrado robusto', body: 'Cifrado de extremo a extremo de nivel Signal en cada capa — mensajes, llamadas y archivos.' },
+    { title: 'Código abierto', body: 'Nuestro código es público, así que cualquiera puede comprobar cómo funciona Secretly — y nuestro modelo de amenazas indica de qué no protege.' },
+    { title: 'Nunca guardamos tus claves', body: 'Tus claves se crean y se guardan en tus dispositivos. Nunca te pedimos tu nombre, número de teléfono ni email.' },
+    { title: 'Cifrado robusto', body: 'Cifrado de extremo a extremo basado en Double Ratchet para mensajes, archivos y llamadas individuales.' },
   ],
   platforms: { label: 'Descargar para', desktop: 'App de escritorio', note: 'Sin teléfono: crea una cuenta en el ordenador o vincula tu teléfono.' },
-  download: { kicker: 'Obtener la app', title: 'Secretly en cada dispositivo.', sub: 'Sin teléfono. Sin email. Solo un ID aleatorio para total anonimato.', sectionLabel: 'Todas las plataformas', sectionTitle: 'Descargar Secretly', downloadBtn: 'Descargar →', comingSoon: 'Próximamente', noteTitle: 'Nota de escritorio', noteBody: 'Crea una cuenta directamente en el ordenador, restáurala desde el kit de recuperación o vincula un teléfono que ya uses.' },
+  download: { kicker: 'Obtener la app', title: 'Secretly en cada dispositivo.', sub: 'Sin teléfono. Sin email. Solo un ID aleatorio.', sectionLabel: 'Todas las plataformas', sectionTitle: 'Descargar Secretly', downloadBtn: 'Descargar →', comingSoon: 'Próximamente', noteTitle: 'Nota de escritorio', noteBody: 'Crea una cuenta directamente en el ordenador, restáurala desde el kit de recuperación o vincula un teléfono que ya uses.' },
   about: {
     kicker: 'Nuestra historia',
     title: 'La privacidad es un derecho,\nno un lujo.',
     sub: 'Somos un equipo de ingenieros y defensores de la privacidad que creemos que tus conversaciones deben seguir siendo tuyas.',
     s1: 'Nuestra Historia', p1: 'Secretly es nuestra respuesta a un mundo de vigilancia digital constante.', p2: 'Construimos Secretly como un santuario digital para cada conexión.', s2: 'Nuestra Misión', p3: 'Creemos que el compromiso no es una opción en materia de seguridad.', p4: 'Secretly es tu espacio. Hoy, mañana, siempre.',
     s3: 'Confianza a través de la transparencia', p5: '¿Por qué los usuarios confían en nosotros? Porque no tenemos nada que ocultar.',
-    trustItems: ['Código Abierto: público y verificable, sin puertas traseras.', 'Cifrado de Nivel Signal: cada mensaje, llamada y archivo protegido con un diseño Double Ratchet probado.', 'Conocimiento Cero: no tenemos las llaves. No sabemos quién eres.'],
+    trustItems: ['Código Abierto: nuestro código es público, así que cualquiera puede examinar cómo funciona Secretly — y nuestro modelo de amenazas dice de qué no protege.', 'Cifrado de extremo a extremo: mensajes, archivos y llamadas individuales usan el diseño Double Ratchet. Nuestra implementación aún no ha sido auditada de forma independiente.', 'Tus claves se quedan contigo: nunca las guardamos y nunca te pedimos tu nombre, número de teléfono ni email.'],
     s4: 'Código Abierto. Corazones Abiertos.', p6: 'Nuestra filosofía significa que construimos con integridad. No respondemos a anunciantes — respondemos a nuestra comunidad.',
   },
   help: {
@@ -83,8 +83,8 @@ const es = {
       { q: '¿Está realmente cifrado de extremo a extremo?', a: 'Sí. Cada mensaje, llamada y archivo está protegido. Solo los participantes tienen acceso.' },
       { q: '¿El código fuente está disponible?', a: 'Sí, Secretly es de código abierto y auditable públicamente.' },
       { q: '¿En qué plataformas está disponible?', a: 'Android, iPhone y iPad, Windows y macOS.' },
-      { q: '¿Puedo usarlo de forma anónima?', a: 'Sí. Nunca se requieren datos personales.' },
-      { q: '¿Qué es la arquitectura de conocimiento cero?', a: 'Nuestros servidores no tienen acceso a tus mensajes ni identidad. No guardamos claves de cifrado.' },
+      { q: '¿Puedo usarlo de forma anónima?', a: 'Secretly nunca te pide tu nombre, número de teléfono ni email — tu cuenta es un ID de Secretly aleatorio. Aun así, nuestro servidor ve datos técnicos, como qué dispositivo escribe a cuál y cuándo; nuestro modelo de amenazas detalla exactamente cuáles.' },
+      { q: '¿Puede Secretly leer mis mensajes?', a: 'No. Los mensajes se cifran de extremo a extremo en tu dispositivo y nunca guardamos las claves, así que no podemos leer tus conversaciones — aunque quisiéramos. Nuestro servidor sí ve información de enrutamiento, como qué dispositivo escribe a cuál y cuándo.' },
     ],
   },
   contact: {
@@ -112,7 +112,7 @@ const es = {
   },
   platform: {
     kicker: 'Descargar',
-    sub: 'Mantente invisible. Sin número de teléfono ni correo: solo un ID de Secretly generado aleatoriamente para un anonimato total.',
+    sub: 'Mantente invisible. Sin número de teléfono ni correo: solo un ID de Secretly generado aleatoriamente.',
     comingSoon: 'Próximamente',
     macComingSoon: 'macOS — próximamente',
     macDownload: 'Descargar para macOS',
@@ -145,7 +145,7 @@ const es = {
   },
   aboutStats: [
     { value: '100%',     label: 'Código abierto',            sub: 'Base de código totalmente auditable' },
-    { value: '0',        label: 'Zero-knowledge',            sub: 'Almacenamiento de mensajes en el servidor' },
+    { value: '0',        label: 'Mensajes legibles',            sub: 'almacenados en nuestros servidores' },
     { value: 'Ninguno',  label: 'Datos personales requeridos', sub: 'Sin número de teléfono ni correo' },
   ],
   termsAbuse: {

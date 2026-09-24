@@ -7,11 +7,11 @@ const fr = {
     ctaDownload: 'Télécharger',
     ctaHow: 'Comment Secretly vous protège',
     proofOpenSource: 'Open source',
-    proofVerified: 'Sécurité vérifiable',
-    proofZK: 'Architecture zéro connaissance',
+    proofVerified: 'Modèle de menaces public',
+    proofZK: 'Chiffré de bout en bout',
   },
   trust: {
-    items: ['Sans numéro de téléphone','Sans e-mail','Chiffré E2E','Open source','Zéro connaissance','Sécurité vérifiable','Identité anonyme','Multi-plateforme','Sans collecte de données','Sans publicité'],
+    items: ['Sans numéro de téléphone','Sans e-mail','Chiffré E2E','Open source','Le serveur ne peut pas lire vos messages','Modèle de menaces public','ID Secretly aléatoire','Multi-plateforme','Sans outils d\'analyse ni traceurs','Sans publicité'],
   },
   home: {
     s1Label: 'Conçu pour la vraie confidentialité',
@@ -34,7 +34,7 @@ const fr = {
     encryption: 'Norme de chiffrement',
     platforms:  'Plateformes déjà disponibles',
     languages:  'Langues',
-    noData:     'Données personnelles collectées',
+    noData:     'Numéros de téléphone ou e-mails requis',
   },
   scenarios: [
     { title: 'Conversations personnelles', body: 'Gardez les discussions privées sans divulguer d\'informations personnelles.' },
@@ -44,8 +44,8 @@ const fr = {
   ],
   steps: [
     { num: '01', title: 'Commencez avec un ID Secretly', body: 'Créez un ID aléatoire au lieu de lier votre compte à un téléphone ou un e-mail.' },
-    { num: '02', title: 'Chiffrez chaque message', body: 'Messages, appels et fichiers protégés par E2E pour un accès réservé aux participants.' },
-    { num: '03', title: 'Gardez le service aveugle', body: 'L\'architecture zéro connaissance réduit l\'empreinte de votre communication.' },
+    { num: '02', title: 'Chiffrez chaque message', body: 'Messages, fichiers et appels individuels sont protégés par un chiffrement de bout en bout, afin que seules les personnes de la conversation puissent les lire.' },
+    { num: '03', title: 'Gardez le serveur à l\'écart du contenu', body: 'Notre serveur relaie des messages chiffrés qu\'il ne peut pas lire et ne les conserve que jusqu\'à leur livraison. Ce qu\'il peut voir — quel appareil écrit à quel autre, et quand — figure dans notre modèle de menaces.' },
     { num: '04', title: 'Vérifiez sans exposer l\'identité', body: 'Vérification multi-niveaux pour confirmer votre interlocuteur sans données personnelles.' },
   ],
   features: [
@@ -54,23 +54,23 @@ const fr = {
     { title: 'Appels vidéo', body: 'Restez face à face avec vos contacts de confiance dans un appel sécurisé.' },
     { title: 'Appels de groupe', body: 'Réunissez équipes et cercles dans des conversations de groupe chiffrées.' },
     { title: 'Partage de fichiers', body: 'Partagez documents, médias et fichiers avec une protection E2E.' },
-    { title: 'Anonymat total', body: 'Utilisez un ID aléatoire — aucun téléphone ni e-mail requis.' },
+    { title: 'Sans numéro de téléphone', body: 'Utilisez un ID aléatoire — aucun téléphone ni e-mail requis.' },
     { title: 'Multi-plateforme', body: 'Disponible sur Android, iOS, Windows et macOS.' },
     { title: 'Chats masqués', body: 'Dissimulez les conversations sensibles avec des contrôles de confidentialité intégrés.' },
     { title: 'Bouton panique', body: 'Outils d\'urgence pour sécuriser rapidement vos conversations.' },
   ],
   pillars: [
-    { title: 'Open source', body: 'Notre code est public et vérifiable. Aucune porte dérobée.' },
-    { title: 'Architecture zéro connaissance', body: 'Nous ne détenons pas les clés de votre royaume. Nous ne savons pas qui vous êtes.' },
-    { title: 'Chiffrement robuste', body: 'Chiffrement de bout en bout de niveau Signal à chaque couche — messages, appels et fichiers.' },
+    { title: 'Open source', body: 'Notre code est public : chacun peut vérifier comment fonctionne Secretly — et notre modèle de menaces indique ce contre quoi il ne protège pas.' },
+    { title: 'Nous ne détenons jamais vos clés', body: 'Vos clés sont créées et conservées sur vos appareils. Nous ne vous demandons jamais votre nom, votre numéro de téléphone ni votre e-mail.' },
+    { title: 'Chiffrement robuste', body: 'Chiffrement de bout en bout fondé sur le Double Ratchet pour les messages, les fichiers et les appels individuels.' },
   ],
   platforms: { label: 'Télécharger pour', desktop: 'Application bureau', note: 'Sans téléphone : créez un compte sur l\'ordinateur ou associez votre téléphone.' },
-  download: { kicker: 'Obtenir l\'app', title: 'Secretly sur chaque appareil.', sub: 'Sans téléphone. Sans e-mail. Juste un ID aléatoire pour un anonymat total.', sectionLabel: 'Toutes les plateformes', sectionTitle: 'Télécharger Secretly', downloadBtn: 'Télécharger →', comingSoon: 'Bientôt disponible', noteTitle: 'Note bureau', noteBody: 'Créez un compte directement sur l\'ordinateur, restaurez-le depuis le kit de récupération ou associez un téléphone que vous utilisez déjà.' },
+  download: { kicker: 'Obtenir l\'app', title: 'Secretly sur chaque appareil.', sub: 'Sans téléphone. Sans e-mail. Juste un ID aléatoire.', sectionLabel: 'Toutes les plateformes', sectionTitle: 'Télécharger Secretly', downloadBtn: 'Télécharger →', comingSoon: 'Bientôt disponible', noteTitle: 'Note bureau', noteBody: 'Créez un compte directement sur l\'ordinateur, restaurez-le depuis le kit de récupération ou associez un téléphone que vous utilisez déjà.' },
   about: {
     kicker: 'Notre histoire', title: 'La confidentialité est un droit,\npas un luxe.', sub: 'Nous sommes une équipe d\'ingénieurs et de défenseurs de la vie privée.',
     s1: 'Notre Histoire', p1: 'Secretly est notre réponse à un monde de surveillance numérique constante.', p2: 'Nous avons construit Secretly comme un sanctuaire numérique.', s2: 'Notre Mission', p3: 'Nous croyons que le compromis n\'est pas une option en matière de sécurité.', p4: 'Secretly est votre espace. Aujourd\'hui, demain, toujours.',
     s3: 'Confiance par la transparence', p5: 'Pourquoi les utilisateurs nous font-ils confiance ? Parce que nous n\'avons rien à cacher.',
-    trustItems: ['Open Source : code public et vérifiable, aucune porte dérobée.', 'Chiffrement de niveau Signal : chaque message, appel et fichier protégé par un Double Ratchet éprouvé.', 'Zéro Connaissance : nous ne détenons pas les clés. Nous ne savons pas qui vous êtes.'],
+    trustItems: ['Open Source : notre code est public, chacun peut donc examiner comment fonctionne Secretly — et notre modèle de menaces dit ce contre quoi il ne protège pas.', 'Chiffrement de bout en bout : messages, fichiers et appels individuels utilisent le Double Ratchet. Notre implémentation n\'a pas encore fait l\'objet d\'un audit indépendant.', 'Vos clés restent chez vous : nous ne les détenons jamais et ne vous demandons jamais votre nom, votre numéro de téléphone ni votre e-mail.'],
     s4: 'Open Source. Cœurs Ouverts.', p6: 'Notre philosophie signifie que nous construisons avec intégrité. Nous répondons à notre communauté, pas aux annonceurs.',
   },
   help: {
@@ -81,8 +81,8 @@ const fr = {
       { q: 'Secretly est-il vraiment chiffré de bout en bout ?', a: 'Oui. Chaque message, appel et fichier est protégé. Seuls les participants y ont accès.' },
       { q: 'Le code source est-il disponible ?', a: 'Oui, Secretly est open source et auditable publiquement.' },
       { q: 'Sur quelles plateformes est disponible Secretly ?', a: 'Android, iPhone et iPad, Windows et macOS.' },
-      { q: 'Puis-je l\'utiliser anonymement ?', a: 'Oui. Aucune information personnelle n\'est jamais requise.' },
-      { q: 'Qu\'est-ce que l\'architecture zéro connaissance ?', a: 'Nos serveurs n\'ont aucun accès à vos messages ni à votre identité. Nous ne stockons pas les clés de chiffrement.' },
+      { q: 'Puis-je l\'utiliser anonymement ?', a: 'Secretly ne vous demande jamais votre nom, votre numéro de téléphone ni votre e-mail — votre compte est un ID Secretly aléatoire. Notre serveur voit tout de même des données techniques, comme quel appareil écrit à quel autre et quand ; notre modèle de menaces les liste précisément.' },
+      { q: 'Secretly peut-il lire mes messages ?', a: 'Non. Les messages sont chiffrés de bout en bout sur votre appareil et nous ne détenons jamais les clés : nous ne pouvons donc pas lire vos conversations — même si nous le voulions. Notre serveur voit en revanche des informations de routage, comme quel appareil écrit à quel autre et quand.' },
     ],
   },
   contact: {
@@ -110,7 +110,7 @@ const fr = {
   },
   platform: {
     kicker: 'Télécharger',
-    sub: 'Restez invisible. Sans numéro de téléphone ni e-mail — juste un identifiant Secretly généré aléatoirement pour un anonymat total.',
+    sub: 'Restez invisible. Sans numéro de téléphone ni e-mail — juste un identifiant Secretly généré aléatoirement.',
     comingSoon: 'Bientôt disponible',
     macComingSoon: 'macOS — bientôt disponible',
     macDownload: 'Télécharger pour macOS',
@@ -143,7 +143,7 @@ const fr = {
   },
   aboutStats: [
     { value: '100%',   label: 'Open source',                  sub: 'Base de code entièrement auditable' },
-    { value: '0',      label: 'Zero-knowledge',               sub: 'Stockage des messages côté serveur' },
+    { value: '0',      label: 'Messages lisibles',               sub: 'stockés sur nos serveurs' },
     { value: 'Aucune', label: 'Donnée personnelle requise',   sub: 'Sans numéro de téléphone ni e-mail' },
   ],
   termsAbuse: {

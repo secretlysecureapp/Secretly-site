@@ -14,7 +14,7 @@ End-to-end encryption (E2EE) means a message is encrypted on **your** device and
 
 ## The keys never leave your device
 
-Secretly uses **Signal-class** cryptography built on the Double Ratchet algorithm — the same family of protocols trusted by the most respected secure messengers.
+Secretly's end-to-end encryption is built on the **Double Ratchet** algorithm — the same design used by the most respected secure messengers. The implementation is our own and has not been independently audited yet.
 
 - Your private keys are generated and stored **on your device**, in secure storage.
 - We never see them, and they're never uploaded.
@@ -27,13 +27,13 @@ The "ratchet" part matters. With every message, the keys advance one step forwar
 - If a key were ever compromised, it couldn't be used to decrypt past messages.
 - Each message is locked with a key that exists for only a moment.
 
-## Zero-knowledge servers
+## What the server can and can't see
 
-Secretly's relay exists to pass encrypted blobs between devices when one is offline — nothing more. It can't read message contents, and it isn't a store of your conversations. Because identity is just an anonymous [Secretly ID](/blog/why-no-phone-number), there's no name or number attached to the traffic either.
+Secretly's relay passes encrypted messages between devices and keeps them only until they are delivered. It can't read message contents. It does see routing information — which device sends to which, when, and how large the message is — plus your display name and a group's title, which it uses for notification titles. Because your account is a random [Secretly ID](/blog/why-no-phone-number), there's no phone number or email attached to the traffic. Our [threat model](https://github.com/Arkhanhel/Secretly/blob/HEAD/docs/THREAT_MODEL.md) lists all of this in detail.
 
 ## Verifying your contacts
 
-For the highest assurance, Secretly lets you compare a **safety number / fingerprint** with your contact (in person or over another channel). If it matches, you have cryptographic proof there's no one in the middle.
+For the highest assurance, Secretly lets you compare a **safety number / fingerprint** with your contact (in person or over another channel). If it matches, you know you hold your contact's real keys.
 
 ## Honesty about audits
 

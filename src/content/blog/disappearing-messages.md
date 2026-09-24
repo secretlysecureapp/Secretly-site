@@ -1,7 +1,7 @@
 ---
 title: "Disappearing messages: privacy that cleans up after itself"
 date: "2026-06-27"
-excerpt: "The most private message is the one that no longer exists. Here's how disappearing messages work in Secretly — and why they're free for everyone."
+excerpt: "The most private message is the one that no longer exists. Here's how auto-delete works in Secretly, what it can and can't do — and why it's free for everyone."
 author: "The Secretly Team"
 tags: "Privacy, Features"
 ---
@@ -10,28 +10,28 @@ Encryption protects a message in transit. But a conversation that lives forever 
 
 ## How they work
 
-Turn on disappearing messages in a chat and pick a timer. Once a message has been seen, the countdown starts, and when it ends the message is removed from **both** devices automatically. No manual cleanup, no forgotten history.
+Turn on auto-delete in a chat and pick a timer: 24 hours, 7 days or 30 days. Messages older than that are removed from **your** devices automatically — your phone and any computer linked to it. No manual cleanup, no forgotten history.
 
 - Set it per conversation.
 - Choose the interval that fits how sensitive the chat is.
-- It applies going forward, for everyone in the conversation.
+- It works on your side only. The other person's copy is not deleted; they can set a timer of their own.
 
-## Why "after read" matters
+## What it does and doesn't do
 
-Deleting on a fixed schedule isn't enough if a message sits unread on a screen. Secretly ties the timer to the message actually being seen, so the window is tight and predictable.
+Auto-delete limits what a lost, seized or borrowed phone can reveal. It can't reach into someone else's device: once a message is delivered, the recipient's copy is theirs. If a conversation must vanish on both sides, agree with your contact to turn it on at both ends.
 
 ## Defense in depth
 
-Disappearing messages work alongside Secretly's other protections:
+Auto-delete works alongside Secretly's other protections:
 
-- **Screenshot protection** discourages and flags attempts to capture sensitive chats.
-- **App lock** with Face ID / biometrics keeps the app sealed if your device is unlocked.
-- **No cloud backup of plaintext** — there's no server-side copy waiting to outlive the message.
+- **Screenshot protection** blocks screenshots and screen recording on Android and hides chat content in the app switcher on iOS.
+- **App lock** with a password, a pattern or Face ID / Touch ID keeps the app sealed if your device is unlocked.
+- **No plaintext backups** — backups are encrypted with your password before they leave the device.
 
 ## A security feature, so it's always free
 
 We believe the controls that keep you safe should never sit behind a paywall. Disappearing messages, encryption, screenshot protection, app lock, and contact verification are **free for everyone**, on every plan. Premium is about convenience and scale — never about safety.
 
-Privacy shouldn't depend on remembering to delete things. With disappearing messages, your conversations clean up after themselves.
+Privacy shouldn't depend on remembering to delete things. With auto-delete, your side of the conversation cleans up after itself.
 
 [Explore all features →](/features)

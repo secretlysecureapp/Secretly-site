@@ -46,9 +46,9 @@ export const SEO_BY_PATH: Record<string, SeoEntry> = {
       'Secretly for Windows and macOS: end-to-end encrypted chats, calls and files on a bigger screen. Create an account right on the computer, restore from a recovery kit, or link a phone you already use.',
   },
   '/security': {
-    title: 'Secretly Security — Zero-Knowledge & E2EE',
+    title: 'Secretly Security — End-to-End Encryption',
     description:
-      'How Secretly protects you: Signal-class end-to-end encryption, zero-knowledge servers, no phone number or email, and a public, verifiable codebase.',
+      'How Secretly protects you: end-to-end encryption built on the Double Ratchet, a server that can’t read your messages, no phone number or email, and open-source code.',
   },
   '/dpa': {
     title: 'Data Processing Agreement — Secretly Teams',
@@ -118,7 +118,7 @@ export const SEO_BY_PATH: Record<string, SeoEntry> = {
   '/privacy-policy': {
     title: 'Secretly Privacy Policy',
     description:
-      'How Secretly’s zero-knowledge architecture protects you: what we never collect, what is technically processed, and your rights under GDPR.',
+      'What Secretly never collects, what is technically processed to deliver messages, and your rights under GDPR.',
   },
   '/terms-of-service': {
     title: 'Secretly Terms of Service',

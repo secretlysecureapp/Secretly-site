@@ -7,11 +7,11 @@ const de = {
     ctaDownload: 'Herunterladen',
     ctaHow: 'Wie Secretly Sie schützt',
     proofOpenSource: 'Open Source',
-    proofVerified: 'Überprüfbare Sicherheit',
-    proofZK: 'Zero-Knowledge-Architektur',
+    proofVerified: 'Öffentliches Bedrohungsmodell',
+    proofZK: 'Ende-zu-Ende-verschlüsselt',
   },
   trust: {
-    items: ['Keine Telefonnummer','Keine E-Mail','E2E-verschlüsselt','Open Source','Zero-Knowledge','Überprüfbare Sicherheit','Anonyme Identität','Multiplattform','Keine Datenverfolgung','Keine Werbung'],
+    items: ['Keine Telefonnummer','Keine E-Mail','E2E-verschlüsselt','Open Source','Server kann Ihre Nachrichten nicht lesen','Öffentliches Bedrohungsmodell','Zufällige Secretly-ID','Multiplattform','Keine Analysedienste oder Tracker','Keine Werbung'],
   },
   home: {
     s1Label: 'Für echte Privatsphäre entwickelt',
@@ -34,7 +34,7 @@ const de = {
     encryption: 'Verschlüsselungsstandard',
     platforms:  'Jetzt verfügbare Plattformen',
     languages:  'Sprachen',
-    noData:     'Erhobene persönliche Daten',
+    noData:     'Erforderliche Telefonnummern oder E-Mails',
   },
   scenarios: [
     { title: 'Persönliche Gespräche', body: 'Halten Sie Einzelchats privat, ohne persönliche Daten preiszugeben.' },
@@ -44,8 +44,8 @@ const de = {
   ],
   steps: [
     { num: '01', title: 'Beginnen Sie mit einer Secretly-ID', body: 'Erstellen Sie eine zufällige ID statt Ihr Konto mit Telefon oder E-Mail zu verknüpfen.' },
-    { num: '02', title: 'Verschlüsseln Sie jeden Nachrichtenpfad', body: 'Nachrichten, Anrufe und Dateien sind E2E-verschlüsselt – nur Teilnehmer haben Zugriff.' },
-    { num: '03', title: 'Den Dienst unwissend halten', body: 'Zero-Knowledge-Architektur und minimale Speicherung reduzieren Ihren digitalen Fußabdruck.' },
+    { num: '02', title: 'Verschlüsseln Sie jeden Nachrichtenpfad', body: 'Nachrichten, Dateien und 1:1-Anrufe sind Ende-zu-Ende-verschlüsselt, sodass nur die Personen im Gespräch sie lesen können.' },
+    { num: '03', title: 'Den Server vom Inhalt fernhalten', body: 'Unser Server leitet verschlüsselte Nachrichten weiter, die er nicht lesen kann, und speichert sie nur bis zur Zustellung. Was er sehen kann — welches Gerät an welches schreibt und wann —, steht in unserem Bedrohungsmodell.' },
     { num: '04', title: 'Verifizieren ohne Identitätspreisgabe', body: 'Mehrstufige Verifizierung ohne Preisgabe persönlicher Daten.' },
   ],
   features: [
@@ -54,23 +54,23 @@ const de = {
     { title: 'Videoanrufe', body: 'Bleiben Sie mit vertrauenswürdigen Personen in einem sicheren Anruf verbunden.' },
     { title: 'Gruppenanrufe', body: 'Bringen Sie Teams in verschlüsselten Gruppenkonversationen zusammen.' },
     { title: 'Dateifreigabe', body: 'Teilen Sie Dokumente, Medien und Dateien mit E2E-Schutz.' },
-    { title: 'Totale Anonymität', body: 'Nutzen Sie eine zufällige ID – keine Telefonnummer oder E-Mail erforderlich.' },
+    { title: 'Keine Telefonnummer', body: 'Nutzen Sie eine zufällige ID – keine Telefonnummer oder E-Mail erforderlich.' },
     { title: 'Multiplattform', body: 'Verfügbar auf Android, iOS, Windows und macOS.' },
     { title: 'Versteckte Chats', body: 'Verbergen Sie sensible Gespräche mit integrierten Datenschutzkontrollen.' },
     { title: 'Panikknopf', body: 'Notfall-Tools zum schnellen Sichern Ihrer Gespräche.' },
   ],
   pillars: [
-    { title: 'Open Source', body: 'Unser Code ist öffentlich und überprüfbar. Keine Hintertüren.' },
-    { title: 'Zero-Knowledge-Architektur', body: 'Wir halten nicht die Schlüssel zu Ihrem Königreich. Wir wissen nicht, wer Sie sind.' },
-    { title: 'Starke Verschlüsselung', body: 'Ende-zu-Ende-Verschlüsselung auf Signal-Niveau auf jeder Ebene — Nachrichten, Anrufe und Dateien.' },
+    { title: 'Open Source', body: 'Unser Code ist öffentlich, sodass jeder prüfen kann, wie Secretly funktioniert — und unser Bedrohungsmodell nennt, wovor es nicht schützt.' },
+    { title: 'Wir verwahren nie Ihre Schlüssel', body: 'Ihre Schlüssel werden auf Ihren Geräten erzeugt und dort aufbewahrt. Wir fragen nie nach Ihrem Namen, Ihrer Telefonnummer oder E-Mail-Adresse.' },
+    { title: 'Starke Verschlüsselung', body: 'Ende-zu-Ende-Verschlüsselung auf Basis des Double Ratchet für Nachrichten, Dateien und 1:1-Anrufe.' },
   ],
   platforms: { label: 'Herunterladen für', desktop: 'Desktop-App', note: 'Kein Telefon nötig: Konto am Computer erstellen oder Telefon verbinden.' },
-  download: { kicker: 'App herunterladen', title: 'Secretly auf jedem Gerät.', sub: 'Keine Telefonnummer. Keine E-Mail. Nur eine zufällige ID für totale Anonymität.', sectionLabel: 'Alle Plattformen', sectionTitle: 'Secretly herunterladen', downloadBtn: 'Herunterladen →', comingSoon: 'Demnächst', noteTitle: 'Desktop-Hinweis', noteBody: 'Erstelle ein Konto direkt am Computer, stelle es aus dem Wiederherstellungsset wieder her oder verbinde ein Telefon, das du bereits nutzt.' },
+  download: { kicker: 'App herunterladen', title: 'Secretly auf jedem Gerät.', sub: 'Keine Telefonnummer. Keine E-Mail. Nur eine zufällige ID.', sectionLabel: 'Alle Plattformen', sectionTitle: 'Secretly herunterladen', downloadBtn: 'Herunterladen →', comingSoon: 'Demnächst', noteTitle: 'Desktop-Hinweis', noteBody: 'Erstelle ein Konto direkt am Computer, stelle es aus dem Wiederherstellungsset wieder her oder verbinde ein Telefon, das du bereits nutzt.' },
   about: {
     kicker: 'Unsere Geschichte', title: 'Privatsphäre ist ein Recht,\nkein Luxus.', sub: 'Wir sind ein Team von Ingenieuren und Datenschutzbeauftragten.',
     s1: 'Unsere Geschichte', p1: 'Secretly ist unsere Antwort auf eine Welt ständiger digitaler Überwachung.', p2: 'Wir haben Secretly als digitales Refugium aufgebaut.', s2: 'Unsere Mission', p3: 'Wir glauben, dass Kompromisse bei der Sicherheit keine Option sind.', p4: 'Secretly ist Ihr Raum. Heute, morgen, immer.',
     s3: 'Vertrauen durch Transparenz', p5: 'Warum vertrauen Nutzer uns? Weil wir nichts zu verbergen haben.',
-    trustItems: ['Open Source: öffentlich und überprüfbar, keine Hintertüren.', 'Verschlüsselung auf Signal-Niveau: jede Nachricht, jeder Anruf und jede Datei mit einem bewährten Double-Ratchet-Design geschützt.', 'Zero-Knowledge: wir halten keine Schlüssel. Wir wissen nicht, wer Sie sind.'],
+    trustItems: ['Open Source: Unser Code ist öffentlich, sodass jeder nachsehen kann, wie Secretly funktioniert — und unser Bedrohungsmodell sagt, wovor es nicht schützt.', 'Ende-zu-Ende-Verschlüsselung: Nachrichten, Dateien und 1:1-Anrufe nutzen das Double-Ratchet-Design. Unsere Implementierung wurde noch nicht unabhängig geprüft.', 'Ihre Schlüssel bleiben bei Ihnen: Wir verwahren sie nie und fragen nie nach Ihrem Namen, Ihrer Telefonnummer oder E-Mail-Adresse.'],
     s4: 'Open Source. Offene Herzen.', p6: 'Unsere Philosophie bedeutet, dass wir mit Integrität bauen. Wir antworten unserer Gemeinschaft, nicht Werbetreibenden.',
   },
   help: {
@@ -81,8 +81,8 @@ const de = {
       { q: 'Ist Secretly wirklich Ende-zu-Ende verschlüsselt?', a: 'Ja. Jede Nachricht, jeder Anruf und jede Datei ist geschützt. Nur Teilnehmer haben Zugriff.' },
       { q: 'Ist der Quellcode verfügbar?', a: 'Ja, Secretly ist Open Source und öffentlich prüfbar.' },
       { q: 'Auf welchen Plattformen ist Secretly verfügbar?', a: 'Android, iPhone & iPad, Windows und macOS.' },
-      { q: 'Kann ich es anonym nutzen?', a: 'Ja. Es werden nie persönliche Informationen benötigt.' },
-      { q: 'Was ist Zero-Knowledge-Architektur?', a: 'Unsere Server haben keinen Zugriff auf Ihre Nachrichten oder Identität. Wir speichern keine Verschlüsselungsschlüssel.' },
+      { q: 'Kann ich es anonym nutzen?', a: 'Secretly fragt nie nach Ihrem Namen, Ihrer Telefonnummer oder E-Mail-Adresse — Ihr Konto ist eine zufällige Secretly-ID. Unser Server sieht dennoch technische Daten, etwa welches Gerät an welches schreibt und wann; unser Bedrohungsmodell listet genau auf, welche.' },
+      { q: 'Kann Secretly meine Nachrichten lesen?', a: 'Nein. Nachrichten werden auf Ihrem Gerät Ende-zu-Ende-verschlüsselt, und wir verwahren nie die Schlüssel, daher können wir Ihre Gespräche nicht lesen — selbst wenn wir wollten. Unser Server sieht allerdings Routing-Informationen, etwa welches Gerät an welches schreibt und wann.' },
     ],
   },
   contact: {
@@ -110,7 +110,7 @@ const de = {
   },
   platform: {
     kicker: 'Herunterladen',
-    sub: 'Bleib unsichtbar. Keine Telefonnummer, keine E-Mail — nur eine zufällig generierte Secretly-ID für völlige Anonymität.',
+    sub: 'Bleib unsichtbar. Keine Telefonnummer, keine E-Mail — nur eine zufällig generierte Secretly-ID.',
     comingSoon: 'Demnächst',
     macComingSoon: 'macOS — demnächst',
     macDownload: 'Für macOS herunterladen',
@@ -143,7 +143,7 @@ const de = {
   },
   aboutStats: [
     { value: '100%',  label: 'Open Source',               sub: 'Vollständig prüfbare Codebasis' },
-    { value: '0',     label: 'Zero-Knowledge',            sub: 'Serverseitige Nachrichtenspeicherung' },
+    { value: '0',     label: 'Lesbare Nachrichten',            sub: 'auf unseren Servern gespeichert' },
     { value: 'Keine', label: 'Erforderliche persönliche Daten', sub: 'Keine Telefonnummer, keine E-Mail' },
   ],
   termsAbuse: {
