@@ -17,6 +17,8 @@ permissions:
 
 jobs:
   build-test-deploy:
+    env:
+      HAS_CF_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN != '' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -35,8 +37,12 @@ jobs:
       - name: Smoke test
         run: npm run test:smoke
 
+      # Сайт выкладывает интеграция Cloudflare с GitHub (Workers Builds) —
+      # сама, по отправке в main. Этот шаг — запасной путь и выполняется,
+      # только если в репозитории заведён CLOUDFLARE_API_TOKEN. Без секрета он
+      # падал на каждой отправке и слал письма «CI failed» при живом сайте.
       - name: Deploy to Cloudflare
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main' && env.HAS_CF_TOKEN == 'true'
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
