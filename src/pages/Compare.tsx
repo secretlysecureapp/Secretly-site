@@ -3,10 +3,10 @@ import { useTranslation } from 'react-i18next'
 import { useReveal } from '../hooks/useReveal'
 
 type Cell = boolean | string
-interface Row { label: string; header?: boolean; secretly?: Cell; signal?: Cell; threema?: Cell; session?: Cell }
+interface Row { label: string; header?: boolean; secretly?: Cell; signal?: Cell; threema?: Cell; session?: Cell; telegram?: Cell; whatsapp?: Cell }
 
 /* Brand names — never translated. */
-const COLS = ['Secretly', 'Signal', 'Threema', 'Session'] as const
+const COLS = ['Secretly', 'Signal', 'Threema', 'Session', 'Telegram', 'WhatsApp'] as const
 
 function Yes() {
   return (
@@ -51,7 +51,7 @@ export default function Compare() {
       <section className="section">
         <div className="container">
           <div className="reveal" style={{ overflowX: 'auto', border: '1px solid var(--border)', borderRadius: 'var(--r-xl)', background: 'var(--bg-surface)' }}>
-            <table style={{ width: '100%', minWidth: 680, borderCollapse: 'collapse' }}>
+            <table style={{ width: '100%', minWidth: 940, borderCollapse: 'collapse' }}>
               <thead>
                 <tr>
                   <th style={{ ...th, color: 'var(--text-muted)' }}>{t('comparePage.feature')}</th>
@@ -66,7 +66,7 @@ export default function Compare() {
                 {rows.map((r, i) =>
                   r.header ? (
                     <tr key={i}>
-                      <td colSpan={5} style={{ padding: '20px 18px 10px', borderTop: i === 0 ? 'none' : '1px solid var(--border)', fontFamily: "'Space Grotesk', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--accent)', background: 'var(--bg-elevated)' }}>
+                      <td colSpan={COLS.length + 1} style={{ padding: '20px 18px 10px', borderTop: i === 0 ? 'none' : '1px solid var(--border)', fontFamily: "'Space Grotesk', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--accent)', background: 'var(--bg-elevated)' }}>
                         {r.label}
                       </td>
                     </tr>
@@ -77,6 +77,8 @@ export default function Compare() {
                       <td style={{ ...td, textAlign: 'center' }}><div style={{ display: 'flex', justifyContent: 'center' }}>{renderCell(r.signal)}</div></td>
                       <td style={{ ...td, textAlign: 'center' }}><div style={{ display: 'flex', justifyContent: 'center' }}>{renderCell(r.threema)}</div></td>
                       <td style={{ ...td, textAlign: 'center' }}><div style={{ display: 'flex', justifyContent: 'center' }}>{renderCell(r.session)}</div></td>
+                      <td style={{ ...td, textAlign: 'center' }}><div style={{ display: 'flex', justifyContent: 'center' }}>{renderCell(r.telegram)}</div></td>
+                      <td style={{ ...td, textAlign: 'center' }}><div style={{ display: 'flex', justifyContent: 'center' }}>{renderCell(r.whatsapp)}</div></td>
                     </tr>
                   ),
                 )}

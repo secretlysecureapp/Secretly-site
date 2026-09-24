@@ -12,7 +12,7 @@ export default function Terms() {
           <p className="page-hero__kicker">Legal</p>
           <h1 className="page-hero__title">Terms of Service</h1>
           <p className="page-hero__sub">
-            Effective date: July 01, 2026 · Operator: SIA Secretly
+            Effective date: September 25, 2026 · Operator: SIA Secretly
           </p>
         </div>
       </section>
@@ -58,10 +58,8 @@ export default function Terms() {
               <li>Account deletion tools</li>
               <li>On-device message translation and voice-message transcription</li>
               <li>
-                Voice dictation (by default, sends the audio you dictate to your device's
-                operating-system speech-recognition service — Apple's or Google's — for conversion
-                to text; an offline, fully on-device transcription mode is available as an
-                alternative where supported)
+                Voice dictation (on-device on Android; on iOS it uses Apple's speech
+                recognition, which Apple may process on its servers)
               </li>
               <li>GIF search (powered by Giphy)</li>
             </ul>
@@ -207,8 +205,8 @@ export default function Terms() {
               <li>Notifications may not arrive</li>
             </ul>
             <p>
-              Calls use <strong>secure transport encryption</strong>. Encryption level may depend
-              on configuration and infrastructure.
+              One-to-one calls are <strong>end-to-end encrypted</strong>. Group calls are relayed
+              by our media server and are encrypted in transit, but not end-to-end.
             </p>
             <p>Secretly is <strong>not an emergency service</strong>.</p>
 
@@ -281,6 +279,11 @@ export default function Terms() {
               <li>You represent that you are not located in a country subject to a U.S. Government embargo or designated “terrorist-supporting,” and are not on any U.S. Government prohibited-or-restricted-parties list.</li>
               <li>Apple and its subsidiaries are third-party beneficiaries of these Terms and may enforce them against you.</li>
             </ul>
+            <p>
+              The desktop apps for macOS and Windows are not distributed through an app store: you
+              download them directly from secretlyapp.com. The macOS app is notarized by Apple and
+              updates itself; the Windows app is distributed as a zip archive.
+            </p>
 
             <h2>13. Updates and Beta Features</h2>
             <p>Secretly may include:</p>
@@ -342,6 +345,10 @@ export default function Terms() {
               <li>Required by law or policy</li>
               <li>Service becomes unavailable</li>
             </ul>
+            <p>
+              Accounts that do not sign in for longer than the period chosen in Settings → Privacy →
+              Delete my account (24 months by default) are deleted automatically.
+            </p>
             <p>Termination does not remove data already received by others.</p>
 
             <h2>16. Disclaimers</h2>

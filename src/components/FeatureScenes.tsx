@@ -78,7 +78,7 @@ const SCENES = [
     <circle className="fs-acc fs-glow fs-travel" cx="33" cy="34" r="3" />
   </svg>,
 
-  // 7 — Hidden chats: padlock closing
+  // 7 — App lock: padlock closing
   <svg viewBox={VB} key="lock">
     <path className="fs-acc-s fs-lock" d="M27 37v-7a9 9 0 0 1 18 0v7" />
     <rect className="fs-acc" x="22" y="37" width="28" height="22" rx="4" />
@@ -86,13 +86,11 @@ const SCENES = [
     <rect x="34.6" y="47" width="2.8" height="6" rx="1.4" fill="rgba(0,0,0,0.4)" />
   </svg>,
 
-  // 8 — Panic button: ripples + pressing alert
-  <svg viewBox={VB} key="panic">
-    <circle className="fs-acc-s fs-wave" cx="36" cy="36" r="14" style={{ animationDelay: '0s' }} />
-    <circle className="fs-acc-s fs-wave" cx="36" cy="36" r="14" style={{ animationDelay: '1.1s' }} />
-    <circle className="fs-acc fs-press" cx="36" cy="36" r="13" />
-    <line x1="36" y1="30" x2="36" y2="38" stroke="#fff" strokeWidth="3" strokeLinecap="round" />
-    <circle cx="36" cy="43" r="2" fill="#fff" />
+  // 8 — Locked Personal chats: a chat bubble behind its own lock
+  <svg viewBox={VB} key="personal">
+    <path className="fs-acc-s" d="M12 18h34a4 4 0 0 1 4 4v15a4 4 0 0 1-4 4H28l-8 7v-7h-8a4 4 0 0 1-4-4V22a4 4 0 0 1 4-4z" />
+    <path className="fs-acc-s fs-lock" d="M48 44v-4a6 6 0 0 1 12 0v4" />
+    <rect className="fs-acc" x="45" y="44" width="18" height="14" rx="3" />
   </svg>,
 ]
 

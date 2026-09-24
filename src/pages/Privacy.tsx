@@ -10,7 +10,7 @@ export default function Privacy() {
           <p className="page-hero__kicker">Legal</p>
           <h1 className="page-hero__title">Privacy Policy</h1>
           <p className="page-hero__sub">
-            Effective Date: July 01, 2026 · Operator: SIA Secretly
+            Effective Date: September 25, 2026 · Operator: SIA Secretly
           </p>
         </div>
       </section>
@@ -23,6 +23,41 @@ export default function Privacy() {
               This document describes what data Secretly collects, how it's used, and user
               rights regarding the Secretly service.
             </p>
+
+            <div style={{
+              padding: '20px 24px',
+              background: 'var(--accent-dim)',
+              border: '1px solid var(--accent-border)',
+              borderRadius: 'var(--r-md)',
+              marginBottom: 40,
+            }}>
+              <h3 style={{ marginTop: 0, marginBottom: 10, fontSize: '1.05rem', color: 'var(--accent)' }}>
+                What changed in this version (September 25, 2026)
+              </h3>
+              <ul style={{ marginBottom: 0 }}>
+                <li>
+                  <strong>Notification previews.</strong> Until September 24, 2026, the app sent
+                  up to 180 characters of a message&rsquo;s text to our server so that notifications
+                  could show a preview. The server stored that text with the queued message and
+                  included it in the push notification sent through Apple (APNs) or Google (FCM).
+                  Since that date the server discards this text, and app version 1.8.59 no longer
+                  sends it. Previews already stored are being purged, including from server backups.
+                </li>
+                <li>
+                  <strong>Group calls.</strong> This policy now states that group calls are relayed by
+                  our media server and are encrypted in transit, not end-to-end. One-to-one calls
+                  remain end-to-end encrypted.
+                </li>
+                <li>
+                  <strong>Inactive accounts.</strong> Section 9 now describes the automatic deletion of
+                  accounts that stop signing in.
+                </li>
+                <li>
+                  <strong>Payments.</strong> Section 18 now reflects that Premium is sold only through
+                  the App Store and Google Play, and that donations are taken on this website.
+                </li>
+              </ul>
+            </div>
 
             <h2>1. Introduction</h2>
             <p>
@@ -58,7 +93,8 @@ export default function Privacy() {
             <p>
               Random device and profile identifiers (UUIDs, not linked to any real-world
               identity), chat/room IDs, delivery metadata (sent/delivered timestamps, message
-              size), delivery statuses, and push notification tokens when notifications are enabled.
+              size), delivery statuses, push notification tokens when notifications are enabled, and
+              your display name and group titles, which are shown as notification titles.
             </p>
             <h3>3.4 Payments and Donations</h3>
             <p>
@@ -120,11 +156,10 @@ export default function Privacy() {
                 never your audio.
               </li>
               <li>
-                <strong>Voice dictation</strong> (the microphone button in the message field) uses
-                your device’s built-in speech recognizer — Apple’s on iOS, Google’s on Android.
-                Depending on your device and its settings, this recognizer may send the audio you
-                dictate to Apple or Google for conversion to text, under their respective privacy
-                policies. Dictation is optional and runs only while you are actively using the
+                <strong>Voice dictation</strong> (the microphone button in the message field) runs
+                on your device on Android. On iOS it uses Apple’s built-in speech recognizer, which,
+                depending on your device and its settings, may send the audio you dictate to Apple
+                for conversion to text, under Apple’s privacy policy. Dictation is optional and runs only while you are actively using the
                 dictation button. If you prefer not to use a device speech service, simply type your
                 message instead.
               </li>
@@ -133,8 +168,9 @@ export default function Privacy() {
             <h3>3.9 GIF Search</h3>
             <p>
               If you use the in-app GIF search feature, the search terms you type are sent to
-              Giphy to retrieve matching results. This is the only data shared with Giphy; it is
-              not linked to your Secretly ID, and Giphy is not used for any other purpose. See
+              Giphy to retrieve matching results, and Giphy also sees your device&rsquo;s IP address.
+              Nothing else is shared with Giphy: the request does not include your Secretly ID, and
+              Giphy is not used for any other purpose. See
               Section 18 for Giphy's privacy policy.
             </p>
 
@@ -159,10 +195,11 @@ export default function Privacy() {
 
             <h2>6. Encryption and Metadata</h2>
             <p>
-              All user-generated content — text messages, voice messages, attachments, reactions,
-              group messages, and call media — is end-to-end encrypted on the sender's device and
-              decrypted only on the recipient's device. In normal operation, our servers do not
-              have access to message content or call media in plaintext.
+              Text messages, voice messages, attachments, reactions, group messages, and
+              one-to-one call media are end-to-end encrypted on the sender's device and decrypted
+              only on the recipient's device. In normal operation, our servers do not have access to
+              this content in plaintext. Group calls are the exception: they are relayed by our
+              self-hosted LiveKit media server and are encrypted in transit, not end-to-end.
             </p>
             <p><strong>Cryptographic primitives used by Secretly:</strong></p>
             <ul>
@@ -175,15 +212,16 @@ export default function Privacy() {
               <li><strong>Hashing / integrity:</strong> SHA-256 and HMAC-SHA256</li>
               <li><strong>Local database at rest:</strong> SQLCipher (mobile) / SQLite3 Multiple Ciphers (desktop), AES-256 with the database key stored in platform secure storage (iOS Keychain / Android Keystore)</li>
               <li><strong>Encrypted backups (optional):</strong> AES-256-GCM, with the key derived from a user-chosen passphrase via PBKDF2-HMAC-SHA256</li>
-              <li><strong>Transport security:</strong> TLS 1.3 for all client-server traffic; DTLS-SRTP (WebRTC standard) for media transport</li>
+              <li><strong>Transport security:</strong> TLS 1.2 or 1.3 for all client-server traffic; DTLS-SRTP (WebRTC standard) for media transport</li>
             </ul>
             <p><strong>Metadata visible to our servers (necessary for delivery and abuse prevention):</strong></p>
             <ul>
               <li>Sender and recipient device identifiers (random UUIDs, no phone number or email required)</li>
               <li>Message timestamps and delivery / read status</li>
               <li>Approximate message size (ciphertext length)</li>
-              <li>IP address of the connecting device (used transiently for routing; not stored alongside message content)</li>
+              <li>IP address of the connecting device (used for routing and kept in request and security logs for the periods in Section 8; never stored alongside message content)</li>
               <li>Push notification token (FCM / APNs) when notifications are enabled</li>
+              <li>Your display name and group titles, used as notification titles</li>
             </ul>
             <p>
               We minimise metadata retention — see Section 8 ("Data Retention Periods").
@@ -205,10 +243,9 @@ export default function Privacy() {
               <li>Audio/video providers (TURN/STUN/media relays)</li>
               <li>In-app purchase processing (Apple App Store, Google Play); and, for optional website donations only, payment providers such as Stripe or PayPal</li>
               <li>On-device machine-learning model distribution (Google ML Kit translation models; the voice-transcription model host)</li>
-              <li>Device speech-recognition services (Apple, Google) — only if and when you use voice dictation</li>
-              <li>GIF search (Giphy) — receives the search terms you type when using the GIF picker; not linked to your Secretly ID</li>
+              <li>Device speech-recognition services (Apple, on iOS) — only if and when you use voice dictation</li>
+              <li>GIF search (Giphy) — receives the search terms you type and your device&rsquo;s IP address when using the GIF picker; not linked to your Secretly ID</li>
               <li>Support and communication services (email, ticketing systems)</li>
-              <li>Analytics and monitoring services (if applicable)</li>
               <li>Legal authorities—only in response to a valid legal request</li>
             </ul>
             <p>
@@ -223,10 +260,10 @@ export default function Privacy() {
               this Policy, unless otherwise required by law. Retention periods:
             </p>
             <ul>
-              <li>Pending/undelivered messages (on the server): deleted immediately upon delivery; if never delivered, automatically deleted after 7 days by default, and in no case more than 30 days</li>
+              <li>Pending/undelivered messages (on the server): deleted immediately upon delivery; if never delivered, automatically deleted after up to 7 days</li>
               <li>Request and error logs: 30–90 days</li>
               <li>Security/audit logs: up to 365 days</li>
-              <li>Backups: up to 180 days</li>
+              <li>Server database backups: kept for a limited period, currently up to 14 days</li>
               <li>Account and profile data: stored until the account is deleted by the user, and thereafter to the extent required to comply with laws and legal obligations</li>
             </ul>
             <p>
@@ -239,14 +276,21 @@ export default function Privacy() {
             <p>
               Because Secretly holds no personal profile about you, there is very little to erase —
               but you remain in control of the cryptographic identity registered for message
-              delivery. In the app you can delete it via: Settings → Account → Delete Account. Upon
+              delivery. In the app you can delete it via: Settings → Account → Delete account. Upon
               deletion:
             </p>
             <ul>
               <li>Your profile ID, public keys, and device records are removed from our key registry</li>
               <li>Your push notification token is invalidated</li>
-              <li>Any undelivered encrypted envelopes queued for you are purged within the retention periods below</li>
+              <li>Encrypted backups you stored on our server are deleted</li>
+              <li>Any undelivered encrypted envelopes queued for you are purged within the retention periods above</li>
             </ul>
+            <p>
+              <strong>Inactive accounts.</strong> Under Settings → Privacy → Delete my account you
+              choose how long you may be away: 1, 3, 6, 12 or 24 months (24 months by default). If
+              you do not sign in for longer than that, the account is deleted automatically in the
+              same way. The countdown restarts each time you sign in.
+            </p>
             <p>
               Deletion does not affect data that has already been transmitted to other users (e.g.,
               messages saved by recipients). Some data may be retained in backups or logs for a
@@ -257,10 +301,10 @@ export default function Privacy() {
             <p>
               Depending on your jurisdiction, you may have the right to access, rectify, erase,
               restrict processing, and port your data, as well as the right to withdraw your
-              consent. In practice, because Secretly does not collect your name, phone number,
-              email, or message content, a data subject request typically concerns only the limited
-              technical data described in Section 3 (such as your random identifiers and push
-              token). To submit a request, write to technical.support@secretlyapp.com. We aim to
+              consent. In practice, because Secretly does not collect your phone number or email
+              and cannot read your end-to-end encrypted messages, a data subject request typically
+              concerns only the limited technical data described in Section 3 (such as your random
+              identifiers, display name and push token). To submit a request, write to technical.support@secretlyapp.com. We aim to
               respond within 30 days, except for complex cases that legally allow for an extension.
             </p>
 
@@ -317,10 +361,10 @@ export default function Privacy() {
               hardening:
             </p>
             <ul>
-              <li>All client-server traffic is protected by TLS 1.3 with HSTS and Let's Encrypt-issued certificates.</li>
+              <li>All client-server traffic is protected by TLS 1.2 or 1.3 with Let's Encrypt-issued certificates.</li>
               <li>HTTP requests to authenticated endpoints are signed with the user's identity key (Ed25519) to prevent replay and impersonation.</li>
-              <li>The local message database is encrypted at rest with SQLCipher / SQLite3 Multiple Ciphers using a key held in the platform secure enclave (iOS Keychain / Android Keystore).</li>
-              <li>Push notifications carry no plaintext message content — only a wake signal and an opaque message identifier.</li>
+              <li>The local message database is encrypted at rest with SQLCipher / SQLite3 Multiple Ciphers using a random key held in the platform&rsquo;s secure storage (Keychain on Apple devices, Keystore on Android).</li>
+              <li>Since September 24, 2026, push notifications carry no message text — only a wake signal, the sender&rsquo;s display name or the group title, and an opaque message identifier. Earlier app versions sent up to 180 characters of message text for previews; see the note at the top of this policy.</li>
               <li>Server-side push tokens are auto-invalidated when Apple/Google report the token as unregistered, so a stale device cannot be used to harvest delivery metadata.</li>
             </ul>
 
@@ -331,7 +375,7 @@ export default function Privacy() {
               prior to disclosure unless notification is prohibited by law.
             </p>
             <p>
-              Legal requests should be directed to: support@secretlyapp.com. Please include contact
+              Legal requests should be directed to: legal@secretlyapp.com. Please include contact
               information and the relevant legal documentation (court order, subpoena, etc.) in your
               request.
             </p>
@@ -360,7 +404,8 @@ export default function Privacy() {
               <li>
                 <strong>VoIP and Push:</strong> For incoming calls to function properly,
                 CallKit/PushKit (iOS) and FCM (Android) are used in accordance with platform
-                guidelines. Push notifications do not contain decrypted message content.
+                guidelines. Since September 24, 2026, push notifications contain no message text
+                (see the note at the top of this policy).
               </li>
             </ul>
 
@@ -384,7 +429,7 @@ export default function Privacy() {
                 <tr><td>Cryptographic hashing</td><td>SHA-256, HMAC-SHA256</td></tr>
                 <tr><td>Local database encryption</td><td>AES-256 via SQLCipher (mobile) / SQLite3 Multiple Ciphers (desktop)</td></tr>
                 <tr><td>Encrypted backup (optional)</td><td>AES-256-GCM with PBKDF2-HMAC-SHA256 key derivation</td></tr>
-                <tr><td>Transport security</td><td>TLS 1.3 (HTTP / WebSocket); DTLS-SRTP (WebRTC media)</td></tr>
+                <tr><td>Transport security</td><td>TLS 1.2 or 1.3 (HTTP / WebSocket); DTLS-SRTP (WebRTC media)</td></tr>
               </tbody>
             </table>
             <p>
@@ -392,7 +437,8 @@ export default function Privacy() {
               listed are publicly specified (RFC, NIST, IRTF CFRG) and have widely-available
               open-source implementations. The cryptographic library used by the application is the
               open-source Dart cryptography package and platform-native libraries (Apple CryptoKit /
-              Android Keystore APIs) for key storage.
+              Android Keystore APIs) for key storage. The Double Ratchet protocol implementation
+              itself is our own and has not yet been independently audited.
             </p>
 
             <h2>17a. Language of this policy</h2>
@@ -408,7 +454,7 @@ export default function Privacy() {
 
             <h3>Hosting / Infrastructure</h3>
             <ul>
-              <li>Hetzner Online GmbH — cloud servers located in Nuremberg, Germany — <a href="https://www.hetzner.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">privacy policy</a></li>
+              <li>Hetzner Online GmbH — cloud servers located in Germany — <a href="https://www.hetzner.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">privacy policy</a></li>
             </ul>
 
             <h3>Push Notifications</h3>
@@ -420,21 +466,21 @@ export default function Privacy() {
             <h3>Media / Calls</h3>
             <ul>
               <li>Coturn (self-hosted) — open-source TURN/STUN server running on our own Hetzner infrastructure for WebRTC NAT traversal — <a href="https://github.com/coturn/coturn" target="_blank" rel="noopener noreferrer">project page</a></li>
-              <li>LiveKit (self-hosted) — open-source SFU running on our own infrastructure for group calls — <a href="https://livekit.io/privacy" target="_blank" rel="noopener noreferrer">privacy policy</a></li>
+              <li>LiveKit (self-hosted) — open-source SFU running on our own infrastructure for group calls; group-call audio and video pass through it encrypted in transit, not end-to-end — <a href="https://livekit.io/privacy" target="_blank" rel="noopener noreferrer">privacy policy</a></li>
               <li>WebRTC (Google open-source library, embedded in the app, no data sent to Google) — <a href="https://webrtc.org/" target="_blank" rel="noopener noreferrer">webrtc.org</a></li>
             </ul>
 
             <h3>GIF Search</h3>
             <ul>
-              <li>Giphy — receives the search terms you type when using the in-app GIF picker, to return matching GIF results; not linked to your Secretly ID — <a href="https://support.giphy.com/hc/en-us/articles/360032872931-GIPHY-Privacy-Policy" target="_blank" rel="noopener noreferrer">privacy policy</a></li>
+              <li>Giphy — receives the search terms you type and your device&rsquo;s IP address when you use the in-app GIF picker, to return matching GIF results; not linked to your Secretly ID — <a href="https://support.giphy.com/hc/en-us/articles/360032872931-GIPHY-Privacy-Policy" target="_blank" rel="noopener noreferrer">privacy policy</a></li>
               <li>Cloudflare (Cloudflare, Inc.) — serves this website and its assets; receives the request data any web server sees, including your IP address — <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer">privacy policy</a>. This concerns the website only, not the messenger: message traffic never passes through it</li>
               <li>Formspree (Formspree, Inc.) — delivers the contact form on this website; receives whatever you type into that form, including the address you give for a reply — <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noopener noreferrer">privacy policy</a></li>
             </ul>
 
-            <h3>Payments (Android only)</h3>
+            <h3>Donations (website)</h3>
             <p>
-              Donations are accepted on Android via Donorbox; in-app donations on iOS are temporarily
-              disabled pending native In-App Purchase integration.
+              Donations are accepted on this website via Donorbox. Premium is sold only through the
+              Apple App Store and Google Play (see Section 3.4).
             </p>
             <ul>
               <li>Donorbox — <a href="https://donorbox.org/privacy" target="_blank" rel="noopener noreferrer">privacy policy</a></li>

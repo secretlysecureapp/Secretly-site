@@ -30,6 +30,20 @@ const DEFINES = [
 
 const ARTEFACTS = [
   {
+    release: '1.8.59 (628)',
+    platform: 'macOS',
+    file: 'Secretly-1.8.59-628.dmg',
+    date: '2026-09-24',
+    sha: 'f581ce72ad4d1f98b6e8b36f043c7feecee6458082b2639387e042e45185b617',
+  },
+  {
+    release: '1.8.59 (628)',
+    platform: 'Windows',
+    file: 'Secretly-1.8.59-628-windows-x64.zip',
+    date: '2026-09-24',
+    sha: 'e6305516dedc57082b31904b64605265fef549d2dd23f067f5c3fb0005315c90',
+  },
+  {
     release: '1.8.39 (588)',
     platform: 'Android',
     file: 'secretly-production-1.8.39-588-store588.aab',
@@ -121,9 +135,10 @@ export default function Verify() {
 
       <section className="section">
         <div className="container">
-          <h2 className="reveal">What we uploaded to the stores</h2>
+          <h2 className="reveal">What we published</h2>
           <p className="reveal">
-            SHA-256 of the exact files we handed to Apple and Google.
+            SHA-256 of the exact desktop files we offer for download, and of the
+            exact mobile files we handed to Apple and Google.
           </p>
 
           <div className="reveal" style={{ overflowX: 'auto' }}>
@@ -132,7 +147,7 @@ export default function Verify() {
                 <tr>
                   <th style={{ textAlign: 'left', padding: '8px 12px 8px 0' }}>Release</th>
                   <th style={{ textAlign: 'left', padding: '8px 12px 8px 0' }}>Platform</th>
-                  <th style={{ textAlign: 'left', padding: '8px 12px 8px 0' }}>Uploaded</th>
+                  <th style={{ textAlign: 'left', padding: '8px 12px 8px 0' }}>Published</th>
                   <th style={{ textAlign: 'left', padding: '8px 0' }}>SHA-256</th>
                 </tr>
               </thead>
@@ -148,12 +163,30 @@ export default function Verify() {
               </tbody>
             </table>
           </div>
+          <p className="reveal" style={{ fontSize: '0.9rem', marginTop: 12 }}>
+            Mobile checksums are published for the build shown; newer store
+            builds will be added here.
+          </p>
 
           <h3 className="reveal" style={{ marginTop: 32 }}>
-            Read this before comparing them with what you installed
+            Desktop downloads: compare them directly
           </h3>
           <p className="reveal">
-            You will not get a match, and that is not a sign of tampering.
+            The macOS and Windows apps come straight from us, not from a store, so
+            the file you download is byte-for-byte the file listed above for that
+            version. Compute its SHA-256 — <code>shasum -a 256</code> on macOS,{' '}
+            <code>certutil -hashfile &lt;file&gt; SHA256</code> on Windows — and
+            compare. A match proves you received exactly the file we published. It
+            does not yet prove that file was built from our source: builds are not
+            reproducible yet.
+          </p>
+
+          <h3 className="reveal" style={{ marginTop: 32 }}>
+            Store builds: read this before comparing them with what you installed
+          </h3>
+          <p className="reveal">
+            For Android and iOS you will not get a match, and that is not a sign of
+            tampering.
           </p>
           <ul className="reveal">
             <li>
@@ -169,7 +202,7 @@ export default function Verify() {
             </li>
           </ul>
           <p className="reveal">
-            So these sums prove one narrow thing: the file we uploaded on that
+            So the mobile sums prove one narrow thing: the file we uploaded on that
             date is the file whose hash is printed here, and we have not quietly
             swapped it since. They do not prove that your installed copy came
             from our source. Nobody who ships through those stores can prove
@@ -187,15 +220,16 @@ export default function Verify() {
             <strong>
               A directly downloadable, signed APK with a published checksum.
             </strong>{' '}
-            That is the one artefact that makes verification real: you download
-            it from us, compute its SHA-256, compare, and check the signing
-            certificate fingerprint — with no store in the middle. It does not
-            exist yet.
+            That is what would do for Android what the desktop downloads already
+            do: you download it from us, compute its SHA-256, compare, and check
+            the signing certificate fingerprint — with no store in the middle. It
+            does not exist yet.
           </p>
           <p className="reveal">
             Until it does, the honest summary is: you can rebuild our client from
-            source and inspect what it does; you cannot byte-compare the copy you
-            installed from a store. The order of work, and where reproducible
+            source and inspect what it does; you can byte-compare a desktop
+            download with its published checksum; you cannot byte-compare the copy
+            you installed from a store. The order of work, and where reproducible
             builds stand, is in <a href={VERIFY_MD}>docs/VERIFY.md</a>.
           </p>
 
@@ -206,10 +240,9 @@ export default function Verify() {
             If you rebuild from source and find behaviour that contradicts{' '}
             <a href={THREAT_MD}>our threat model</a> or anything on this page,
             that is a finding and we want it. Write to{' '}
-            <a href="mailto:support@secretlyapp.com?subject=SECURITY">
-              support@secretlyapp.com
-            </a>{' '}
-            with <code>SECURITY</code> in the subject. We publish corrections,
+            <a href="mailto:security@secretlyapp.com">
+              security@secretlyapp.com
+            </a>. We publish corrections,
             including the ones that embarrass us.
           </p>
         </div>

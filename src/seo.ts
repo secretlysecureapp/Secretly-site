@@ -23,7 +23,7 @@ export const SEO_BY_PATH: Record<string, SeoEntry> = {
   '/': {
     title: 'Secretly — Private Messaging Without Phone Numbers or Email',
     description:
-      'Secretly is an end-to-end encrypted messenger with no phone number, no email, no ads, and no trackers. Private chats, calls, and file sharing on every device.',
+      'Secretly is an end-to-end encrypted messenger with no phone number, no email, no ads, and no trackers. Private chats, calls, and file sharing on your phone and computer.',
   },
   '/download': {
     title: 'Download Secretly — Android, iOS, Windows and macOS',
@@ -38,12 +38,12 @@ export const SEO_BY_PATH: Record<string, SeoEntry> = {
   '/download/ios': {
     title: 'Download Secretly for iPhone & iPad',
     description:
-      'Install Secretly for iPhone and iPad from the App Store. End-to-end encrypted chats, calls, and files with no phone number or email.',
+      'Install Secretly for iPhone and iPad from the App Store. End-to-end encrypted chats, files, and one-to-one calls with no phone number or email.',
   },
   '/download/desktop': {
     title: 'Secretly for Windows and macOS — free download',
     description:
-      'Secretly for Windows and macOS: end-to-end encrypted chats, calls and files on a bigger screen. Create an account right on the computer, restore from a recovery kit, or link a phone you already use.',
+      'Secretly for Windows and macOS: end-to-end encrypted chats, files and one-to-one calls on a bigger screen. Create an account right on the computer, restore from a recovery kit, or link a phone you already use.',
   },
   '/security': {
     title: 'Secretly Security — End-to-End Encryption',
@@ -53,7 +53,7 @@ export const SEO_BY_PATH: Record<string, SeoEntry> = {
   '/dpa': {
     title: 'Data Processing Agreement — Secretly Teams',
     description:
-      'Our GDPR Article 28 agreement for organisations: what we process, the sub-processors, security measures, breach notification and deletion — written around the fact that end-to-end encryption means we never hold the message content.',
+      'Our GDPR Article 28 agreement for organisations: what we process, the sub-processors, security measures, breach notification and deletion — written around the fact that end-to-end encryption means we cannot read message content.',
   },
   '/verify': {
     title: 'Verify a Secretly Build — Checksums & Reproducing',
@@ -61,9 +61,9 @@ export const SEO_BY_PATH: Record<string, SeoEntry> = {
       'Rebuild Secretly from source with the pinned toolchains, and check the SHA-256 of what we upload to the stores — including an honest account of what store distribution makes impossible to verify.',
   },
   '/compare': {
-    title: 'Secretly vs Signal, Threema & Session',
+    title: 'Secretly vs Signal, Threema, Session, Telegram & WhatsApp',
     description:
-      'An honest comparison of Secretly, Signal, Threema, and Session — registration, encryption, open source, audits, desktop, groups, calls, and pricing.',
+      'An honest comparison of Secretly with Signal, Threema, Session, Telegram and WhatsApp — sign-up without a phone number, encryption, calls, open source, audits, desktop and pricing, checked in September 2026.',
   },
   '/features': {
     title: 'Secretly Features — Everything It Does',
@@ -78,17 +78,17 @@ export const SEO_BY_PATH: Record<string, SeoEntry> = {
   '/teams': {
     title: 'Secretly for Teams — Secure Business Messaging',
     description:
-      'Encrypted communication for legal, healthcare, finance, and journalism teams. Admin controls, organizational IDs, and policies — without ad-funded apps.',
+      'Encrypted communication for legal, healthcare, finance, and journalism teams. Group admin roles today, organization-wide controls in pilot — no ad-funded apps.',
   },
   '/about': {
     title: 'About Secretly — Privacy Is a Right, Not a Luxury',
     description:
-      'Secretly is built by engineers and privacy advocates. Learn about our mission to make secure, anonymous communication available to everyone.',
+      'Secretly is built by engineers and privacy advocates. Learn about our mission to make secure communication without personal identifiers available to everyone.',
   },
   '/blog': {
     title: 'Secretly Blog — Privacy & Security Notes',
     description:
-      'Plain-language writing from the Secretly team on private messaging, end-to-end encryption, disappearing messages, and staying anonymous online.',
+      'Plain-language writing from the Secretly team on private messaging, end-to-end encryption, disappearing messages, and staying private online.',
   },
   '/help': {
     title: 'Secretly Help & FAQ',
@@ -113,7 +113,7 @@ export const SEO_BY_PATH: Record<string, SeoEntry> = {
   '/delete-account': {
     title: 'Delete Your Secretly Account',
     description:
-      'How to delete your Secretly account and data. Because Secretly stores no personal information, removal is simple and final by design.',
+      'How to delete your Secretly account: one step in Settings removes your ID, keys, profile and backups from our servers. Inactive accounts are deleted automatically.',
   },
   '/privacy-policy': {
     title: 'Secretly Privacy Policy',

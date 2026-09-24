@@ -14,26 +14,26 @@ Your number is tied to your real name, your billing address, your carrier, and o
 
 It also exposes your social graph. "Find friends by contacts" features quietly upload your address book and reveal who you know.
 
-## Secretly uses an anonymous ID instead
+## Secretly uses a random ID instead
 
 When you install Secretly, the app generates a random **Secretly ID** on your device. That ID is how people reach you. There is:
 
 - no phone number,
 - no email,
-- no name,
+- no real name,
 - no account to sign into.
 
-You share your ID (or a QR code) with the people you want to talk to, and that's it. Nothing about your identity is required to create it, and nothing links it back to you on our side.
+You share your ID (or a QR code) with the people you want to talk to, and that's it. Nothing about your identity is required to create it. Our server still sees technical data such as IP addresses and push tokens — our threat model lists it — but nothing we ask you for points back to you.
 
 ## What this means in practice
 
-- **You can't be found by your number.** Strangers can't look you up because there's nothing to look up.
-- **A breach reveals nothing useful.** There's no directory of phone numbers to steal.
-- **You stay in control of your social graph.** Secretly never asks for your contacts.
+- **You can't be found by your number.** Nobody can look you up unless you turn on nickname search — it is off by default.
+- **A breach reveals far less.** There's no directory of phone numbers or emails to steal — though, like any messenger, our server holds routing data such as which device talks to which.
+- **You stay in control of your social graph.** Your address book is never uploaded; optional contact sync only writes to your phone.
 
 ## "But how do you stop spam without a number?"
 
-Phone-number verification is mostly a convenience for the *platform*, not a real security control. Secretly relies on the fundamentals instead: you only receive messages from IDs you've added, end-to-end encryption protects every message, and there's no public directory to scrape.
+Phone-number verification is mostly a convenience for the *platform*, not a real security control. Secretly relies on the fundamentals instead: messages from people you haven't added wait in Requests, you can block anyone, end-to-end encryption protects every message, and there's no public directory to scrape.
 
 Privacy shouldn't start with handing over the most identifying number you own. With Secretly, it doesn't.
 

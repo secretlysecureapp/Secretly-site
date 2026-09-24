@@ -91,8 +91,8 @@ export default function Download() {
             <p className="section-label" style={{ marginBottom: 20 }}>System requirements</p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 16 }}>
               {[
-                { os: 'Android', req: 'Android 8.0 or later' },
-                { os: 'iPhone & iPad', req: 'iOS / iPadOS 15 or later' },
+                { os: 'Android', req: 'Android 7.0 or later' },
+                { os: 'iPhone & iPad', req: 'iOS / iPadOS 15.5 or later' },
                 { os: 'Windows', req: 'Windows 10 or later' },
                 { os: 'macOS', req: 'macOS 11 Big Sur or later' },
               ].map((r) => (

@@ -25,7 +25,7 @@ export default function Dpa() {
           <p className="page-hero__kicker">Legal</p>
           <h1 className="page-hero__title">Data Processing Agreement</h1>
           <p className="page-hero__sub">
-            For Secretly Teams · Article 28 GDPR · Version 1.0, 18 September 2026
+            For Secretly Teams · Article 28 GDPR · Version 1.1, 25 September 2026
           </p>
         </div>
       </section>
@@ -43,16 +43,27 @@ export default function Dpa() {
           </p>
           <p>
             <strong>We cannot read your organisation&rsquo;s messages, files or
-            calls.</strong> They are encrypted on the sender&rsquo;s device and
+            one-to-one calls.</strong> They are encrypted on the sender&rsquo;s device and
             decrypted on the recipient&rsquo;s. Our servers pass ciphertext they
             have no key for. This is not a policy we could quietly change: it is
             how the protocol works, and the source code is public so you can
-            check rather than believe us.
+            check rather than believe us. Group calls are the exception: they
+            pass through our self-hosted media server encrypted in transit, not
+            end-to-end.
           </p>
           <p>
             What we do process is the minimum needed to deliver a message to the
             right device: account identifiers, device public keys, push tokens,
-            timestamps and sizes. That is the subject of this agreement.
+            timestamps and sizes, plus display names and group titles, which are
+            shown as notification titles. That is the subject of this agreement.
+          </p>
+          <p>
+            <strong>Change in version 1.1.</strong> Until 24 September 2026 the
+            app also sent up to 180 characters of message text for notification
+            previews; the server stored it and included it in the push sent
+            through Apple or Google. Since that date the server discards it and
+            app version 1.8.59 no longer sends it. Previews already stored are
+            being purged, including from server backups.
           </p>
 
           <h2>1. Parties and roles</h2>
@@ -98,17 +109,20 @@ export default function Dpa() {
           <p><strong>Personal data processed:</strong></p>
           <ul>
             <li>Secretly ID (a device-generated identifier — no phone number, no email address)</li>
-            <li>Display name and avatar, if the user chooses to set them</li>
+            <li>Display name and avatar, if the user chooses to set them; group titles. Display names and group titles are used as notification titles</li>
             <li>Device public keys and prekey bundles</li>
             <li>Push notification tokens (Apple, Google)</li>
             <li>Delivery metadata: conversation identifiers, timestamps, message sizes, delivery and read status</li>
+            <li>Group-call audio and video, relayed in transit by our media server (not end-to-end encrypted)</li>
+            <li>Until 24 September 2026 only: up to 180 characters of message text for notification previews — no longer collected, and being purged</li>
             <li>Encrypted backup archives, where the user creates one — encrypted with a password we do not hold</li>
             <li>IP addresses in transient connection and security logs</li>
             <li>Billing references for the organisation&rsquo;s seats</li>
           </ul>
           <p>
-            <strong>Not processed:</strong> message, file or call content, which
-            is end-to-end encrypted; contact lists, which stay on the device; and
+            <strong>Not processed:</strong> message, file or one-to-one call
+            content, which is end-to-end encrypted (subject to the group-call and
+            preview notes above); contact lists, which stay on the device; and
             any special category data under Article 9 — which does not mean your
             members cannot discuss it, only that we never see it.
           </p>
@@ -137,13 +151,14 @@ export default function Dpa() {
           </p>
           <ul>
             <li><strong>Hetzner Online GmbH</strong> (Germany, EU) — hosting of the relay and key servers. All persistent data lives here.</li>
-            <li><strong>Apple Inc.</strong> (USA) — push notification delivery to iOS and macOS devices. Receives a push token and a wake signal, not message content.</li>
-            <li><strong>Google Ireland Ltd / Google LLC</strong> (Ireland, USA) — Firebase Cloud Messaging for Android push. Same: token and wake signal only.</li>
+            <li><strong>Apple Inc.</strong> (USA) — push notification delivery to iOS and macOS devices. Receives a push token, a wake signal and the notification title (sender&rsquo;s display name or group title) — no message text since 24 September 2026.</li>
+            <li><strong>Google Ireland Ltd / Google LLC</strong> (Ireland, USA) — Firebase Cloud Messaging for Android push. Same: token, wake signal and notification title only.</li>
             <li><strong>Cloudflare, Inc.</strong> (USA) — serves the public website only. No messaging traffic passes through it.</li>
           </ul>
           <p>
             <strong>Giphy</strong> receives whatever a user types into the GIF
-            search box, if they use that feature. This is the user&rsquo;s own
+            search box, and the device&rsquo;s IP address, if they use that
+            feature. This is the user&rsquo;s own
             action rather than processing on the Controller&rsquo;s behalf, and
             the feature can be left unused; we list it here so nobody is
             surprised.
@@ -157,7 +172,7 @@ export default function Dpa() {
           <p>Article 32 measures in force:</p>
           <ul>
             <li>end-to-end encryption of message content using the Double Ratchet protocol with X3DH key agreement and Ed25519 identities — the server holds no key that decrypts it;</li>
-            <li>XChaCha20-Poly1305 for media and archives; SQLCipher for storage on the device; DTLS-SRTP for calls;</li>
+            <li>XChaCha20-Poly1305 for messages and media; AES-256-GCM for backups and the recovery kit; SQLCipher for storage on the device; DTLS-SRTP end-to-end for one-to-one calls, and transport encryption for group calls;</li>
             <li>TLS for every connection between client and server;</li>
             <li>signed server configuration, which the client refuses if the signature does not verify;</li>
             <li>server access restricted to the operator, over key-based SSH;</li>
@@ -200,16 +215,17 @@ export default function Dpa() {
             operate infrastructure in the United States. Those transfers rely on
             the European Commission&rsquo;s Standard Contractual Clauses and, where
             the recipient is certified, the EU&ndash;US Data Privacy Framework. A
-            push token identifies a device to its own operating system vendor; it
-            carries no message content.
+            push token identifies a device to its own operating system vendor.
+            Since 24 September 2026 the push itself carries no message text —
+            only a wake signal and the notification title.
           </p>
 
           <h2>9. Deletion and return</h2>
           <ul>
-            <li>A member&rsquo;s account data is deleted when they delete the account in the app, or when the Controller removes their seat and instructs deletion.</li>
+            <li>A member&rsquo;s account data is deleted when they delete the account in the app, or on request, by us, when the Controller asks us to remove their seat and delete their data.</li>
             <li>On termination of the subscription, we delete the Controller&rsquo;s organisational data within <strong>30 days</strong>, unless EU or Member State law requires us to keep it.</li>
-            <li>Encrypted server backups age out within <strong>180 days</strong>. Data in them is unreadable to us and is not restored to live systems after deletion.</li>
-            <li>There is nothing to &ldquo;return&rdquo; in the usual sense: message content lives on the members&rsquo; devices, and they can export it themselves.</li>
+            <li>Server database backups contain routing metadata and encrypted payloads, not readable message content, and are kept for a limited period, currently up to <strong>14 days</strong>. Data in them is not restored to live systems after deletion.</li>
+            <li>There is nothing to &ldquo;return&rdquo; in the usual sense: message content lives on the members&rsquo; devices.</li>
           </ul>
 
           <h2>10. Audits</h2>
@@ -218,7 +234,9 @@ export default function Dpa() {
             and provide our threat model, security policy and sub-processor list
             on request. Because the entire client and server source code is
             public, a technical audit does not depend on our cooperation: your
-            own security team, or an auditor you hire, can read exactly what runs.
+            own security team, or an auditor you hire, can read the code we
+            publish. Builds are not yet reproducible, so no one can yet prove
+            that a given binary, or our server, was built from it.
           </p>
           <p>
             <strong>We will not pretend to offer more than we can.</strong> An

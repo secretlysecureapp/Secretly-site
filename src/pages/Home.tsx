@@ -23,7 +23,7 @@ const STRUCTURED_DATA = {
       sameAs: [
         'https://x.com/Secretly_App',
         'https://facebook.com/secretlysecureapp',
-        'https://github.com/secretlysecureapp/Secretly-site',
+        'https://github.com/Arkhanhel/Secretly',
       ],
     },
     {
@@ -88,7 +88,8 @@ export default function Home() {
   // iOS, macOS и (с 24.09.2026) Windows. Счётчик не обещает того, чего нельзя
   // скачать, — раньше он показывал пять при двух доступных.
   const [platRef,   platVal]   = useCountUp(4, 1400, '')
-  const [langRef,   langVal]   = useCountUp(10, 1600, '')
+  // Языки интерфейса ПРИЛОЖЕНИЯ (8), а не сайта (10) — подпись это и говорит.
+  const [langRef,   langVal]   = useCountUp(8, 1600, '')
   const [noDataRef, noDataVal] = useCountUp(0, 800, '')
 
   return (
