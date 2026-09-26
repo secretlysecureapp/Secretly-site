@@ -44,6 +44,27 @@ const ARTEFACTS = [
     sha: '5e29c8936dde8f04e4b3444407f0907a84b2baf6793f99f89c2c957c35fc4347',
   },
   {
+    release: '1.8.61 (630)',
+    platform: 'Windows',
+    file: 'Secretly-1.8.61-630-windows-x64.zip',
+    date: '2026-09-25',
+    sha: '7465e38bfbc7853750c3ace547adeaf8e0a82f0f4e84fbbd634ee9e73bf4a2e4',
+  },
+  {
+    release: '1.8.61 (631)',
+    platform: 'Android',
+    file: 'secretly-production-1.8.61-631-store631.aab',
+    date: '2026-09-26',
+    sha: 'ad87f9c8e649d7c51b69505ab943b390ac1fb31b73cfe624f0ca45bcc466e7ec',
+  },
+  {
+    release: '1.8.61 (630)',
+    platform: 'iOS',
+    file: 'secretly-production-1.8.61-630-store630.ipa',
+    date: '2026-09-26',
+    sha: '50ad5814edc362c848bd907645719d40ebb7e9d45b823e7afc28ccbc039ffbea',
+  },
+  {
     release: '1.8.59 (628)',
     platform: 'macOS',
     file: 'Secretly-1.8.59-628.dmg',
@@ -183,8 +204,11 @@ export default function Verify() {
             </table>
           </div>
           <p className="reveal" style={{ fontSize: '0.9rem', marginTop: 12 }}>
-            Mobile checksums are published for the build shown; newer store
-            builds will be added here.
+            Each release&rsquo;s exact source is tagged in the repository
+            (for example <code>v1.8.61-630</code>); <a href={VERIFY_MD}>docs/VERIFY.md</a>{' '}
+            maps every file to its tag. On 26 September 2026 Google Play serves
+            1.8.61 (631); the App Store still serves 1.8.39 (588), with 1.8.61
+            (630) in TestFlight.
           </p>
 
           <h3 className="reveal" style={{ marginTop: 32 }}>
