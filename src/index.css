@@ -623,6 +623,11 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(12px);
   animation: fadeUp 0.7s cubic-bezier(0.22,1,0.36,1) 0.54s forwards;
 }
+.hero__proof-link {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
 .hero__proof-dot {
   width: 3px;
   height: 3px;

@@ -10,7 +10,7 @@ tags: "Security, Encryption"
 
 ## The short version
 
-End-to-end encryption (E2EE) means a message is encrypted on **your** device and can only be decrypted on the **recipient's** device. Nobody in between — not the network, not the relay server, not Secretly — can read it. The server only ever sees ciphertext.
+End-to-end encryption (E2EE) means a message is encrypted on **your** device and can only be decrypted on the **recipient's** device. Nobody in between — not the network, not the relay server, not Secretly — can read it. The server only moves ciphertext — though it does see who talks to whom and when (more on that below).
 
 ## Your keys stay on your device
 

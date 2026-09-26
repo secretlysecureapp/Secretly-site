@@ -15,6 +15,7 @@ Turn on auto-delete in a chat and pick a timer: 24 hours, 7 days or 30 days. Mes
 - Set it per conversation.
 - Choose the interval that fits how sensitive the chat is.
 - It works on your side only. The other person's copy is not deleted; they can set a timer of their own.
+- It removes the messages. Downloaded files and voice-message transcripts stay until you delete them — we are working on removing them too.
 
 ## What it does and doesn't do
 

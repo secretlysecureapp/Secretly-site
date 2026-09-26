@@ -30,6 +30,20 @@ const DEFINES = [
 
 const ARTEFACTS = [
   {
+    release: '1.8.61 (630)',
+    platform: 'macOS',
+    file: 'Secretly-1.8.61-630.dmg',
+    date: '2026-09-25',
+    sha: 'bc21172346b41af4d6ba4c199f47357dda297b711ce9fc0132504ca7fbaaf26d',
+  },
+  {
+    release: '1.8.61 (631)',
+    platform: 'Windows',
+    file: 'Secretly-1.8.61-631-windows-x64.zip',
+    date: '2026-09-26',
+    sha: '5e29c8936dde8f04e4b3444407f0907a84b2baf6793f99f89c2c957c35fc4347',
+  },
+  {
     release: '1.8.59 (628)',
     platform: 'macOS',
     file: 'Secretly-1.8.59-628.dmg',
@@ -100,9 +114,9 @@ export default function Verify() {
         <div className="container">
           <h2 className="reveal">Rebuild the client from source</h2>
           <p className="reveal">
-            Everything needed to produce a build equivalent to the one in the
-            stores is public: the source, the pinned toolchains, and the exact
-            compile-time values.
+            Almost everything needed to produce a build equivalent to the one in
+            the stores is public: the source, the pinned toolchains, and the
+            compile-time values below. The one exception is our GIPHY API key.
           </p>
 
           <ul className="reveal">
@@ -118,9 +132,14 @@ export default function Verify() {
           </ul>
 
           <p className="reveal">
-            The store builds were compiled with these values. All four are public
-            by nature; the last is the <strong>public</strong> half of the key
-            that signs our configuration endpoint.
+            The store builds were compiled with these four values — all public by
+            nature; the last is the <strong>public</strong> half of the key that
+            signs our configuration endpoint — plus build settings that do not
+            touch the security path: version and build number, a build marker,
+            fallback addresses of our own hosts, and feature switches (room keys,
+            call logs, demo data, pre-key handling). One value is private: our
+            GIPHY API key, so a rebuild will differ from ours at least in that
+            string.
           </p>
           <pre className="reveal" style={preBlock}>
             {DEFINES.map((d) => `--dart-define=${d}`).join('\n')}

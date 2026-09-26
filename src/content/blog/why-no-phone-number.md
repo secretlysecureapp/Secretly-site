@@ -23,7 +23,7 @@ When you install Secretly, the app generates a random **Secretly ID** on your de
 - no real name,
 - no account to sign into.
 
-You share your ID (or a QR code) with the people you want to talk to, and that's it. Nothing about your identity is required to create it. Our server still sees technical data such as IP addresses and push tokens — our threat model lists it — but nothing we ask you for points back to you.
+You share your ID (or a QR code) with the people you want to talk to, and that's it. Nothing about your identity is required to create it. Our server still sees technical data such as IP addresses and push tokens — our [privacy policy](/privacy) says what and for how long — but nothing we ask you for points back to you.
 
 ## What this means in practice
 

@@ -169,10 +169,14 @@ export default function Security() {
               <div style={{ display: 'flex', gap: 12 }}><Check /><span style={{ fontSize: 15, color: 'var(--text-secondary)', lineHeight: 1.7 }}>{t('securityPage.audit2')}</span></div>
               <div style={{ display: 'flex', gap: 12 }}><Check /><span style={{ fontSize: 15, color: 'var(--text-secondary)', lineHeight: 1.7 }}><strong style={{ color: 'var(--text-primary)' }}>{t('securityPage.auditPlannedLead')}</strong> {t('securityPage.auditPlannedRest')}</span></div>
             </div>
+            <p style={{ fontSize: 15, color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 16 }}>
+              {t('securityPage.threatA')}{' '}
+              <a href={`${SITE.github}/blob/main/docs/THREAT_MODEL.md`} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent)' }}>{t('securityPage.threatLink')}</a>{t('securityPage.threatB')}
+            </p>
             <p style={{ fontSize: 14, color: 'var(--text-muted)', lineHeight: 1.7 }}>
               {t('securityPage.vulnA')}{' '}
               <a href="mailto:security@secretlyapp.com" style={{ color: 'var(--accent)' }}>security@secretlyapp.com</a>{t('securityPage.vulnB')}{' '}
-              <a href={SITE.github} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent)' }}>GitHub</a>{t('securityPage.vulnC')}
+              <a href={`${SITE.github}/blob/main/SECURITY.md`} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent)' }}>SECURITY.md</a>{t('securityPage.vulnC')}
             </p>
           </div>
         </div>

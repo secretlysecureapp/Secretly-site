@@ -118,9 +118,8 @@ export default function Footer() {
           {/* Не «All rights reserved»: код мессенджера выпущен под AGPL-3.0,
               и эта формула прямо ей противоречила. */}
           <p className="footer__copy">
-            © 2026 SIA Secretly · Messenger source code under{' '}
+            © 2026 SIA Secretly (this site, MIT) · Messenger source code © 2025–2026 Yurii Arkhanhelskyi,{' '}
             <a href="https://github.com/Arkhanhel/Secretly" target="_blank" rel="noopener noreferrer">AGPL-3.0</a>
-            {' '}· This site under MIT
           </p>
           {/* Реквизиты на каждой странице: директива об электронной коммерции
               требует, чтобы они были «легко, непосредственно и постоянно

@@ -25,7 +25,7 @@ export default function Dpa() {
           <p className="page-hero__kicker">Legal</p>
           <h1 className="page-hero__title">Data Processing Agreement</h1>
           <p className="page-hero__sub">
-            For Secretly Teams · Article 28 GDPR · Version 1.1, 25 September 2026
+            For Secretly Teams · Article 28 GDPR · Version 1.2, 26 September 2026
           </p>
         </div>
       </section>
@@ -58,12 +58,20 @@ export default function Dpa() {
             shown as notification titles. That is the subject of this agreement.
           </p>
           <p>
+            <strong>Change in version 1.2.</strong> This version states that server
+            backups are currently stored unencrypted on the same server, how long they
+            are really kept, and that backups made before 24 September 2026 may still
+            contain notification previews until they are deleted. It also calls our
+            handshake X3DH-like and limits Apple push to iOS devices.
+          </p>
+          <p>
             <strong>Change in version 1.1.</strong> Until 24 September 2026 the
             app also sent up to 180 characters of message text for notification
             previews; the server stored it and included it in the push sent
             through Apple or Google. Since that date the server discards it and
-            app version 1.8.59 no longer sends it. Previews already stored are
-            being purged, including from server backups.
+            app version 1.8.59 no longer sends it. Previews that were queued were removed on that date;
+            server backups made before it may still contain them until those
+            backups are deleted.
           </p>
 
           <h2>1. Parties and roles</h2>
@@ -114,7 +122,7 @@ export default function Dpa() {
             <li>Push notification tokens (Apple, Google)</li>
             <li>Delivery metadata: conversation identifiers, timestamps, message sizes, delivery and read status</li>
             <li>Group-call audio and video, relayed in transit by our media server (not end-to-end encrypted)</li>
-            <li>Until 24 September 2026 only: up to 180 characters of message text for notification previews — no longer collected, and being purged</li>
+            <li>Until 24 September 2026 only: up to 180 characters of message text for notification previews — no longer collected; server backups made before that date may still contain it until they are deleted</li>
             <li>Encrypted backup archives, where the user creates one — encrypted with a password we do not hold</li>
             <li>IP addresses in transient connection and security logs</li>
             <li>Billing references for the organisation&rsquo;s seats</li>
@@ -151,7 +159,7 @@ export default function Dpa() {
           </p>
           <ul>
             <li><strong>Hetzner Online GmbH</strong> (Germany, EU) — hosting of the relay and key servers. All persistent data lives here.</li>
-            <li><strong>Apple Inc.</strong> (USA) — push notification delivery to iOS and macOS devices. Receives a push token, a wake signal and the notification title (sender&rsquo;s display name or group title) — no message text since 24 September 2026.</li>
+            <li><strong>Apple Inc.</strong> (USA) — push notification delivery to iOS devices. Receives a push token, a wake signal and the notification title (sender&rsquo;s display name or group title) — no message text since 24 September 2026.</li>
             <li><strong>Google Ireland Ltd / Google LLC</strong> (Ireland, USA) — Firebase Cloud Messaging for Android push. Same: token, wake signal and notification title only.</li>
             <li><strong>Cloudflare, Inc.</strong> (USA) — serves the public website only. No messaging traffic passes through it.</li>
           </ul>
@@ -171,12 +179,12 @@ export default function Dpa() {
           <h2>6. Security measures</h2>
           <p>Article 32 measures in force:</p>
           <ul>
-            <li>end-to-end encryption of message content using the Double Ratchet protocol with X3DH key agreement and Ed25519 identities — the server holds no key that decrypts it;</li>
+            <li>end-to-end encryption of message content using the Double Ratchet protocol with an X3DH-like key agreement and Ed25519 identities (the initiator signs the handshake since app version 1.8.58) — the server holds no key that decrypts it;</li>
             <li>XChaCha20-Poly1305 for messages and media; AES-256-GCM for backups and the recovery kit; SQLCipher for storage on the device; DTLS-SRTP end-to-end for one-to-one calls, and transport encryption for group calls;</li>
             <li>TLS for every connection between client and server;</li>
             <li>signed server configuration, which the client refuses if the signature does not verify;</li>
             <li>server access restricted to the operator, over key-based SSH;</li>
-            <li>encrypted, access-controlled backups of server state, held in the EU;</li>
+            <li>access-controlled backups of server state, held in the EU — currently unencrypted and on the same server; encryption and an off-site copy are being added;</li>
             <li>rate limiting, request nonce replay protection and a bounded timestamp window on the key server;</li>
             <li>a published threat model that states the known limitations rather than hiding them.</li>
           </ul>
@@ -224,7 +232,7 @@ export default function Dpa() {
           <ul>
             <li>A member&rsquo;s account data is deleted when they delete the account in the app, or on request, by us, when the Controller asks us to remove their seat and delete their data.</li>
             <li>On termination of the subscription, we delete the Controller&rsquo;s organisational data within <strong>30 days</strong>, unless EU or Member State law requires us to keep it.</li>
-            <li>Server database backups contain routing metadata and encrypted payloads, not readable message content, and are kept for a limited period, currently up to <strong>14 days</strong>. Data in them is not restored to live systems after deletion.</li>
+            <li>Server database backups contain routing metadata and encrypted payloads, not readable message content, and are usually kept for <strong>14 days</strong>; the three most recent copies are always kept, whatever their age. Data in them is not restored to live systems after deletion.</li>
             <li>There is nothing to &ldquo;return&rdquo; in the usual sense: message content lives on the members&rsquo; devices.</li>
           </ul>
 

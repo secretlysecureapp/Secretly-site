@@ -142,7 +142,7 @@ export default function Home() {
               <div className="hero__proof">
                 <span>{t('hero.proofOpenSource')}</span>
                 <span className="hero__proof-dot" />
-                <span>{t('hero.proofVerified')}</span>
+                <a className="hero__proof-link" href="https://github.com/Arkhanhel/Secretly/blob/main/docs/THREAT_MODEL.md" target="_blank" rel="noopener noreferrer">{t('hero.proofVerified')}</a>
                 <span className="hero__proof-dot" />
                 <span>{t('hero.proofZK')}</span>
               </div>

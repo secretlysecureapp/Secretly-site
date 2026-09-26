@@ -10,7 +10,7 @@ export default function Privacy() {
           <p className="page-hero__kicker">Legal</p>
           <h1 className="page-hero__title">Privacy Policy</h1>
           <p className="page-hero__sub">
-            Effective Date: September 25, 2026 · Operator: SIA Secretly
+            Effective Date: September 26, 2026 · Operator: SIA Secretly
           </p>
         </div>
       </section>
@@ -32,16 +32,25 @@ export default function Privacy() {
               marginBottom: 40,
             }}>
               <h3 style={{ marginTop: 0, marginBottom: 10, fontSize: '1.05rem', color: 'var(--accent)' }}>
-                What changed in this version (September 25, 2026)
+                What changed recently (September 25–26, 2026)
               </h3>
               <ul style={{ marginBottom: 0 }}>
+                <li>
+                  <strong>September 26: more precise wording.</strong> Sections 3.7 and 19 now
+                  describe the Meta SKAdNetwork identifiers in the iOS app. Section 18 now lists
+                  every third party the app can contact for optional features. The encryption
+                  section calls our handshake X3DH-like and names the cipher used for backups,
+                  and the retention section says how long server backups are really kept and
+                  that they are not yet encrypted at rest.
+                </li>
                 <li>
                   <strong>Notification previews.</strong> Until September 24, 2026, the app sent
                   up to 180 characters of a message&rsquo;s text to our server so that notifications
                   could show a preview. The server stored that text with the queued message and
                   included it in the push notification sent through Apple (APNs) or Google (FCM).
                   Since that date the server discards this text, and app version 1.8.59 no longer
-                  sends it. Previews already stored are being purged, including from server backups.
+                  sends it. Previews that were already queued were removed on that date; server backups made
+                  before it may still contain them until those backups are deleted.
                 </li>
                 <li>
                   <strong>Group calls.</strong> This policy now states that group calls are relayed by
@@ -132,7 +141,8 @@ export default function Privacy() {
             <h3>3.7 Diagnostics and Analytics</h3>
             <p>
               Secretly does not use third-party analytics, advertising, or crash-reporting
-              services in the app or on this website (see Section 18). We do not build behavioural
+              services in the app or on this website (see Section 18). The iOS app does list Meta&rsquo;s
+              SKAdNetwork identifiers; see Section 19. We do not build behavioural
               profiles, and we use privacy-respecting, cookieless measurement at most for basic
               site health.
             </p>
@@ -205,10 +215,11 @@ export default function Privacy() {
             <ul>
               <li><strong>Identity keys:</strong> Ed25519 (digital signatures, long-term identity)</li>
               <li><strong>Key agreement:</strong> X25519 (Curve25519 Diffie-Hellman) for signed pre-keys, one-time pre-keys, and per-message DH ratchet steps</li>
-              <li><strong>Initial handshake:</strong> X3DH-style triple Diffie-Hellman exchange to establish a fresh root key for each new conversation</li>
+              <li><strong>Initial handshake:</strong> X3DH-like exchange — X25519 between a fresh ephemeral key and the recipient&rsquo;s signed pre-key and, when available, a one-time pre-key — to establish a fresh root key for each new conversation. Since app version 1.8.58 the initiator also signs the handshake with its Ed25519 identity key.</li>
               <li><strong>Forward-secrecy ratchet:</strong> Signal-inspired Double Ratchet v3, advancing chain keys per message and root keys per DH step</li>
               <li><strong>Symmetric message encryption (AEAD):</strong> XChaCha20-Poly1305 (24-byte nonce, 16-byte authentication tag)</li>
               <li><strong>Key derivation:</strong> HKDF-SHA256 for ratchet keys; PBKDF2-HMAC-SHA256 for password-derived encryption (backups, recovery kit)</li>
+              <li><strong>Backups and recovery kit:</strong> AES-256-GCM, with the key derived from your password by PBKDF2-HMAC-SHA256 (400,000 iterations for new server backups; 200,000 for the recovery kit)</li>
               <li><strong>Hashing / integrity:</strong> SHA-256 and HMAC-SHA256</li>
               <li><strong>Local database at rest:</strong> SQLCipher (mobile) / SQLite3 Multiple Ciphers (desktop), AES-256 with the database key stored in platform secure storage (iOS Keychain / Android Keystore)</li>
               <li><strong>Encrypted backups (optional):</strong> AES-256-GCM, with the key derived from a user-chosen passphrase via PBKDF2-HMAC-SHA256</li>
@@ -263,7 +274,7 @@ export default function Privacy() {
               <li>Pending/undelivered messages (on the server): deleted immediately upon delivery; if never delivered, automatically deleted after up to 7 days</li>
               <li>Request and error logs: 30–90 days</li>
               <li>Security/audit logs: up to 365 days</li>
-              <li>Server database backups: kept for a limited period, currently up to 14 days</li>
+              <li>Server database backups: usually kept for 14 days, and the three most recent copies are always kept whatever their age. They are access-controlled but currently stored unencrypted on the same server; we are adding encryption and an off-site copy.</li>
               <li>Account and profile data: stored until the account is deleted by the user, and thereafter to the extent required to comply with laws and legal obligations</li>
             </ul>
             <p>
@@ -422,10 +433,11 @@ export default function Privacy() {
               <tbody>
                 <tr><td>Digital signatures (identity, message authentication)</td><td>Ed25519</td></tr>
                 <tr><td>Diffie-Hellman key agreement</td><td>X25519 (Curve25519)</td></tr>
-                <tr><td>Initial pairwise handshake</td><td>X3DH-style triple DH</td></tr>
+                <tr><td>Initial pairwise handshake</td><td>X3DH-like: X25519 between an ephemeral key and the recipient&rsquo;s signed and one-time pre-keys; Ed25519 handshake signature since app 1.8.58</td></tr>
                 <tr><td>Per-message symmetric AEAD encryption</td><td>XChaCha20-Poly1305 (256-bit key, 192-bit nonce, 128-bit tag)</td></tr>
                 <tr><td>Forward-secrecy ratchet</td><td>Custom Double Ratchet v3 (X25519 + HKDF-SHA256 + XChaCha20-Poly1305)</td></tr>
                 <tr><td>Key derivation</td><td>HKDF-SHA256; PBKDF2-HMAC-SHA256 for password-based derivation</td></tr>
+                <tr><td>Backups and recovery kit</td><td>AES-256-GCM; key from PBKDF2-HMAC-SHA256</td></tr>
                 <tr><td>Cryptographic hashing</td><td>SHA-256, HMAC-SHA256</td></tr>
                 <tr><td>Local database encryption</td><td>AES-256 via SQLCipher (mobile) / SQLite3 Multiple Ciphers (desktop)</td></tr>
                 <tr><td>Encrypted backup (optional)</td><td>AES-256-GCM with PBKDF2-HMAC-SHA256 key derivation</td></tr>
@@ -477,6 +489,19 @@ export default function Privacy() {
               <li>Formspree (Formspree, Inc.) — delivers the contact form on this website; receives whatever you type into that form, including the address you give for a reply — <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noopener noreferrer">privacy policy</a></li>
             </ul>
 
+            <h3>Optional features that contact third parties</h3>
+            <p>
+              These services are contacted only when you use the feature. None of them
+              receives message content.
+            </p>
+            <ul>
+              <li>Google Fonts (Google LLC) — animated emoji in reactions and statuses are downloaded from fonts.gstatic.com the first time they are shown; Google receives your IP address and which animation was requested. We plan to ship these animations inside the app.</li>
+              <li>Hugging Face — the speech-recognition model for voice-message transcription (about 140 MB) is downloaded once, on first use; the file is checked against a fixed SHA-256 before use. Hugging Face receives your IP address.</li>
+              <li>Google ML Kit — optional message translation downloads language models through Google&rsquo;s model manager. Google learns which language pairs were requested, never message content: translation runs on your device.</li>
+              <li>Voice dictation — uses your device&rsquo;s built-in speech recognition from Apple or Google. Depending on the device and language, the audio may be processed on their servers. We are switching dictation to on-device only.</li>
+              <li>Link previews — when you send a link, your device fetches the page to build the preview, so that website sees your IP address and the user agent &ldquo;SecretlyLinkPreview/1.0&rdquo;. People who receive the link do not contact the website.</li>
+            </ul>
+
             <h3>Donations (website)</h3>
             <p>
               Donations are accepted on this website via Donorbox. Premium is sold only through the
@@ -512,6 +537,13 @@ export default function Privacy() {
               No third-party advertising networks are used to display targeted ads inside the
               application. Personal data is not shared with third parties for ad targeting purposes.
               If this changes in the future, this Policy will be updated and users will be notified.
+            </p>
+            <p>
+              The iOS app lists Meta&rsquo;s SKAdNetwork identifiers in its settings file. This is
+              Apple&rsquo;s privacy-preserving install attribution: the app itself sends nothing to
+              Meta and uses no advertising identifier, but Apple may send Meta an anonymous,
+              aggregated notice that an install followed an ad. We are removing these identifiers
+              in the next iOS release.
             </p>
 
             <h2>20. Contact</h2>

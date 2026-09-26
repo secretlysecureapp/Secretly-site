@@ -24,6 +24,8 @@ the Secretly messenger apps and servers are also welcome at the same address.
 
 ## Encryption
 
-Messages, calls, and files are end-to-end encrypted (Signal-class Double
-Ratchet). See https://www.secretlyapp.com/security for the security model and
-the current independent-audit status.
+Messages, files and one-to-one calls are end-to-end encrypted with a Double
+Ratchet (our own implementation, not yet independently audited). Group calls
+are encrypted in transit only, for now. See https://www.secretlyapp.com/security
+and the threat model in the app repository
+(https://github.com/Arkhanhel/Secretly/blob/main/docs/THREAT_MODEL.md).
