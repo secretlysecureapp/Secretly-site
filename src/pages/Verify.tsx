@@ -30,6 +30,41 @@ const DEFINES = [
 
 const ARTEFACTS = [
   {
+    release: '1.8.62 (635)',
+    platform: 'macOS',
+    file: 'Secretly-1.8.62-635.dmg',
+    date: '2026-09-28',
+    sha: '9c40a3ec95bb92152808d52a135c3b43fe27b5a44f775b1c6cd92164288aa619',
+  },
+  {
+    release: '1.8.62 (635)',
+    platform: 'Windows installer',
+    file: 'Secretly-Setup-1.8.62-635-x64.exe',
+    date: '2026-09-28',
+    sha: 'aeb9d7d63be5dafd3ffd508227e72baab4a480182626043c297e6a0af8a6d467',
+  },
+  {
+    release: '1.8.62 (635)',
+    platform: 'Windows',
+    file: 'Secretly-1.8.62-635-windows-x64.zip',
+    date: '2026-09-28',
+    sha: 'c9dff9a784b59a9d2b6574dd538a98ee9cb0466372d74c0e14b4839cd04a01a0',
+  },
+  {
+    release: '1.8.62 (635)',
+    platform: 'Android',
+    file: 'secretly-production-1.8.62-635-store635.aab',
+    date: '2026-09-28',
+    sha: 'e6df02697f84205fac018162c217debca2600c01bbb2c1f1962143bed5df5fa7',
+  },
+  {
+    release: '1.8.62 (635)',
+    platform: 'iOS',
+    file: 'secretly-production-1.8.62-635-store635.ipa',
+    date: '2026-09-28',
+    sha: '16dd0047c0d72d09683841c57d04d99fd2a76e3abfca1590b6cc60db524df9db',
+  },
+  {
     release: '1.8.61 (630)',
     platform: 'macOS',
     file: 'Secretly-1.8.61-630.dmg',
@@ -63,20 +98,6 @@ const ARTEFACTS = [
     file: 'secretly-production-1.8.61-630-store630.ipa',
     date: '2026-09-26',
     sha: '50ad5814edc362c848bd907645719d40ebb7e9d45b823e7afc28ccbc039ffbea',
-  },
-  {
-    release: '1.8.59 (628)',
-    platform: 'macOS',
-    file: 'Secretly-1.8.59-628.dmg',
-    date: '2026-09-24',
-    sha: 'f581ce72ad4d1f98b6e8b36f043c7feecee6458082b2639387e042e45185b617',
-  },
-  {
-    release: '1.8.59 (628)',
-    platform: 'Windows',
-    file: 'Secretly-1.8.59-628-windows-x64.zip',
-    date: '2026-09-24',
-    sha: 'e6305516dedc57082b31904b64605265fef549d2dd23f067f5c3fb0005315c90',
   },
   {
     release: '1.8.39 (588)',
@@ -205,10 +226,11 @@ export default function Verify() {
           </div>
           <p className="reveal" style={{ fontSize: '0.9rem', marginTop: 12 }}>
             Each release&rsquo;s exact source is tagged in the repository
-            (for example <code>v1.8.61-630</code>); <a href={VERIFY_MD}>docs/VERIFY.md</a>{' '}
-            maps every file to its tag. On 26 September 2026 Google Play serves
-            1.8.61 (631); the App Store still serves 1.8.39 (588), with 1.8.61
-            (630) in TestFlight.
+            (for example <code>v1.8.62-635</code>); <a href={VERIFY_MD}>docs/VERIFY.md</a>{' '}
+            maps every file to its tag. On 28 September 2026 this website serves
+            1.8.62 (635) for macOS and Windows; Google Play serves 1.8.61 (631)
+            until 1.8.62 (635) is through review; the App Store still serves
+            1.8.39 (588), with 1.8.62 (635) in TestFlight.
           </p>
 
           <h3 className="reveal" style={{ marginTop: 32 }}>

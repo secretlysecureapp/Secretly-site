@@ -37,8 +37,11 @@ export const SITE = {
     android: 'https://play.google.com/store/apps/details?id=com.secretly.secretly_app&pcampaignid=web_share',
     ios:     'https://apps.apple.com/ua/app/secretly-secure-messenger/id6760417329?l=ru',
     // Тот же приём, что у macOS ниже: постоянный адрес, ссылка на сервере
-    // переставляется при выпуске, Caddy отдаёт её с no-store.
-    windows: 'https://updates.secretlyapp.com/Secretly-latest-windows.zip',
+    // переставляется при выпуске, Caddy отдаёт её с no-store. С 1.8.62 (635,
+    // 28.09.2026) — установщик: ставится одной кнопкой и дальше обновляется
+    // сам из приложения. Архив остаётся для тех, кому нужна переносная копия.
+    windows: 'https://updates.secretlyapp.com/Secretly-Setup-latest.exe',
+    windowsZip: 'https://updates.secretlyapp.com/Secretly-latest-windows.zip',
     // Постоянный адрес: ссылка на сервере переставляется при каждом выпуске,
     // поэтому сайт не нужно править. Отдаётся с no-store — иначе промежуточные
     // узлы весь год держали бы по этому адресу старую версию.

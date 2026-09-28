@@ -179,6 +179,7 @@ const ru = {
     comingSoon: 'Скоро будет',
     macComingSoon: 'macOS — скоро будет',
     macDownload: 'Скачать для macOS',
+    windowsZip: 'Windows без установки: переносной ZIP',
     anotherPlatform: 'Ищете другую платформу?',
     viewAll: 'Все загрузки →',
     android: { title: 'Secretly для Android',       cta: 'Скачать для Android',         note: 'Или откройте secretlyapp.com/download с телефона.', store: 'Доступно в Google Play' },

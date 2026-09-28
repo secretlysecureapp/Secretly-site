@@ -220,6 +220,7 @@ const en = {
     comingSoon: 'Coming soon',
     macComingSoon: 'macOS — coming soon',
     macDownload: 'Download for macOS',
+    windowsZip: 'Windows without installing: portable ZIP',
     anotherPlatform: 'Looking for another platform?',
     viewAll: 'View all downloads →',
     android: { title: 'Secretly for Android',       cta: 'Download for Android',        note: 'Or visit secretlyapp.com/download from your phone.', store: 'Available on Google Play' },

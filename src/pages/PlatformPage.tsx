@@ -138,6 +138,13 @@ export default function PlatformPage({ platform }: PlatformPageProps) {
                 </>
               )}
             </div>
+            {platform === 'desktop' && isAvailable(SITE.download.windowsZip) && (
+              <p style={{ marginTop: 14, fontSize: '0.9rem' }}>
+                <a href={SITE.download.windowsZip} target="_blank" rel="noopener noreferrer">
+                  {t('platform.windowsZip')}
+                </a>
+              </p>
+            )}
 
             <p style={{ fontSize: 14, color: 'var(--text-muted)' }}>{t(`platform.${platform}.note`)}</p>
           </div>
