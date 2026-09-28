@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { SITE } from '../config'
+import LogoMark from './LogoMark'
 
 const PRODUCT_LINKS = [
   { label: 'Features',  to: '/features' },
@@ -33,7 +34,7 @@ export default function Footer() {
           {/* Brand col */}
           <div className="footer__brand">
             <Link to="/" className="footer__logo">
-              <img src="/icons/chat.png" alt="" className="footer__logo-icon" />
+              <LogoMark className="footer__logo-icon" decorative />
               Secretly
             </Link>
             <p className="footer__tagline">

@@ -40,7 +40,7 @@
   --grid-line:   rgba(255, 255, 255, 0.035);
   --hover-soft:  rgba(255, 255, 255, 0.05);
   --icon-filter: brightness(0) invert(1);
-  --logo-blend:  screen;
+  --logo-ink:    #ffffff;
   --stat-grad:   #ffffff;
   --shadow-strong: rgba(0, 0, 0, 0.42);
   --sheen:       rgba(255, 255, 255, 0.28);
@@ -80,7 +80,7 @@
   --grid-line:   rgba(22, 18, 14, 0.045);
   --hover-soft:  rgba(22, 18, 14, 0.045);
   --icon-filter: brightness(0) saturate(0) opacity(0.75);
-  --logo-blend:  normal;
+  --logo-ink:    #16120e;
   --stat-grad:   #16120e;
   --shadow-strong: rgba(22, 18, 14, 0.14);
   --sheen:       rgba(255, 255, 255, 0.7);
@@ -922,6 +922,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ────────────────────────────────────────────────────────────
+   BRAND MARK — знак без подложки (components/LogoMark.tsx)
+   Форма — маска (белый знак на прозрачном), цвет — --logo-ink.
+   ──────────────────────────────────────────────────────────── */
+.logo-mark {
+  display: inline-block;
+  flex-shrink: 0;
+  background-color: var(--logo-ink);
+  -webkit-mask: url('/brand/mark.png') center / contain no-repeat;
+          mask: url('/brand/mark.png') center / contain no-repeat;
+}
+
+/* ────────────────────────────────────────────────────────────
    NAVBAR
    ──────────────────────────────────────────────────────────── */
 .navbar {
@@ -957,8 +969,9 @@ h1, h2, h3, h4, h5, h6 {
 .navbar__logo-icon {
   width: 46px;
   height: 46px;
-  mix-blend-mode: var(--logo-blend);
-  opacity: 1;
+  /* знак ≈ 32 px — как на прежней картинке, где он занимал 70 % плитки */
+  -webkit-mask-size: 75%;
+          mask-size: 75%;
 }
 .navbar__nav {
   display: flex;
@@ -1072,8 +1085,9 @@ h1, h2, h3, h4, h5, h6 {
 .footer__logo-icon {
   width: 28px;
   height: 28px;
-  filter: var(--icon-filter);
-  opacity: 0.9;
+  /* знак ≈ 23 px — размер прежнего значка в подвале */
+  -webkit-mask-size: 87%;
+          mask-size: 87%;
 }
 .footer__tagline {
   font-size: 14px;

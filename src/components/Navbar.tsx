@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import i18n, { LANGUAGES } from '../i18n'
 import ThemeToggle from './ThemeToggle'
+import LogoMark from './LogoMark'
 
 export default function Navbar() {
   const [scrolled,    setScrolled]    = useState(false)
@@ -55,7 +56,7 @@ export default function Navbar() {
         <div className="container">
           <div className="navbar__inner">
             <Link to="/" className="navbar__logo">
-              <img src="/logo.png" alt="Secretly" className="navbar__logo-icon" />
+              <LogoMark className="navbar__logo-icon" decorative />
               Secretly
             </Link>
 
