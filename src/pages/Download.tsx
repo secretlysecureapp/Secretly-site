@@ -94,7 +94,7 @@ export default function Download() {
                 { os: 'Android', req: 'Android 7.0 or later' },
                 { os: 'iPhone & iPad', req: 'iOS / iPadOS 15.5 or later' },
                 { os: 'Windows', req: 'Windows 10 or later' },
-                { os: 'macOS', req: 'macOS 11 Big Sur or later' },
+                { os: 'macOS', req: 'macOS 13 Ventura or later' },
               ].map((r) => (
                 <div key={r.os} style={{ padding: '18px 20px', background: 'var(--bg-surface)', border: '1px solid var(--border)', borderRadius: 'var(--r-md)' }}>
                   <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600, fontSize: 15, marginBottom: 4 }}>{r.os}</p>

@@ -30,6 +30,41 @@ const DEFINES = [
 
 const ARTEFACTS = [
   {
+    release: '1.8.63 (644)',
+    platform: 'macOS',
+    file: 'Secretly-1.8.63-644.dmg',
+    date: '2026-10-01',
+    sha: '9078a170d2323f7175656e8360da3b47ab3c98f9182ef1a4d8023850e7d05d45',
+  },
+  {
+    release: '1.8.63 (644)',
+    platform: 'Windows installer',
+    file: 'Secretly-Setup-1.8.63-644-x64.exe',
+    date: '2026-10-01',
+    sha: '75c5de4b26e3888c9692f6445e8d62d40776213077a835fad578d04540f42e7b',
+  },
+  {
+    release: '1.8.63 (644)',
+    platform: 'Windows',
+    file: 'Secretly-1.8.63-644-windows-x64.zip',
+    date: '2026-10-01',
+    sha: '49585bf6761b8aa71396f43a558918833e8f6a380fdbcdc5a731a4501378f198',
+  },
+  {
+    release: '1.8.63 (644)',
+    platform: 'Android',
+    file: 'secretly-production-1.8.63-644-store644.aab',
+    date: '2026-10-01',
+    sha: 'e1851ceec745330e1a80ea5e4fa370e2a03e9211dbb52ef6d0f9a7d58f5416f4',
+  },
+  {
+    release: '1.8.63 (644)',
+    platform: 'iOS',
+    file: 'secretly-production-1.8.63-644-store644.ipa',
+    date: '2026-10-01',
+    sha: 'd02753ed69cceafadab7c9dd138852109fc6a6e67be793b50861e6e6e4b814e8',
+  },
+  {
     release: '1.8.62 (635)',
     platform: 'macOS',
     file: 'Secretly-1.8.62-635.dmg',
